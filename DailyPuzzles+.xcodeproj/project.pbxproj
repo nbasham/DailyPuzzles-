@@ -1,0 +1,372 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20292BFB29F2104C00C51913 /* DailyPuzzles_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */; };
+		20292BFD29F2104C00C51913 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20292BFC29F2104C00C51913 /* ContentView.swift */; };
+		20292BFF29F2104E00C51913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20292BFE29F2104E00C51913 /* Assets.xcassets */; };
+		20292C0229F2104E00C51913 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20292C0129F2104E00C51913 /* Preview Assets.xcassets */; };
+		209025372A0ED7B5004B6790 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025362A0ED7B5004B6790 /* MainView.swift */; };
+		209025392A0ED937004B6790 /* GameHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025382A0ED937004B6790 /* GameHostView.swift */; };
+		2090253D2A0EDA15004B6790 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2090253C2A0EDA15004B6790 /* Coordinator.swift */; };
+		2090253F2A103958004B6790 /* GameDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2090253E2A103958004B6790 /* GameDescriptor.swift */; };
+		209025412A104CD2004B6790 /* MainToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025402A104CD2004B6790 /* MainToolbarView.swift */; };
+		209025432A104EA4004B6790 /* CryptogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025422A104EA4004B6790 /* CryptogramView.swift */; };
+		209025452A1053CA004B6790 /* GameToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025442A1053CA004B6790 /* GameToolbarView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		20292BF729F2104C00C51913 /* DailyPuzzles+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DailyPuzzles+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPuzzles_App.swift; sourceTree = "<group>"; };
+		20292BFC29F2104C00C51913 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		20292BFE29F2104E00C51913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20292C0129F2104E00C51913 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		209025362A0ED7B5004B6790 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		209025382A0ED937004B6790 /* GameHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHostView.swift; sourceTree = "<group>"; };
+		2090253C2A0EDA15004B6790 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		2090253E2A103958004B6790 /* GameDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDescriptor.swift; sourceTree = "<group>"; };
+		209025402A104CD2004B6790 /* MainToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainToolbarView.swift; sourceTree = "<group>"; };
+		209025422A104EA4004B6790 /* CryptogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptogramView.swift; sourceTree = "<group>"; };
+		209025442A1053CA004B6790 /* GameToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToolbarView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20292BF429F2104C00C51913 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20292BEE29F2104C00C51913 = {
+			isa = PBXGroup;
+			children = (
+				20292BF929F2104C00C51913 /* DailyPuzzles+ */,
+				20292BF829F2104C00C51913 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20292BF829F2104C00C51913 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20292BF729F2104C00C51913 /* DailyPuzzles+.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20292BF929F2104C00C51913 /* DailyPuzzles+ */ = {
+			isa = PBXGroup;
+			children = (
+				20292BFC29F2104C00C51913 /* ContentView.swift */,
+				2090253C2A0EDA15004B6790 /* Coordinator.swift */,
+				209025422A104EA4004B6790 /* CryptogramView.swift */,
+				20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */,
+				2090253E2A103958004B6790 /* GameDescriptor.swift */,
+				209025382A0ED937004B6790 /* GameHostView.swift */,
+				209025442A1053CA004B6790 /* GameToolbarView.swift */,
+				209025362A0ED7B5004B6790 /* MainView.swift */,
+				209025402A104CD2004B6790 /* MainToolbarView.swift */,
+				20292BFE29F2104E00C51913 /* Assets.xcassets */,
+				20292C0029F2104E00C51913 /* Preview Content */,
+			);
+			path = "DailyPuzzles+";
+			sourceTree = "<group>";
+		};
+		20292C0029F2104E00C51913 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				20292C0129F2104E00C51913 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20292BF629F2104C00C51913 /* DailyPuzzles+ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20292C0529F2104E00C51913 /* Build configuration list for PBXNativeTarget "DailyPuzzles+" */;
+			buildPhases = (
+				20292BF329F2104C00C51913 /* Sources */,
+				20292BF429F2104C00C51913 /* Frameworks */,
+				20292BF529F2104C00C51913 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DailyPuzzles+";
+			productName = "DailyPuzzles+";
+			productReference = 20292BF729F2104C00C51913 /* DailyPuzzles+.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20292BEF29F2104C00C51913 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					20292BF629F2104C00C51913 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 20292BF229F2104C00C51913 /* Build configuration list for PBXProject "DailyPuzzles+" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20292BEE29F2104C00C51913;
+			productRefGroup = 20292BF829F2104C00C51913 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20292BF629F2104C00C51913 /* DailyPuzzles+ */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20292BF529F2104C00C51913 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20292C0229F2104E00C51913 /* Preview Assets.xcassets in Resources */,
+				20292BFF29F2104E00C51913 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20292BF329F2104C00C51913 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2090253F2A103958004B6790 /* GameDescriptor.swift in Sources */,
+				209025392A0ED937004B6790 /* GameHostView.swift in Sources */,
+				209025432A104EA4004B6790 /* CryptogramView.swift in Sources */,
+				209025452A1053CA004B6790 /* GameToolbarView.swift in Sources */,
+				2090253D2A0EDA15004B6790 /* Coordinator.swift in Sources */,
+				20292BFD29F2104C00C51913 /* ContentView.swift in Sources */,
+				209025372A0ED7B5004B6790 /* MainView.swift in Sources */,
+				209025412A104CD2004B6790 /* MainToolbarView.swift in Sources */,
+				20292BFB29F2104C00C51913 /* DailyPuzzles_App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		20292C0329F2104E00C51913 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		20292C0429F2104E00C51913 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20292C0629F2104E00C51913 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DailyPuzzles+/Preview Content\"";
+				DEVELOPMENT_TEAM = BGR2CU5KFK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "blacklabs.DailyPuzzles-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20292C0729F2104E00C51913 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DailyPuzzles+/Preview Content\"";
+				DEVELOPMENT_TEAM = BGR2CU5KFK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "blacklabs.DailyPuzzles-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20292BF229F2104C00C51913 /* Build configuration list for PBXProject "DailyPuzzles+" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20292C0329F2104E00C51913 /* Debug */,
+				20292C0429F2104E00C51913 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20292C0529F2104E00C51913 /* Build configuration list for PBXNativeTarget "DailyPuzzles+" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20292C0629F2104E00C51913 /* Debug */,
+				20292C0729F2104E00C51913 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20292BEF29F2104C00C51913 /* Project object */;
+}

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var navigator: Navigator
 
     var body: some View {
         ZStack {
@@ -10,23 +10,19 @@ struct MainView: View {
             VStack {
                 ForEach(GameDescriptor.all) { game in
                     Button(game.displayName) {
-                        coordinator.gameSelected(game)
+                        navigator.push(game)
                     }
                 }
             }
         }
-        .navigationDestination(for: Coordinator.Path.self) { path in
-            coordinator.navigate(to: path)
+        .onReceive(NotificationCenter.default.publisher(for: .gameHelp)) { _ in
+            navigator.push("help")
         }
-        .sheet(item: $coordinator.sheet) { sheet in
-            coordinator.navigate(to: sheet)
+        .navigationDestination(for: GameDescriptor.self) { game in
+            GameHostView(viewModel: GameHostViewModel(game: game))
         }
-        .fullScreenCover (item: $coordinator.fullscreen) { fullscreen in
-            coordinator.navigate(to: fullscreen)
-        }
-        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-            // it is OK to update @Published vars here
-            coordinator.handleRotation(UIDevice.current.orientation)
+        .navigationDestination(for: String.self) { _ in
+            ColorView(.yellow)
         }
         .navigationBarTitle("") // hides Back on game screen
         .navigationBarTitleDisplayMode(.inline)
@@ -39,6 +35,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
-            .environmentObject(Coordinator())
+            .environmentObject(Navigator())
     }
 }

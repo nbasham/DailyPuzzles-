@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct DailyPuzzles_App: App {
-    @StateObject private var coordinator = Coordinator()
+    @StateObject private var navigator = Navigator()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(coordinator)
+                .environmentObject(navigator)
         }
     }
 }

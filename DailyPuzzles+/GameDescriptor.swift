@@ -51,4 +51,8 @@ enum GameDescriptor: String, Identifiable {
                 return .cyan
         } // next color ff00ff
     }
+
+    func view(host: GameHost, size: CGSize) -> some View {
+        CryptogramView(host: host, size: size)
+    }
 }

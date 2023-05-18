@@ -13,7 +13,7 @@
 		20292C0229F2104E00C51913 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20292C0129F2104E00C51913 /* Preview Assets.xcassets */; };
 		209025372A0ED7B5004B6790 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025362A0ED7B5004B6790 /* MainView.swift */; };
 		209025392A0ED937004B6790 /* GameHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025382A0ED937004B6790 /* GameHostView.swift */; };
-		2090253D2A0EDA15004B6790 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2090253C2A0EDA15004B6790 /* Coordinator.swift */; };
+		2090253D2A0EDA15004B6790 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2090253C2A0EDA15004B6790 /* Navigator.swift */; };
 		2090253F2A103958004B6790 /* GameDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2090253E2A103958004B6790 /* GameDescriptor.swift */; };
 		209025412A104CD2004B6790 /* MainToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025402A104CD2004B6790 /* MainToolbarView.swift */; };
 		209025432A104EA4004B6790 /* CryptogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025422A104EA4004B6790 /* CryptogramView.swift */; };
@@ -28,7 +28,7 @@
 		20292C0129F2104E00C51913 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		209025362A0ED7B5004B6790 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		209025382A0ED937004B6790 /* GameHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHostView.swift; sourceTree = "<group>"; };
-		2090253C2A0EDA15004B6790 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		2090253C2A0EDA15004B6790 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		2090253E2A103958004B6790 /* GameDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDescriptor.swift; sourceTree = "<group>"; };
 		209025402A104CD2004B6790 /* MainToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainToolbarView.swift; sourceTree = "<group>"; };
 		209025422A104EA4004B6790 /* CryptogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptogramView.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				20292BFC29F2104C00C51913 /* ContentView.swift */,
-				2090253C2A0EDA15004B6790 /* Coordinator.swift */,
+				2090253C2A0EDA15004B6790 /* Navigator.swift */,
 				209025422A104EA4004B6790 /* CryptogramView.swift */,
 				20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */,
 				2090253E2A103958004B6790 /* GameDescriptor.swift */,
@@ -162,7 +162,7 @@
 				209025392A0ED937004B6790 /* GameHostView.swift in Sources */,
 				209025432A104EA4004B6790 /* CryptogramView.swift in Sources */,
 				209025452A1053CA004B6790 /* GameToolbarView.swift in Sources */,
-				2090253D2A0EDA15004B6790 /* Coordinator.swift in Sources */,
+				2090253D2A0EDA15004B6790 /* Navigator.swift in Sources */,
 				20292BFD29F2104C00C51913 /* ContentView.swift in Sources */,
 				209025372A0ED7B5004B6790 /* MainView.swift in Sources */,
 				209025412A104CD2004B6790 /* MainToolbarView.swift in Sources */,

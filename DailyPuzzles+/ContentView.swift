@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var navigator: Navigator
 
     var body: some View {
-        NavigationStack(path: $coordinator.path) {
+        NavigationStack(path: $navigator.path) {
             MainView()
         }
     }
@@ -20,6 +20,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(Coordinator())
+            .environmentObject(Navigator())
     }
 }

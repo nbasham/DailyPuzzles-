@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MainToolbarView: ToolbarContent {
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var navigator: Navigator
 
     var body: some ToolbarContent {
         Group {
@@ -29,7 +29,8 @@ struct MainToolbarView: ToolbarContent {
 
     private func menuView() -> some View {
         Menu {
-            Button("Help", action: { coordinator.mainHelpSelected() })
+            Button("Help", action: {
+                NotificationCenter.default.post(name: .gameHelp, object: nil) } )
         } label: {
             HStack {
                 Text("menu")
@@ -55,6 +56,6 @@ struct MainToolbarView_Previews: PreviewProvider {
                 MainToolbarView()
             }
         }
-        .environmentObject(Coordinator())
+        .environmentObject(Navigator())
     }
 }

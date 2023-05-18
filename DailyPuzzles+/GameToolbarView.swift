@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct GameToolbarView: ToolbarContent {
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var navigator: Navigator
 
     var body: some ToolbarContent {
         Group {
             ToolbarItem(placement: .navigationBarLeading) {
                 ZStack(alignment: .trailing) {
                     Button(action: {
-                        coordinator.backSelected()
+                        navigator.pop()
                     }, label: {
                         HStack {
                             Label("back", systemImage: "chevron.left.circle.fill")
@@ -33,7 +33,8 @@ struct GameToolbarView: ToolbarContent {
 
     private func menuView() -> some View {
         Menu {
-            Button("To do", action: {  } )
+            Button("Solve", action: {
+                NotificationCenter.default.post(name: .gameSolve, object: nil) } )
         }
     label: {
         HStack {
@@ -73,6 +74,35 @@ struct GameToolbarView_Previews: PreviewProvider {
                 GameToolbarView()
             }
         }
-        .environmentObject(Coordinator())
+        .environmentObject(Navigator())
     }
+}
+
+/*
+ // Posting a notification
+ NotificationCenter.default.post(name: .eventOccurred, object: nil)
+
+ // Adding an observer
+ NotificationCenter.default.addObserver(self, selector: #selector(someMethod), name: .eventOccurred, object: nil)
+
+ // Or with SwiftUI's onReceive modifier
+ .onReceive(NotificationCenter.default.publisher(for: .eventOccurred)) { _ in
+ // Handle the notification
+ }
+ */
+extension NSNotification.Name {
+    static let gameHelp = NSNotification.Name("gameHelp")
+    static let gameSolve = NSNotification.Name("gameSolve")
+    static let gameStartAgain = NSNotification.Name("gameStartAgain")
+    //  quotefalls
+    static let autoAdvance = NSNotification.Name("autoAdvance")
+    //  sudoku
+    static let completeLastNumber = NSNotification.Name("completeLastNumber")
+    static let placeMarkersTrailing = NSNotification.Name("placeMarkersTrailing")
+    static let selectRowCol = NSNotification.Name("selectRowCol")
+    static let undo = NSNotification.Name("undo")
+    //  word search
+    static let hideClues = NSNotification.Name("hideClues")
+    //  debug
+    static let almostSolveEvent = NSNotification.Name("almostSolveEvent")
 }

@@ -6,9 +6,10 @@ protocol GameHost {
 }
 
 struct GameHostView: View, GameHost {
-    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var navigator: Navigator
     @ObservedObject var viewModel: GameHostViewModel
     var game: GameDescriptor { viewModel.game }
+    @State private var isGameDisabled = false
 
     var body: some View {
         ZStack {
@@ -18,7 +19,8 @@ struct GameHostView: View, GameHost {
                 Color.clear
                 VStack(spacing: 0) {
                     GeometryReader { proxy in
-                        CryptogramView(host: self, size: proxy.size)
+                        game.view(host: self, size: proxy.size)
+                            .disabled(isGameDisabled)
                     }
                     if viewModel.showSolved {
                         GameSolvedView()
@@ -34,6 +36,9 @@ struct GameHostView: View, GameHost {
         .onDisappear {
             viewModel.stopEventListening()
         }
+        .onReceive(NotificationCenter.default.publisher(for: .gameSolve)) { x in
+            didSolve()
+        }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
         .toolbarBackground(.visible, for: .navigationBar)
@@ -44,6 +49,7 @@ struct GameHostView: View, GameHost {
     }
 
     func didSolve() {
+        isGameDisabled = true
         viewModel.didSolve()
     }
 }
@@ -51,7 +57,7 @@ struct GameHostView: View, GameHost {
 struct GameHostView_Previews: PreviewProvider {
     static var previews: some View {
         GameHostView(viewModel: GameHostViewModel(game: .quotefalls))
-            .environmentObject(Coordinator())
+            .environmentObject(Navigator())
     }
 }
 

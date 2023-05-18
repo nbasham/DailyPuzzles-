@@ -23,6 +23,7 @@ struct MainView: View {
         }
         .navigationDestination(for: String.self) { _ in
             ColorView(.yellow)
+                .navigationTitle("Help")
         }
         .navigationBarTitle("") // hides Back on game screen
         .navigationBarTitleDisplayMode(.inline)

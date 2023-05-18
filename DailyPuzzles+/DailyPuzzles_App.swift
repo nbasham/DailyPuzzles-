@@ -15,6 +15,12 @@ struct DailyPuzzles_App: App {
         WindowGroup {
             ContentView()
                 .environmentObject(navigator)
+                .onAppear {
+                    //  Stop flashing white corners on rotation
+                    if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first {
+                        window.rootViewController?.view.backgroundColor = UIColor(named: "background")
+                    }
+                }
         }
     }
 }

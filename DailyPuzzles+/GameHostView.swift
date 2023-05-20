@@ -3,6 +3,8 @@ import SwiftUI
 protocol GameHost {
     var game: GameDescriptor { get }
     func didSolve()
+    func incMisses()
+    func incHints()
 }
 
 struct GameHostView: View, GameHost {
@@ -55,6 +57,9 @@ struct GameHostView: View, GameHost {
         isGameDisabled = true
         viewModel.didSolve()
     }
+
+    func incMisses() { viewModel.incMisses() }
+    func incHints() { viewModel.incHints() }
 }
 
 struct GameHostView_Previews: PreviewProvider {
@@ -126,6 +131,9 @@ class GameHostViewModel: ObservableObject {
             gameModel.save(game: game)
         }
     }
+
+    func incMisses() { gameModel.numberMissed += 1 }
+    func incHints() { gameModel.numberOfHintsUsed += 1 }
 }
 
 struct GameSolvedView: View {

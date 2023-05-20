@@ -25,21 +25,13 @@ extension Date {
     }
 }
 
-extension UserDefaults {
-    func object<T: Decodable>(forKey key: String) -> T? {
-        if let data = self.object(forKey: key) as? Data {
-            let decoder = JSONDecoder()
-            if let obj = try? decoder.decode(T.self, from: data) {
-                return obj
-            }
-        }
-        return nil
-    }
-
-    func set(value: Encodable, forKey key: String) {
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(value) {
-            self.set(encoded, forKey: key)
-        }
+public extension Int {
+    /// 96.timerValue, yeilds "1:36"
+    var timerValue: String {
+        let hours = self / 3600
+        let minutes = (self % 3600) / 60
+        let seconds = (self % 3600) % 60
+        let timeStr = hours == 0 ? "\(minutes):\(String(format: "%02d", seconds))" : "\(hours):\(String(format: "%02d", minutes)):\(String(format: "%02d", seconds))"
+        return timeStr
     }
 }

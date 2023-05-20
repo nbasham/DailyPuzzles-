@@ -7,7 +7,7 @@ protocol GameHost {
 
 struct GameHostView: View, GameHost {
     @EnvironmentObject private var navigator: Navigator
-    @ObservedObject var viewModel: GameHostViewModel
+    @StateObject var viewModel: GameHostViewModel
     var game: GameDescriptor { viewModel.game }
     @State private var isGameDisabled = false
 
@@ -31,13 +31,16 @@ struct GameHostView: View, GameHost {
             }
         }
         .onAppear {
-            viewModel.startEventListening()
+            viewModel.start()
         }
         .onDisappear {
-            viewModel.stopEventListening()
+            viewModel.stop()
         }
         .onReceive(NotificationCenter.default.publisher(for: .gameSolve)) { x in
             didSolve()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .gameBackButton)) { x in
+            viewModel.save()
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
@@ -65,11 +68,28 @@ class GameHostViewModel: ObservableObject {
     let game: GameDescriptor
     @Published var isSolved = false
     @Published var showSolved = false
+    var gameModel: GameModel
+    let timer = SecondsTimer()
 
     init(game: GameDescriptor) {
         self.game = game
+        gameModel = GameModel.load(game: game)
+    }
+
+    //  init is called twice, appear (which calls this) only once
+    func start() {
         NotificationCenter.default.addObserver(self, selector: #selector(appBecameActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        timer.start(initialSeconds: gameModel.elapsedSeconds) { secs in
+            self.gameModel.elapsedSeconds = secs
+            NotificationCenter.default.post(name: .gameTimer, object: ["secs": NSNumber(value: secs)])
+        }
+        startEventListening()
+    }
+
+    func stop() {
+        stopEventListening()
+        timer.end()
     }
 
     func startEventListening() {
@@ -84,15 +104,27 @@ class GameHostViewModel: ObservableObject {
 
     @objc func appBecameActive() {
         print("App became active")
+        timer.resume()
     }
 
     @objc func appMovedToBackground() {
         print("App moved to background!")
+        timer.pause()
+        save()
     }
 
     func didSolve() {
+        timer.pause()
         isSolved = true
         showSolved = true
+        GameModel.clear(game: game)
+        // TODO remove game's persistence
+    }
+
+    func save() {
+        if !isSolved {
+            gameModel.save(game: game)
+        }
     }
 }
 

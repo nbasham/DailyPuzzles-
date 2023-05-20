@@ -2,12 +2,15 @@ import SwiftUI
 
 struct GameToolbarView: ToolbarContent {
     @EnvironmentObject private var navigator: Navigator
+    @State private var seconds = "0:00" // sets width so it doesn't jump at 0
+    let shouldShowTimer = true
 
     var body: some ToolbarContent {
         Group {
             ToolbarItem(placement: .navigationBarLeading) {
                 ZStack(alignment: .trailing) {
                     Button(action: {
+                        NotificationCenter.default.post(name: .gameBackButton, object: nil)
                         navigator.pop()
                     }, label: {
                         HStack {
@@ -19,6 +22,12 @@ struct GameToolbarView: ToolbarContent {
                                 .fontWeight(.light)
                         }
                     })
+                }
+                .onReceive(NotificationCenter.default.publisher(for: .gameTimer)) { notification in
+                    if let info = notification.object as? [String:Int] {
+                        let secs = info["secs"] ?? 0
+                        seconds = secs.timerValue
+                    }
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -38,8 +47,9 @@ struct GameToolbarView: ToolbarContent {
         }
     label: {
         HStack {
-            Text("menu")
-                .foregroundColor(.white)
+            Text(shouldShowTimer ? "\(seconds)" : "menu")
+                .foregroundColor(seconds == "0:00" ? .clear : .white)
+                .monospacedDigit() // uses system font vs. monospace()
                 .fontWeight(.light)
             Label("menu", systemImage: "info.circle.fill")
                 .imageScale(.large)
@@ -91,6 +101,8 @@ struct GameToolbarView_Previews: PreviewProvider {
  }
  */
 extension NSNotification.Name {
+    static let gameTimer = NSNotification.Name("gameTimer")
+    static let gameBackButton = NSNotification.Name("gameBackButton")
     static let gameHelp = NSNotification.Name("gameHelp")
     static let gameSolve = NSNotification.Name("gameSolve")
     static let gameStartAgain = NSNotification.Name("gameStartAgain")

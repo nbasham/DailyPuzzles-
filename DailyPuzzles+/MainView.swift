@@ -9,9 +9,10 @@ struct MainView: View {
                 .ignoresSafeArea()
             VStack {
                 ForEach(GameDescriptor.all) { game in
-                    Button(game.displayName) {
-                        navigator.push(game)
-                    }
+                    NavigationLink(game.displayName, value: game)
+//                    Button(game.displayName) {
+//                        navigator.push(game)
+//                    }
                 }
             }
         }

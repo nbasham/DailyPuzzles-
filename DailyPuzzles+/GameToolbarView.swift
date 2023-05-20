@@ -2,6 +2,7 @@ import SwiftUI
 
 struct GameToolbarView: ToolbarContent {
     @EnvironmentObject private var navigator: Navigator
+    @EnvironmentObject private var settings: Settings
     @State private var seconds = "0:00" // sets width so it doesn't jump at 0
     let shouldShowTimer = true
 
@@ -44,18 +45,23 @@ struct GameToolbarView: ToolbarContent {
         Menu {
             Button("Solve", action: {
                 NotificationCenter.default.post(name: .gameSolve, object: nil) } )
+        } label: {
+            HStack {
+                if settings.timerOn {
+                    Text(settings.timerOn ? "\(seconds)" : "menu")
+                        .foregroundColor(seconds == "0:00" ? .clear : .white)
+                        .monospacedDigit() // uses system font vs. monospace()
+                        .fontWeight(.light)
+                } else {
+                    Text("menu")
+                        .foregroundColor(.white)
+                        .fontWeight(.light)
+                }
+                Label("menu", systemImage: "info.circle.fill")
+                    .imageScale(.large)
+                    .tint(.white)
+            }
         }
-    label: {
-        HStack {
-            Text(shouldShowTimer ? "\(seconds)" : "menu")
-                .foregroundColor(seconds == "0:00" ? .clear : .white)
-                .monospacedDigit() // uses system font vs. monospace()
-                .fontWeight(.light)
-            Label("menu", systemImage: "info.circle.fill")
-                .imageScale(.large)
-                .tint(.white)
-        }
-    }
     }
 
     private func shareMenuView() -> some View {
@@ -85,6 +91,7 @@ struct GameToolbarView_Previews: PreviewProvider {
             }
         }
         .environmentObject(Navigator())
+        .environmentObject(Settings())
     }
 }
 
@@ -101,6 +108,7 @@ struct GameToolbarView_Previews: PreviewProvider {
  }
  */
 extension NSNotification.Name {
+    static let settings = NSNotification.Name("settings")
     static let gameTimer = NSNotification.Name("gameTimer")
     static let gameBackButton = NSNotification.Name("gameBackButton")
     static let gameHelp = NSNotification.Name("gameHelp")

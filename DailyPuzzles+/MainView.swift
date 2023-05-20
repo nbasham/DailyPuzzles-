@@ -19,12 +19,19 @@ struct MainView: View {
         .onReceive(NotificationCenter.default.publisher(for: .gameHelp)) { _ in
             navigator.push("help")
         }
+        .onReceive(NotificationCenter.default.publisher(for: .settings)) { _ in
+            navigator.push("settings")
+        }
         .navigationDestination(for: GameDescriptor.self) { game in
             GameHostView(viewModel: GameHostViewModel(game: game))
         }
-        .navigationDestination(for: String.self) { _ in
-            ColorView(.yellow)
-                .navigationTitle("Help")
+        .navigationDestination(for: String.self) { path in
+            if path == "settings" {
+                SettingsView()
+            } else {
+                ColorView(.yellow)
+                    .navigationTitle("Help")
+            }
         }
         .navigationBarTitle("") // hides Back on game screen
         .navigationBarTitleDisplayMode(.inline)

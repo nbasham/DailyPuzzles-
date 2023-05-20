@@ -31,6 +31,8 @@ struct MainToolbarView: ToolbarContent {
         Menu {
             Button("Help", action: {
                 NotificationCenter.default.post(name: .gameHelp, object: nil) } )
+            Button("Settings", action: {
+                NotificationCenter.default.post(name: .settings, object: nil) } )
         } label: {
             HStack {
                 Text("menu")

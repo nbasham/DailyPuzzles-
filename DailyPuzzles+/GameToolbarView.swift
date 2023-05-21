@@ -4,7 +4,7 @@ struct GameToolbarView: ToolbarContent {
     @EnvironmentObject private var navigator: Navigator
     @EnvironmentObject private var settings: Settings
     @EnvironmentObject private var play: Play
-    @State private var seconds = "0:00" // sets width so it doesn't jump at 0
+    @State var seconds = "0:00" // sets width so it doesn't jump at 0
     let shouldShowTimer = true
 
     var body: some ToolbarContent {

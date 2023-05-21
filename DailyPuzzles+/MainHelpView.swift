@@ -6,7 +6,7 @@ struct MainHelpView: View {
     Daily Puzzles+
     """
     let message: LocalizedStringKey = """
-        **Daily Puzzles+** lets you solve a new cryptogram, crypto-families, memory, quotefalls, sudoku and word search puzzle every day. New, often topical puzzles become available every day at midnight. Puzzles are automatically saved so you can come and go at your leisure. Feel free to use the Contact Us menu item if you have any questions or suggestions.
+        We're excited to introduce you to Daily Puzzles Plus, our premium subscription-based version of the much-loved Daily Puzzles app you've enjoyed for the last decade. This enhanced version comes packed with a host of exciting new features and improvements, all designed to enrich your puzzle-solving experience. In addition to the daily cryptogram, crypto-families, memory, quotefalls, sudoku, and word search puzzles you're familiar with, Daily Puzzles Plus brings a variety of new games to challenge your brain. Additionally, we've refined your favorites with a fresh coat of interactive polish. Now, for the first time, you can choose the level of difficulty for your puzzles, letting you tailor your gaming experience to your mood or desired challenge. With Daily Puzzles Plus, your favorite puzzles will be ready and waiting for you at midnight, with all progress automatically saved, so you can dive in and out at your convenience. Join us on Daily Puzzles Plus, and elevate your daily puzzling to the next level!
 
         **Thank you!** We’re grateful that so many of you have stayed with us through the years - you’ve played a staggering 200 million puzzles! Our goal is to keep improving **Daily Puzzles+** so that you can enjoy it for many more years to come.
 

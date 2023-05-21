@@ -51,7 +51,7 @@ struct GameToolbarView: ToolbarContent {
         } label: {
             HStack {
                 if settings.timerOn {
-                    Text(settings.timerOn ? "\(seconds)" : "menu")
+                    Text("\(seconds)")
                         .foregroundColor(seconds == "0:00" ? .clear : .white)
                         .monospacedDigit() // uses system font vs. monospace()
                         .fontWeight(.light)

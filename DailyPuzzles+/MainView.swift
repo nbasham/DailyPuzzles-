@@ -5,12 +5,24 @@ struct MainView: View {
     @EnvironmentObject private var play: Play
 
     var body: some View {
-        ZStack {
+        ZStack(alignment: .topLeading) {
             Color("background")
                 .ignoresSafeArea()
-            VStack {
+            VStack(alignment: .leading, spacing: 16) {
                 ForEach(GameDescriptor.all) { game in
-                    NavigationLink(game.displayName, value: game)
+                    HStack {
+                        Circle()
+                            .fill(
+                                game.color
+                            )
+                            .frame(height: 25)
+                            .aspectRatio(1, contentMode: .fit)
+                       NavigationLink(game.displayName, value: game)
+                            .tint(.primary)
+                         Spacer()
+                    }
+                    .frame(maxWidth: .infinity)
+                    .contentShape(Rectangle())
                         .onTapGesture {
                             play.tap()
                         }
@@ -19,6 +31,8 @@ struct MainView: View {
 //                    }
                 }
             }
+            .padding()
+            .padding(.horizontal)
         }
         .onReceive(NotificationCenter.default.publisher(for: .gameHelp)) { _ in
             navigator.push("help")

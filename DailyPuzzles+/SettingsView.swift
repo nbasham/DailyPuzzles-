@@ -9,14 +9,23 @@ struct SettingsView: View {
         ZStack {
             Color("background")
                 .ignoresSafeArea()
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 16) {
                 Toggle("Show timer", isOn: settings.$timerOn)
-                    .tint(Color("top"))
+                Toggle("Play sounds", isOn: $play.soundOn)
+                Section("Volume level") {
+                    Picker("Volume level", selection: $play.soundVolume) {
+                        Text("Low").tag(0.2)
+                        Text("Med").tag(0.5)
+                        Text("High").tag(1.0)
+                    }
+                    .pickerStyle(.segmented)
+                }
+                .disabled(play.soundOn == false)
                 Spacer()
             }
+            .tint(Color("top"))
             .padding()
         }
-        //        .navigationTitle("Settings")
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(Color("top"), for: .navigationBar)
         .navigationBarBackButtonHidden()
@@ -51,6 +60,7 @@ struct SettingsView_Previews: PreviewProvider {
             SettingsView()
                 .environmentObject(Navigator())
                 .environmentObject(Settings())
+                .environmentObject(Play())
         }
     }
 }

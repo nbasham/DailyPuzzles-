@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MainToolbarView: ToolbarContent {
     @EnvironmentObject private var navigator: Navigator
+    @EnvironmentObject private var play: Play
 
     var body: some ToolbarContent {
         Group {
@@ -30,9 +31,13 @@ struct MainToolbarView: ToolbarContent {
     private func menuView() -> some View {
         Menu {
             Button("Help", action: {
-                NotificationCenter.default.post(name: .gameHelp, object: nil) } )
+                NotificationCenter.default.post(name: .gameHelp, object: nil)
+                play.tap()
+            } )
             Button("Settings", action: {
-                NotificationCenter.default.post(name: .settings, object: nil) } )
+                NotificationCenter.default.post(name: .settings, object: nil)
+                play.tap()
+            } )
         } label: {
             HStack {
                 Text("menu")
@@ -42,6 +47,9 @@ struct MainToolbarView: ToolbarContent {
                     .imageScale(.large)
                     .tint(.white)
             }
+        }
+        .onTapGesture {
+            play.tap()
         }
     }
 }
@@ -59,5 +67,6 @@ struct MainToolbarView_Previews: PreviewProvider {
             }
         }
         .environmentObject(Navigator())
+        .environmentObject(Play())
     }
 }

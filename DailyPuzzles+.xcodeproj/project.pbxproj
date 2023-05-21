@@ -12,6 +12,47 @@
 		201E655B2A190A00005404B9 /* SecondsTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E655A2A190A00005404B9 /* SecondsTimer.swift */; };
 		201E655D2A1957BC005404B9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E655C2A1957BC005404B9 /* Settings.swift */; };
 		201E655F2A195845005404B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E655E2A195845005404B9 /* SettingsView.swift */; };
+		201E65622A196626005404B9 /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 201E65612A196626005404B9 /* SwiftySound */; };
+		201E65642A199775005404B9 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E65632A199775005404B9 /* Play.swift */; };
+		201E658F2A199888005404B9 /* Highlight.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65662A199888005404B9 /* Highlight.aiff */; };
+		201E65902A199888005404B9 /* Type.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65672A199888005404B9 /* Type.aiff */; };
+		201E65912A199888005404B9 /* Incorrect.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65682A199888005404B9 /* Incorrect.aiff */; };
+		201E65922A199888005404B9 /* MarkerConflict.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65692A199888005404B9 /* MarkerConflict.aiff */; };
+		201E65932A199888005404B9 /* Correct.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E656A2A199888005404B9 /* Correct.aiff */; };
+		201E65942A199888005404B9 /* MarkerErase.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E656B2A199888005404B9 /* MarkerErase.aiff */; };
+		201E65952A199888005404B9 /* NumberHighlightOn.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E656C2A199888005404B9 /* NumberHighlightOn.aiff */; };
+		201E65962A199888005404B9 /* Match.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E656D2A199888005404B9 /* Match.aiff */; };
+		201E65972A199888005404B9 /* GameComplete.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E656E2A199888005404B9 /* GameComplete.aiff */; };
+		201E65982A199888005404B9 /* Hint.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E656F2A199888005404B9 /* Hint.aiff */; };
+		201E65992A199888005404B9 /* Erase.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65702A199888005404B9 /* Erase.aiff */; };
+		201E659A2A199888005404B9 /* NumberHighlightOff.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65712A199888005404B9 /* NumberHighlightOff.aiff */; };
+		201E659B2A199888005404B9 /* Touch.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65722A199888005404B9 /* Touch.aiff */; };
+		201E659C2A199888005404B9 /* Tink.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65732A199888005404B9 /* Tink.aiff */; };
+		201E659D2A199888005404B9 /* Chime0.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65752A199888005404B9 /* Chime0.aiff */; };
+		201E659E2A199888005404B9 /* Harp1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65772A199888005404B9 /* Harp1.aiff */; };
+		201E659F2A199888005404B9 /* Harp11.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65782A199888005404B9 /* Harp11.aiff */; };
+		201E65A02A199888005404B9 /* Harp10.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65792A199888005404B9 /* Harp10.aiff */; };
+		201E65A12A199888005404B9 /* Harp0.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E657A2A199888005404B9 /* Harp0.aiff */; };
+		201E65A22A199888005404B9 /* Harp17.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E657B2A199888005404B9 /* Harp17.aiff */; };
+		201E65A32A199888005404B9 /* Harp7.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E657C2A199888005404B9 /* Harp7.aiff */; };
+		201E65A42A199888005404B9 /* Harp6.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E657D2A199888005404B9 /* Harp6.aiff */; };
+		201E65A52A199888005404B9 /* Harp16.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E657E2A199888005404B9 /* Harp16.aiff */; };
+		201E65A62A199888005404B9 /* Harp15.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E657F2A199888005404B9 /* Harp15.aiff */; };
+		201E65A72A199888005404B9 /* Harp9.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65802A199888005404B9 /* Harp9.aiff */; };
+		201E65A82A199888005404B9 /* Harp5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65812A199888005404B9 /* Harp5.aiff */; };
+		201E65A92A199888005404B9 /* Harp4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65822A199888005404B9 /* Harp4.aiff */; };
+		201E65AA2A199888005404B9 /* Harp18.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65832A199888005404B9 /* Harp18.aiff */; };
+		201E65AB2A199888005404B9 /* Harp8.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65842A199888005404B9 /* Harp8.aiff */; };
+		201E65AC2A199888005404B9 /* Harp14.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65852A199888005404B9 /* Harp14.aiff */; };
+		201E65AD2A199888005404B9 /* Harp3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65862A199888005404B9 /* Harp3.aiff */; };
+		201E65AE2A199888005404B9 /* Harp13.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65872A199888005404B9 /* Harp13.aiff */; };
+		201E65AF2A199888005404B9 /* Harp12.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65882A199888005404B9 /* Harp12.aiff */; };
+		201E65B02A199888005404B9 /* Harp2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E65892A199888005404B9 /* Harp2.aiff */; };
+		201E65B12A199888005404B9 /* Chime1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E658A2A199888005404B9 /* Chime1.aiff */; };
+		201E65B22A199888005404B9 /* Chime2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E658B2A199888005404B9 /* Chime2.aiff */; };
+		201E65B32A199888005404B9 /* Chime3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E658C2A199888005404B9 /* Chime3.aiff */; };
+		201E65B42A199888005404B9 /* Chime4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E658D2A199888005404B9 /* Chime4.aiff */; };
+		201E65B52A199888005404B9 /* Marker.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E658E2A199888005404B9 /* Marker.aiff */; };
 		20292BFB29F2104C00C51913 /* DailyPuzzles_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */; };
 		20292BFD29F2104C00C51913 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20292BFC29F2104C00C51913 /* ContentView.swift */; };
 		20292BFF29F2104E00C51913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20292BFE29F2104E00C51913 /* Assets.xcassets */; };
@@ -31,6 +72,46 @@
 		201E655A2A190A00005404B9 /* SecondsTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondsTimer.swift; sourceTree = "<group>"; };
 		201E655C2A1957BC005404B9 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		201E655E2A195845005404B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		201E65632A199775005404B9 /* Play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play.swift; sourceTree = "<group>"; };
+		201E65662A199888005404B9 /* Highlight.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Highlight.aiff; sourceTree = "<group>"; };
+		201E65672A199888005404B9 /* Type.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Type.aiff; sourceTree = "<group>"; };
+		201E65682A199888005404B9 /* Incorrect.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Incorrect.aiff; sourceTree = "<group>"; };
+		201E65692A199888005404B9 /* MarkerConflict.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = MarkerConflict.aiff; sourceTree = "<group>"; };
+		201E656A2A199888005404B9 /* Correct.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Correct.aiff; sourceTree = "<group>"; };
+		201E656B2A199888005404B9 /* MarkerErase.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = MarkerErase.aiff; sourceTree = "<group>"; };
+		201E656C2A199888005404B9 /* NumberHighlightOn.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = NumberHighlightOn.aiff; sourceTree = "<group>"; };
+		201E656D2A199888005404B9 /* Match.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Match.aiff; sourceTree = "<group>"; };
+		201E656E2A199888005404B9 /* GameComplete.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = GameComplete.aiff; sourceTree = "<group>"; };
+		201E656F2A199888005404B9 /* Hint.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Hint.aiff; sourceTree = "<group>"; };
+		201E65702A199888005404B9 /* Erase.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Erase.aiff; sourceTree = "<group>"; };
+		201E65712A199888005404B9 /* NumberHighlightOff.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = NumberHighlightOff.aiff; sourceTree = "<group>"; };
+		201E65722A199888005404B9 /* Touch.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Touch.aiff; sourceTree = "<group>"; };
+		201E65732A199888005404B9 /* Tink.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Tink.aiff; sourceTree = "<group>"; };
+		201E65752A199888005404B9 /* Chime0.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Chime0.aiff; sourceTree = "<group>"; };
+		201E65772A199888005404B9 /* Harp1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp1.aiff; sourceTree = "<group>"; };
+		201E65782A199888005404B9 /* Harp11.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp11.aiff; sourceTree = "<group>"; };
+		201E65792A199888005404B9 /* Harp10.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp10.aiff; sourceTree = "<group>"; };
+		201E657A2A199888005404B9 /* Harp0.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp0.aiff; sourceTree = "<group>"; };
+		201E657B2A199888005404B9 /* Harp17.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp17.aiff; sourceTree = "<group>"; };
+		201E657C2A199888005404B9 /* Harp7.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp7.aiff; sourceTree = "<group>"; };
+		201E657D2A199888005404B9 /* Harp6.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp6.aiff; sourceTree = "<group>"; };
+		201E657E2A199888005404B9 /* Harp16.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp16.aiff; sourceTree = "<group>"; };
+		201E657F2A199888005404B9 /* Harp15.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp15.aiff; sourceTree = "<group>"; };
+		201E65802A199888005404B9 /* Harp9.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp9.aiff; sourceTree = "<group>"; };
+		201E65812A199888005404B9 /* Harp5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp5.aiff; sourceTree = "<group>"; };
+		201E65822A199888005404B9 /* Harp4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp4.aiff; sourceTree = "<group>"; };
+		201E65832A199888005404B9 /* Harp18.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp18.aiff; sourceTree = "<group>"; };
+		201E65842A199888005404B9 /* Harp8.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp8.aiff; sourceTree = "<group>"; };
+		201E65852A199888005404B9 /* Harp14.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp14.aiff; sourceTree = "<group>"; };
+		201E65862A199888005404B9 /* Harp3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp3.aiff; sourceTree = "<group>"; };
+		201E65872A199888005404B9 /* Harp13.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp13.aiff; sourceTree = "<group>"; };
+		201E65882A199888005404B9 /* Harp12.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp12.aiff; sourceTree = "<group>"; };
+		201E65892A199888005404B9 /* Harp2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp2.aiff; sourceTree = "<group>"; };
+		201E658A2A199888005404B9 /* Chime1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Chime1.aiff; sourceTree = "<group>"; };
+		201E658B2A199888005404B9 /* Chime2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Chime2.aiff; sourceTree = "<group>"; };
+		201E658C2A199888005404B9 /* Chime3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Chime3.aiff; sourceTree = "<group>"; };
+		201E658D2A199888005404B9 /* Chime4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Chime4.aiff; sourceTree = "<group>"; };
+		201E658E2A199888005404B9 /* Marker.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Marker.aiff; sourceTree = "<group>"; };
 		20292BF729F2104C00C51913 /* DailyPuzzles+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DailyPuzzles+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPuzzles_App.swift; sourceTree = "<group>"; };
 		20292BFC29F2104C00C51913 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,12 +131,75 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201E65622A196626005404B9 /* SwiftySound in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		201E65652A199888005404B9 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				201E65662A199888005404B9 /* Highlight.aiff */,
+				201E65672A199888005404B9 /* Type.aiff */,
+				201E65682A199888005404B9 /* Incorrect.aiff */,
+				201E65692A199888005404B9 /* MarkerConflict.aiff */,
+				201E656A2A199888005404B9 /* Correct.aiff */,
+				201E656B2A199888005404B9 /* MarkerErase.aiff */,
+				201E656C2A199888005404B9 /* NumberHighlightOn.aiff */,
+				201E656D2A199888005404B9 /* Match.aiff */,
+				201E656E2A199888005404B9 /* GameComplete.aiff */,
+				201E656F2A199888005404B9 /* Hint.aiff */,
+				201E65702A199888005404B9 /* Erase.aiff */,
+				201E65712A199888005404B9 /* NumberHighlightOff.aiff */,
+				201E65722A199888005404B9 /* Touch.aiff */,
+				201E65732A199888005404B9 /* Tink.aiff */,
+				201E65742A199888005404B9 /* Q */,
+				201E658E2A199888005404B9 /* Marker.aiff */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		201E65742A199888005404B9 /* Q */ = {
+			isa = PBXGroup;
+			children = (
+				201E65752A199888005404B9 /* Chime0.aiff */,
+				201E65762A199888005404B9 /* Harp */,
+				201E658A2A199888005404B9 /* Chime1.aiff */,
+				201E658B2A199888005404B9 /* Chime2.aiff */,
+				201E658C2A199888005404B9 /* Chime3.aiff */,
+				201E658D2A199888005404B9 /* Chime4.aiff */,
+			);
+			path = Q;
+			sourceTree = "<group>";
+		};
+		201E65762A199888005404B9 /* Harp */ = {
+			isa = PBXGroup;
+			children = (
+				201E65772A199888005404B9 /* Harp1.aiff */,
+				201E65782A199888005404B9 /* Harp11.aiff */,
+				201E65792A199888005404B9 /* Harp10.aiff */,
+				201E657A2A199888005404B9 /* Harp0.aiff */,
+				201E657B2A199888005404B9 /* Harp17.aiff */,
+				201E657C2A199888005404B9 /* Harp7.aiff */,
+				201E657D2A199888005404B9 /* Harp6.aiff */,
+				201E657E2A199888005404B9 /* Harp16.aiff */,
+				201E657F2A199888005404B9 /* Harp15.aiff */,
+				201E65802A199888005404B9 /* Harp9.aiff */,
+				201E65812A199888005404B9 /* Harp5.aiff */,
+				201E65822A199888005404B9 /* Harp4.aiff */,
+				201E65832A199888005404B9 /* Harp18.aiff */,
+				201E65842A199888005404B9 /* Harp8.aiff */,
+				201E65852A199888005404B9 /* Harp14.aiff */,
+				201E65862A199888005404B9 /* Harp3.aiff */,
+				201E65872A199888005404B9 /* Harp13.aiff */,
+				201E65882A199888005404B9 /* Harp12.aiff */,
+				201E65892A199888005404B9 /* Harp2.aiff */,
+			);
+			path = Harp;
+			sourceTree = "<group>";
+		};
 		20292BEE29F2104C00C51913 = {
 			isa = PBXGroup;
 			children = (
@@ -83,12 +227,14 @@
 				201E65582A17E994005404B9 /* GameModel.swift */,
 				209025382A0ED937004B6790 /* GameHostView.swift */,
 				209025442A1053CA004B6790 /* GameToolbarView.swift */,
+				201E65632A199775005404B9 /* Play.swift */,
 				209025402A104CD2004B6790 /* MainToolbarView.swift */,
 				209025362A0ED7B5004B6790 /* MainView.swift */,
 				2090253C2A0EDA15004B6790 /* Navigator.swift */,
 				201E655A2A190A00005404B9 /* SecondsTimer.swift */,
 				201E655C2A1957BC005404B9 /* Settings.swift */,
 				201E655E2A195845005404B9 /* SettingsView.swift */,
+				201E65652A199888005404B9 /* Sounds */,
 				20292BFE29F2104E00C51913 /* Assets.xcassets */,
 				20292C0029F2104E00C51913 /* Preview Content */,
 			);
@@ -119,6 +265,9 @@
 			dependencies = (
 			);
 			name = "DailyPuzzles+";
+			packageProductDependencies = (
+				201E65612A196626005404B9 /* SwiftySound */,
+			);
 			productName = "DailyPuzzles+";
 			productReference = 20292BF729F2104C00C51913 /* DailyPuzzles+.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +296,9 @@
 				Base,
 			);
 			mainGroup = 20292BEE29F2104C00C51913;
+			packageReferences = (
+				201E65602A196626005404B9 /* XCRemoteSwiftPackageReference "SwiftySound" */,
+			);
 			productRefGroup = 20292BF829F2104C00C51913 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -161,8 +313,47 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201E65932A199888005404B9 /* Correct.aiff in Resources */,
+				201E65B42A199888005404B9 /* Chime4.aiff in Resources */,
+				201E65AD2A199888005404B9 /* Harp3.aiff in Resources */,
+				201E65A72A199888005404B9 /* Harp9.aiff in Resources */,
+				201E65AF2A199888005404B9 /* Harp12.aiff in Resources */,
+				201E65952A199888005404B9 /* NumberHighlightOn.aiff in Resources */,
 				20292C0229F2104E00C51913 /* Preview Assets.xcassets in Resources */,
+				201E659C2A199888005404B9 /* Tink.aiff in Resources */,
+				201E65922A199888005404B9 /* MarkerConflict.aiff in Resources */,
+				201E65A82A199888005404B9 /* Harp5.aiff in Resources */,
 				20292BFF29F2104E00C51913 /* Assets.xcassets in Resources */,
+				201E659A2A199888005404B9 /* NumberHighlightOff.aiff in Resources */,
+				201E65B32A199888005404B9 /* Chime3.aiff in Resources */,
+				201E65A42A199888005404B9 /* Harp6.aiff in Resources */,
+				201E65A02A199888005404B9 /* Harp10.aiff in Resources */,
+				201E65912A199888005404B9 /* Incorrect.aiff in Resources */,
+				201E659E2A199888005404B9 /* Harp1.aiff in Resources */,
+				201E65B02A199888005404B9 /* Harp2.aiff in Resources */,
+				201E65A12A199888005404B9 /* Harp0.aiff in Resources */,
+				201E65B22A199888005404B9 /* Chime2.aiff in Resources */,
+				201E658F2A199888005404B9 /* Highlight.aiff in Resources */,
+				201E65AB2A199888005404B9 /* Harp8.aiff in Resources */,
+				201E65B12A199888005404B9 /* Chime1.aiff in Resources */,
+				201E659F2A199888005404B9 /* Harp11.aiff in Resources */,
+				201E659B2A199888005404B9 /* Touch.aiff in Resources */,
+				201E65A52A199888005404B9 /* Harp16.aiff in Resources */,
+				201E65972A199888005404B9 /* GameComplete.aiff in Resources */,
+				201E65982A199888005404B9 /* Hint.aiff in Resources */,
+				201E65AE2A199888005404B9 /* Harp13.aiff in Resources */,
+				201E65A92A199888005404B9 /* Harp4.aiff in Resources */,
+				201E65AA2A199888005404B9 /* Harp18.aiff in Resources */,
+				201E65B52A199888005404B9 /* Marker.aiff in Resources */,
+				201E65A62A199888005404B9 /* Harp15.aiff in Resources */,
+				201E65942A199888005404B9 /* MarkerErase.aiff in Resources */,
+				201E65902A199888005404B9 /* Type.aiff in Resources */,
+				201E65A22A199888005404B9 /* Harp17.aiff in Resources */,
+				201E659D2A199888005404B9 /* Chime0.aiff in Resources */,
+				201E65A32A199888005404B9 /* Harp7.aiff in Resources */,
+				201E65962A199888005404B9 /* Match.aiff in Resources */,
+				201E65992A199888005404B9 /* Erase.aiff in Resources */,
+				201E65AC2A199888005404B9 /* Harp14.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +378,7 @@
 				201E655B2A190A00005404B9 /* SecondsTimer.swift in Sources */,
 				20292BFB29F2104C00C51913 /* DailyPuzzles_App.swift in Sources */,
 				201E65592A17E994005404B9 /* GameModel.swift in Sources */,
+				201E65642A199775005404B9 /* Play.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +579,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		201E65602A196626005404B9 /* XCRemoteSwiftPackageReference "SwiftySound" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamcichy/SwiftySound.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		201E65612A196626005404B9 /* SwiftySound */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 201E65602A196626005404B9 /* XCRemoteSwiftPackageReference "SwiftySound" */;
+			productName = SwiftySound;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 20292BEF29F2104C00C51913 /* Project object */;
 }

@@ -5,10 +5,17 @@ protocol GameHost {
     func didSolve()
     func incMisses()
     func incHints()
+    func playTap()
+    func playHighlight()
+    func playIncorrect()
+    func playCorrect()
+    func playHint()
+    func playErase()
 }
 
 struct GameHostView: View, GameHost {
     @EnvironmentObject private var navigator: Navigator
+    @EnvironmentObject private var play: Play
     @StateObject var viewModel: GameHostViewModel
     var game: GameDescriptor { viewModel.game }
     @State private var isGameDisabled = false
@@ -60,12 +67,19 @@ struct GameHostView: View, GameHost {
 
     func incMisses() { viewModel.incMisses() }
     func incHints() { viewModel.incHints() }
+    func playTap() { play.tap() }
+    func playHighlight() { play.highlight() }
+    func playIncorrect() { play.incorrect() }
+    func playCorrect() { play.correct() }
+    func playHint() { play.hint() }
+    func playErase() { play.erase() }
 }
 
 struct GameHostView_Previews: PreviewProvider {
     static var previews: some View {
         GameHostView(viewModel: GameHostViewModel(game: .quotefalls))
             .environmentObject(Navigator())
+            .environmentObject(Play())
     }
 }
 

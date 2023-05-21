@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject private var navigator: Navigator
+    @EnvironmentObject private var play: Play
 
     var body: some View {
         ZStack {
@@ -10,6 +11,9 @@ struct MainView: View {
             VStack {
                 ForEach(GameDescriptor.all) { game in
                     NavigationLink(game.displayName, value: game)
+                        .onTapGesture {
+                            play.tap()
+                        }
 //                    Button(game.displayName) {
 //                        navigator.push(game)
 //                    }
@@ -45,5 +49,6 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .environmentObject(Navigator())
+            .environmentObject(Play())
     }
 }

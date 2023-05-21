@@ -3,6 +3,7 @@ import SwiftUI
 struct GameToolbarView: ToolbarContent {
     @EnvironmentObject private var navigator: Navigator
     @EnvironmentObject private var settings: Settings
+    @EnvironmentObject private var play: Play
     @State private var seconds = "0:00" // sets width so it doesn't jump at 0
     let shouldShowTimer = true
 
@@ -11,6 +12,7 @@ struct GameToolbarView: ToolbarContent {
             ToolbarItem(placement: .navigationBarLeading) {
                 ZStack(alignment: .trailing) {
                     Button(action: {
+                        play.tap()
                         NotificationCenter.default.post(name: .gameBackButton, object: nil)
                         navigator.pop()
                     }, label: {
@@ -44,6 +46,7 @@ struct GameToolbarView: ToolbarContent {
     private func menuView() -> some View {
         Menu {
             Button("Solve", action: {
+                play.tap()
                 NotificationCenter.default.post(name: .gameSolve, object: nil) } )
         } label: {
             HStack {
@@ -61,6 +64,9 @@ struct GameToolbarView: ToolbarContent {
                     .imageScale(.large)
                     .tint(.white)
             }
+        }
+        .onTapGesture {
+            play.tap()
         }
     }
 

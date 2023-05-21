@@ -3,6 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var settings: Settings
     @EnvironmentObject private var navigator: Navigator
+    @EnvironmentObject private var play: Play
 
     var body: some View {
         ZStack {
@@ -22,6 +23,7 @@ struct SettingsView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
+                    play.tap()
                     navigator.pop()
                 }, label: {
                 HStack {

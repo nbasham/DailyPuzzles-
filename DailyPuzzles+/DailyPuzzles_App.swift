@@ -11,12 +11,14 @@ import SwiftUI
 struct DailyPuzzles_App: App {
     @StateObject private var navigator = Navigator()
     @StateObject private var settings = Settings()
+    @StateObject private var play = Play()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(navigator)
                 .environmentObject(settings)
+                .environmentObject(play)
                 .onAppear {
                     //  Stop flashing white corners on rotation
                     if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first {

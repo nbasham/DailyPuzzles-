@@ -53,6 +53,7 @@
 		201E65B32A199888005404B9 /* Chime3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E658C2A199888005404B9 /* Chime3.aiff */; };
 		201E65B42A199888005404B9 /* Chime4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E658D2A199888005404B9 /* Chime4.aiff */; };
 		201E65B52A199888005404B9 /* Marker.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 201E658E2A199888005404B9 /* Marker.aiff */; };
+		201E65B92A1A99C7005404B9 /* MainHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E65B82A1A99C7005404B9 /* MainHelpView.swift */; };
 		20292BFB29F2104C00C51913 /* DailyPuzzles_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */; };
 		20292BFD29F2104C00C51913 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20292BFC29F2104C00C51913 /* ContentView.swift */; };
 		20292BFF29F2104E00C51913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20292BFE29F2104E00C51913 /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 		201E658C2A199888005404B9 /* Chime3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Chime3.aiff; sourceTree = "<group>"; };
 		201E658D2A199888005404B9 /* Chime4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Chime4.aiff; sourceTree = "<group>"; };
 		201E658E2A199888005404B9 /* Marker.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Marker.aiff; sourceTree = "<group>"; };
+		201E65B82A1A99C7005404B9 /* MainHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHelpView.swift; sourceTree = "<group>"; };
 		20292BF729F2104C00C51913 /* DailyPuzzles+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DailyPuzzles+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPuzzles_App.swift; sourceTree = "<group>"; };
 		20292BFC29F2104C00C51913 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -224,19 +226,20 @@
 				20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */,
 				201E65562A17E535005404B9 /* Extension.swift */,
 				2090253E2A103958004B6790 /* GameDescriptor.swift */,
-				201E65582A17E994005404B9 /* GameModel.swift */,
 				209025382A0ED937004B6790 /* GameHostView.swift */,
+				201E65582A17E994005404B9 /* GameModel.swift */,
 				209025442A1053CA004B6790 /* GameToolbarView.swift */,
-				201E65632A199775005404B9 /* Play.swift */,
+				201E65B82A1A99C7005404B9 /* MainHelpView.swift */,
 				209025402A104CD2004B6790 /* MainToolbarView.swift */,
 				209025362A0ED7B5004B6790 /* MainView.swift */,
 				2090253C2A0EDA15004B6790 /* Navigator.swift */,
+				201E65632A199775005404B9 /* Play.swift */,
 				201E655A2A190A00005404B9 /* SecondsTimer.swift */,
 				201E655C2A1957BC005404B9 /* Settings.swift */,
 				201E655E2A195845005404B9 /* SettingsView.swift */,
-				201E65652A199888005404B9 /* Sounds */,
 				20292BFE29F2104E00C51913 /* Assets.xcassets */,
 				20292C0029F2104E00C51913 /* Preview Content */,
+				201E65652A199888005404B9 /* Sounds */,
 			);
 			path = "DailyPuzzles+";
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				209025432A104EA4004B6790 /* CryptogramView.swift in Sources */,
 				209025452A1053CA004B6790 /* GameToolbarView.swift in Sources */,
 				2090253D2A0EDA15004B6790 /* Navigator.swift in Sources */,
+				201E65B92A1A99C7005404B9 /* MainHelpView.swift in Sources */,
 				201E65572A17E535005404B9 /* Extension.swift in Sources */,
 				201E655F2A195845005404B9 /* SettingsView.swift in Sources */,
 				20292BFD29F2104C00C51913 /* ContentView.swift in Sources */,

@@ -13,12 +13,28 @@ class Navigator: ObservableObject {
     }
 }
 
-struct FullCoverPath: Identifiable {
+struct FullCoverPath: Identifiable, Equatable, Hashable, CustomStringConvertible {
+    var description: String { "\(value)" }
+
+    static func == (lhs: FullCoverPath, rhs: FullCoverPath) -> Bool {
+        lhs.id == rhs.id
+    }
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(id)
+    }
     let value: any Hashable
     var id = UUID()
 }
 
-struct SheetPath: Identifiable {
+struct SheetPath: Identifiable, Equatable, Hashable, CustomStringConvertible {
+    var description: String { "\(value)" }
+
+    static func == (lhs: SheetPath, rhs: SheetPath) -> Bool {
+        lhs.id == rhs.id
+    }
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(id)
+    }
     let value: any Hashable
     var id = UUID()
 }

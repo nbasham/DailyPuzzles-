@@ -3,6 +3,7 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject private var navigator: Navigator
     @EnvironmentObject private var play: Play
+    @State private var coverScreen: FullCoverPath?
 
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -34,14 +35,21 @@ struct MainView: View {
             .padding()
             .padding(.horizontal)
         }
-        .onReceive(NotificationCenter.default.publisher(for: .gameHelp)) { _ in
-            navigator.push("help")
+        .onReceive(NotificationCenter.default.publisher(for: .help)) { _ in
+            coverScreen = FullCoverPath(value: "help")
         }
         .onReceive(NotificationCenter.default.publisher(for: .settings)) { _ in
             navigator.push("settings")
         }
         .navigationDestination(for: GameDescriptor.self) { game in
             GameHostView(viewModel: GameHostViewModel(game: game))
+        }
+        .fullScreenCover(item: $coverScreen) { path in
+            if path.description == "help" {
+                MainHelpView()
+            } else {
+                ColorView(.orange)
+            }
         }
         .navigationDestination(for: String.self) { path in
             if path == "settings" {

@@ -31,7 +31,7 @@ struct MainToolbarView: ToolbarContent {
     private func menuView() -> some View {
         Menu {
             Button("Help", action: {
-                NotificationCenter.default.post(name: .gameHelp, object: nil)
+                NotificationCenter.default.post(name: .help, object: nil)
                 play.tap()
             } )
             Button("Settings", action: {

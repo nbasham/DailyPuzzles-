@@ -1,5 +1,8 @@
 import SwiftUI
 
+/*
+ Todo figure out how to broadcast rotation changes
+ */
 struct MainView: View {
     @EnvironmentObject private var navigator: Navigator
     @EnvironmentObject private var play: Play
@@ -9,26 +12,21 @@ struct MainView: View {
         ZStack(alignment: .topLeading) {
             Color("background")
                 .ignoresSafeArea()
-            VStack(alignment: .leading, spacing: 16) {
-                ForEach(GameDescriptor.all) { game in
-                    HStack {
-                        MainBallView(game: game)
-                        NavigationLink(game.displayName, value: game)
-                            .tint(.primary)
-                        Spacer()
+            VStack(alignment: .leading, spacing: 0) {
+                GeometryReader { proxy in
+                    ZStack {
+                        Color.yellow
+                        Text(proxy.size.description)
                     }
-                    .frame(maxWidth: .infinity)
-                    .contentShape(Rectangle())
-                        .onTapGesture {
-                            play.tap()
-                        }
-//                    Button(game.displayName) {
-//                        navigator.push(game)
-//                    }
                 }
+//                gameChooserView
+                Spacer()
+                FactoidView()
+                    .frame(height: 88)
+                    .ignoresSafeArea(edges: .bottom)
             }
-            .padding()
-            .padding(.horizontal)
+//            .padding()
+//            .padding(.horizontal)
         }
         .onAppear {
             DailyStorage.isNewDay()
@@ -67,6 +65,25 @@ struct MainView: View {
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(Color("top"), for: .navigationBar)
         .toolbar { MainToolbarView() }
+    }
+
+    private var gameChooserView: some View {
+        ForEach(GameDescriptor.all) { game in
+            HStack {
+                MainBallView(game: game)
+                NavigationLink(game.displayName, value: game)
+                    .tint(.primary)
+                Spacer()
+            }
+            .frame(maxWidth: .infinity)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                play.tap()
+            }
+            //                    Button(game.displayName) {
+            //                        navigator.push(game)
+            //                    }
+        }
     }
 }
 

@@ -33,19 +33,10 @@ struct MainToolbarView: ToolbarContent {
     private func menuView() -> some View {
         Menu {
             if MFMailComposeViewController.canSendMail() {
-                Button("Contact us", action: {
-                    NotificationCenter.default.post(name: .contact, object: nil)
-                    play.tap()
-                } )
+                MenuItem(name: "Contact us", notificationName: .contact)
             }
-            Button("Help", action: {
-                NotificationCenter.default.post(name: .help, object: nil)
-                play.tap()
-            } )
-            Button("Settings", action: {
-                NotificationCenter.default.post(name: .settings, object: nil)
-                play.tap()
-            } )
+            MenuItem(name: "Help", notificationName: .help)
+            MenuItem(name: "Settings", notificationName: .settings)
         } label: {
             HStack {
                 Text("menu")
@@ -76,5 +67,18 @@ struct MainToolbarView_Previews: PreviewProvider {
         }
         .environmentObject(Navigator())
         .environmentObject(Play())
+    }
+}
+
+struct MenuItem: View {
+    let name: String
+    let notificationName: NSNotification.Name
+    @EnvironmentObject private var play: Play
+
+    var body: some View {
+        Button(name, action: {
+            NotificationCenter.default.post(name: notificationName, object: nil)
+            play.tap()
+        } )
     }
 }

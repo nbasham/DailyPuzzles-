@@ -45,9 +45,7 @@ struct GameToolbarView: ToolbarContent {
 
     private func menuView() -> some View {
         Menu {
-            Button("Solve", action: {
-                play.tap()
-                NotificationCenter.default.post(name: .gameSolve, object: nil) } )
+            MenuItem(name: "Solve", notificationName: .gameSolve)
         } label: {
             HStack {
                 if settings.timerOn {

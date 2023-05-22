@@ -61,6 +61,7 @@ struct GameHostView: View, GameHost {
     }
 
     func didSolve() {
+        DailyStorage.completed(game: game)
         isGameDisabled = true
         viewModel.didSolve()
     }

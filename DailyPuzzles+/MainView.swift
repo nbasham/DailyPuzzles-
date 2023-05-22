@@ -30,6 +30,9 @@ struct MainView: View {
             .padding()
             .padding(.horizontal)
         }
+        .onAppear {
+            DailyStorage.isNewDay()
+        }
         .onReceive(NotificationCenter.default.publisher(for: .help)) { value in
             coverScreen = FullCoverPath(value: "help")
         }

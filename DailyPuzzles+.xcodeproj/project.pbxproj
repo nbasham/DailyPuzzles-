@@ -61,6 +61,7 @@
 		2060632B2A1AC3A30044AC81 /* MainBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060632A2A1AC3A30044AC81 /* MainBallView.swift */; };
 		2060632D2A1AE4240044AC81 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060632C2A1AE4240044AC81 /* EmailView.swift */; };
 		206063302A1B0F7C0044AC81 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2060632F2A1B0F7C0044AC81 /* MessageUI.framework */; };
+		2060634C2A1C06640044AC81 /* DailyStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060634B2A1C06640044AC81 /* DailyStorage.swift */; };
 		209025372A0ED7B5004B6790 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025362A0ED7B5004B6790 /* MainView.swift */; };
 		209025392A0ED937004B6790 /* GameHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025382A0ED937004B6790 /* GameHostView.swift */; };
 		2090253D2A0EDA15004B6790 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2090253C2A0EDA15004B6790 /* Navigator.swift */; };
@@ -125,6 +126,7 @@
 		2060632A2A1AC3A30044AC81 /* MainBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBallView.swift; sourceTree = "<group>"; };
 		2060632C2A1AE4240044AC81 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		2060632F2A1B0F7C0044AC81 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		2060634B2A1C06640044AC81 /* DailyStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStorage.swift; sourceTree = "<group>"; };
 		209025362A0ED7B5004B6790 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		209025382A0ED937004B6790 /* GameHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHostView.swift; sourceTree = "<group>"; };
 		2090253C2A0EDA15004B6790 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				20292BFC29F2104C00C51913 /* ContentView.swift */,
 				209025422A104EA4004B6790 /* CryptogramView.swift */,
 				20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */,
+				2060634B2A1C06640044AC81 /* DailyStorage.swift */,
 				2060632C2A1AE4240044AC81 /* EmailView.swift */,
 				201E65562A17E535005404B9 /* Extension.swift */,
 				2090253E2A103958004B6790 /* GameDescriptor.swift */,
@@ -400,6 +403,7 @@
 				209025412A104CD2004B6790 /* MainToolbarView.swift in Sources */,
 				201E655B2A190A00005404B9 /* SecondsTimer.swift in Sources */,
 				2060632B2A1AC3A30044AC81 /* MainBallView.swift in Sources */,
+				2060634C2A1C06640044AC81 /* DailyStorage.swift in Sources */,
 				20292BFB29F2104C00C51913 /* DailyPuzzles_App.swift in Sources */,
 				201E65592A17E994005404B9 /* GameModel.swift in Sources */,
 				201E65642A199775005404B9 /* Play.swift in Sources */,

@@ -20,7 +20,7 @@ struct GameModel: Codable {
     }
 
     static func load(game: GameDescriptor) -> Self {
-        if let data = UserDefaults.standard.object(forKey: key(game)) as? Data,
+        if let data = UserDefaults.daily.object(forKey: key(game)) as? Data,
            let model = GameModel.fromData(data) {
             return model
         } else {
@@ -29,12 +29,12 @@ struct GameModel: Codable {
     }
 
     static func clear(game: GameDescriptor) {
-        UserDefaults.standard.removeObject(forKey: key(game))
+        UserDefaults.daily.removeObject(forKey: key(game))
     }
 
     func save(game: GameDescriptor) {
         if let data {
-            UserDefaults.standard.set(data, forKey: GameModel.key(game))
+            UserDefaults.daily.set(data, forKey: GameModel.key(game))
         }
     }
 }

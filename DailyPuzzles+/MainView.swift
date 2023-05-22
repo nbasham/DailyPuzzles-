@@ -12,15 +12,10 @@ struct MainView: View {
             VStack(alignment: .leading, spacing: 16) {
                 ForEach(GameDescriptor.all) { game in
                     HStack {
-                        Circle()
-                            .fill(
-                                game.color
-                            )
-                            .frame(height: 25)
-                            .aspectRatio(1, contentMode: .fit)
-                       NavigationLink(game.displayName, value: game)
+                        MainBallView(color: game.color)
+                        NavigationLink(game.displayName, value: game)
                             .tint(.primary)
-                         Spacer()
+                        Spacer()
                     }
                     .frame(maxWidth: .infinity)
                     .contentShape(Rectangle())
@@ -35,8 +30,11 @@ struct MainView: View {
             .padding()
             .padding(.horizontal)
         }
-        .onReceive(NotificationCenter.default.publisher(for: .help)) { _ in
+        .onReceive(NotificationCenter.default.publisher(for: .help)) { value in
             coverScreen = FullCoverPath(value: "help")
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .contact)) { value in
+            coverScreen = FullCoverPath(value: "contact")
         }
         .onReceive(NotificationCenter.default.publisher(for: .settings)) { _ in
             navigator.push("settings")
@@ -47,6 +45,8 @@ struct MainView: View {
         .fullScreenCover(item: $coverScreen) { path in
             if path.description == "help" {
                 MainHelpView()
+            } else if path.description == "contact" {
+                EmailView()
             } else {
                 ColorView(.orange)
             }

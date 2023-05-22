@@ -1,5 +1,7 @@
 import SwiftUI
+import MessageUI
 
+//  DOESN'T WORK IN SIMULATOR, be sure to import MessageUI into the Xcode project
 struct MainToolbarView: ToolbarContent {
     @EnvironmentObject private var navigator: Navigator
     @EnvironmentObject private var play: Play
@@ -30,6 +32,12 @@ struct MainToolbarView: ToolbarContent {
 
     private func menuView() -> some View {
         Menu {
+            if MFMailComposeViewController.canSendMail() {
+                Button("Contact us", action: {
+                    NotificationCenter.default.post(name: .contact, object: nil)
+                    play.tap()
+                } )
+            }
             Button("Help", action: {
                 NotificationCenter.default.post(name: .help, object: nil)
                 play.tap()

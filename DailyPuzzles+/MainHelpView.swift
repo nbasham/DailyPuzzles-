@@ -63,5 +63,6 @@ struct MainHelpView_Previews: PreviewProvider {
 }
 
 extension NSNotification.Name {
+    static let contact = NSNotification.Name("contact")
     static let help = NSNotification.Name("help")
 }

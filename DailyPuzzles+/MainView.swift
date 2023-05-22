@@ -12,7 +12,7 @@ struct MainView: View {
             VStack(alignment: .leading, spacing: 16) {
                 ForEach(GameDescriptor.all) { game in
                     HStack {
-                        MainBallView(color: game.color)
+                        MainBallView(game: game)
                         NavigationLink(game.displayName, value: game)
                             .tint(.primary)
                         Spacer()

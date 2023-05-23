@@ -7,6 +7,7 @@ class MainViewModel: ObservableObject {
     @Published var chooserLineSpacing: CGFloat = 16
     @Published var overMinXMargin: CGFloat = 0
     var isPad: Bool { UIDevice.current.userInterfaceIdiom == .pad }
+    private var isLandscape: Bool { !inPortrait }
 
     init() {
         if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first,

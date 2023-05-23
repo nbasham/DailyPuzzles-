@@ -14,7 +14,6 @@ struct MainBallView: View {
             .overlay(
                 ballFill
             )
-            .frame(height: 32)
             .aspectRatio(1, contentMode: .fit)
             .rotationEffect(.degrees(animateBall ? 5*360 : 0))
             .onTapGesture {
@@ -41,7 +40,7 @@ struct MainBallView: View {
                 .font(.system(size: 13, design: .rounded))
                 .foregroundColor(.white.opacity(0.8))
                 .offset(y: -1)
-                .padding(3) // pushes 'play' from circle edge
+                .padding(4) // pushes 'play' from circle edge
         }
     }
 }

@@ -18,17 +18,19 @@ struct MainHelpView: View {
             ZStack(alignment: .topLeading) {
                 Color("background")
                     .ignoresSafeArea()
-                VStack(alignment: .leading) {
-                    Text("Welcome")
-                        .font(.headline)
-                        .padding(.vertical)
-                    Text(message)
-                        .padding(.bottom)
-                    Spacer()
-                    Text("Version 1.0")
-                        .font(.caption)
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        Text("Welcome")
+                            .font(.headline)
+                            .padding(.vertical)
+                        Text(message)
+                            .padding(.bottom)
+                        Spacer()
+                        Text("Version 1.0")
+                            .font(.caption)
+                    }
+                    .padding()
                 }
-                .padding()
             }
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarBackground(Color("top"), for: .navigationBar)

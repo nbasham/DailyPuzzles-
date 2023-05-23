@@ -5,6 +5,8 @@ import MessageUI
 struct MainToolbarView: ToolbarContent {
     @EnvironmentObject private var navigator: Navigator
     @EnvironmentObject private var play: Play
+    @EnvironmentObject private var viewModel: MainViewModel
+    @State var overMinXMargin: CGFloat = 0
 
     var body: some ToolbarContent {
         Group {
@@ -21,13 +23,17 @@ struct MainToolbarView: ToolbarContent {
 
     private var logoView: some View {
         HStack(spacing: 2) {
+            Spacer(minLength: 39)
             Text("Daily")
                 .fontWeight(.light)
             Text("Puzzles")
                 .fontWeight(.heavy)
+            Spacer()
         }
         .font(.system(size: 19))
         .foregroundColor(.white)
+        .fixedSize(horizontal: true, vertical: true)
+        .frame(width: 148 - overMinXMargin)
     }
 
     private func menuView() -> some View {

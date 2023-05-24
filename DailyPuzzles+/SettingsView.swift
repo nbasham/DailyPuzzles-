@@ -21,6 +21,7 @@ struct SettingsView: View {
                     .pickerStyle(.segmented)
                 }
                 .disabled(play.soundOn == false)
+                NavigationLink("Choose games", destination: SettingsGameChooserView())
                 Spacer()
             }
             .tint(Color("top"))

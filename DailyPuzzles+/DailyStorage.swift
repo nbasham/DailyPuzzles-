@@ -25,7 +25,7 @@ struct DailyStorage {
         return false
 #else
         guard let datestamp = UserDefaults.daily.object(forKey: "daily.datestamp") as? String else { return false }
-        guard datestamp != Date.yyddmm else { return false }
+        guard datestamp != Date.yymmdd else { return false }
         UserDefaults.clearDaily()
         NotificationCenter.default.post(name: .dateChange, object: nil)
         return true
@@ -33,7 +33,7 @@ struct DailyStorage {
     }
 
     private static func key(game: GameDescriptor) -> String {
-        "\(Date.yyddmm)_\(game.id)_completed"
+        "\(Date.yymmdd)_\(game.id)_completed"
     }
 
     static func completed(game: GameDescriptor) {

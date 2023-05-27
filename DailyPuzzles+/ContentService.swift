@@ -11,6 +11,15 @@ final class ContentService: ObservableObject {
         }
     }
 
+    private var _factoidUpdates: [String]?
+    private var factoidUpdates: [String] {
+        if let _factoidUpdates { return _factoidUpdates }
+        else {
+            _factoidUpdates = ContentService.lines(from: "factoidUpdates")
+            return _factoidUpdates ?? []
+        }
+    }
+
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(lowMemoryWarning), name: UIApplication.didReceiveMemoryWarningNotification, object: nil)
     }
@@ -18,9 +27,16 @@ final class ContentService: ObservableObject {
     @objc func lowMemoryWarning() {
         print("lowMemoryWarning")
         _factoids = nil
+        _factoidUpdates = nil
     }
 
     var factoid: String {
+        if let update = factoidUpdates.first(where: { str in
+            str.starts(with: Date.yymmdd)
+        }) {
+            return String(update.dropFirst(9))
+        }
+
         let line = factoids.first { str in
             str.starts(with: Date.ddmm)
         }
@@ -41,6 +57,7 @@ final class ContentService: ObservableObject {
                 fatalError(error.localizedDescription)
             }
         }
+        assertionFailure("'\(file)' not loaded")
         return []
     }
 

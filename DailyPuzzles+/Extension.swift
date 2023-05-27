@@ -1,11 +1,11 @@
 import SwiftUI
 
 extension Date {
-    static var yyddmm: String {
-        Date().yyddmm
+    static var yymmdd: String {
+        Date().yymmdd
     }
 
-    var yyddmm: String {
+    var yymmdd: String {
         let dc = Calendar.current.dateComponents([.year, .month, .day], from: self)
         let day = String(format: "%02d", dc.day!)
         let month = String(format: "%02d", dc.month!)

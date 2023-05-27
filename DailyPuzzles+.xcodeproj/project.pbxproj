@@ -74,6 +74,7 @@
 		209025452A1053CA004B6790 /* GameToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025442A1053CA004B6790 /* GameToolbarView.swift */; };
 		209AAA7C2A2290630072B17D /* ContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209AAA7B2A2290630072B17D /* ContentService.swift */; };
 		209AAA7E2A22915B0072B17D /* factoids.txt in Resources */ = {isa = PBXBuildFile; fileRef = 209AAA7D2A22915B0072B17D /* factoids.txt */; };
+		209AAA812A229B7B0072B17D /* factoidUpdates.txt in Resources */ = {isa = PBXBuildFile; fileRef = 209AAA802A229B7B0072B17D /* factoidUpdates.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,7 +144,9 @@
 		209025422A104EA4004B6790 /* CryptogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptogramView.swift; sourceTree = "<group>"; };
 		209025442A1053CA004B6790 /* GameToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToolbarView.swift; sourceTree = "<group>"; };
 		209AAA7B2A2290630072B17D /* ContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentService.swift; sourceTree = "<group>"; };
-		209AAA7D2A22915B0072B17D /* factoids.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = factoids.txt; sourceTree = "<group>"; };
+		209AAA7D2A22915B0072B17D /* factoids.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = factoids.txt; sourceTree = "<group>"; usesTabs = 1; };
+		209AAA7F2A2298640072B17D /* Notes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
+		209AAA802A229B7B0072B17D /* factoidUpdates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = factoidUpdates.txt; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +252,7 @@
 				2060632C2A1AE4240044AC81 /* EmailView.swift */,
 				201E65562A17E535005404B9 /* Extension.swift */,
 				209AAA7D2A22915B0072B17D /* factoids.txt */,
+				209AAA802A229B7B0072B17D /* factoidUpdates.txt */,
 				2060634D2A1C0C860044AC81 /* FactoidView.swift */,
 				2090253E2A103958004B6790 /* GameDescriptor.swift */,
 				209025382A0ED937004B6790 /* GameHostView.swift */,
@@ -268,6 +272,7 @@
 				20292BFE29F2104E00C51913 /* Assets.xcassets */,
 				20292C0029F2104E00C51913 /* Preview Content */,
 				201E65652A199888005404B9 /* Sounds */,
+				209AAA7F2A2298640072B17D /* Notes.txt */,
 			);
 			path = "DailyPuzzles+";
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 				201E65A02A199888005404B9 /* Harp10.aiff in Resources */,
 				201E65912A199888005404B9 /* Incorrect.aiff in Resources */,
 				201E659E2A199888005404B9 /* Harp1.aiff in Resources */,
+				209AAA812A229B7B0072B17D /* factoidUpdates.txt in Resources */,
 				201E65B02A199888005404B9 /* Harp2.aiff in Resources */,
 				201E65A12A199888005404B9 /* Harp0.aiff in Resources */,
 				201E65B22A199888005404B9 /* Chime2.aiff in Resources */,

@@ -9,10 +9,16 @@ struct SettingsView: View {
         ZStack {
             Color("background")
                 .ignoresSafeArea()
-            VStack(alignment: .leading, spacing: 16) {
+            Form {
+                NavigationLink("Choose games", destination: SettingsGameChooserView())
+               // Use GameDescriptor.all instead of onGames so we have a complete list, thus always in sync with each game
+                NavigationLink("Order games", destination: SettingsGameOrderView(data: GameDescriptor.all))
+                    .accentColor(Color("top"))
                 Toggle("Show timer", isOn: settings.$timerOn)
                 Toggle("Play sounds", isOn: $play.soundOn)
-                Section("Volume level") {
+                VStack(spacing: 4) {
+                    Text("Volume level")
+                        .foregroundColor(.secondary)
                     Picker("Volume level", selection: $play.soundVolume) {
                         Text("Low").tag(0.2)
                         Text("Med").tag(0.5)
@@ -20,14 +26,12 @@ struct SettingsView: View {
                     }
                     .pickerStyle(.segmented)
                 }
+                .padding(.horizontal)
                 .disabled(play.soundOn == false)
-                NavigationLink("Choose games", destination: SettingsGameChooserView())
-                // Use GameDescriptor.all instead of onGames so we have a complete list, thus always in sync with each game
-                NavigationLink("Order games", destination: SettingsGameOrderView(data: GameDescriptor.all))
-                Spacer()
             }
+            .scrollContentBackground(.hidden)
             .tint(Color("top"))
-            .padding()
+            .padding(.top)
         }
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(Color("top"), for: .navigationBar)

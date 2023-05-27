@@ -20,12 +20,16 @@ struct GameModel: Codable {
     }
 
     static func load(game: GameDescriptor) -> Self {
+#if isPreview
+        return GameModel()
+#else
         if let data = UserDefaults.daily.object(forKey: key(game)) as? Data,
            let model = GameModel.fromData(data) {
             return model
         } else {
             return GameModel()
         }
+#endif
     }
 
     static func clear(game: GameDescriptor) {
@@ -33,8 +37,10 @@ struct GameModel: Codable {
     }
 
     func save(game: GameDescriptor) {
+#if !isPreview
         if let data {
             UserDefaults.daily.set(data, forKey: GameModel.key(game))
         }
+#endif
     }
 }

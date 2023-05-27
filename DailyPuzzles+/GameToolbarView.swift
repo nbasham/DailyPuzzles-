@@ -4,8 +4,8 @@ struct GameToolbarView: ToolbarContent {
     @EnvironmentObject private var navigator: Navigator
     @EnvironmentObject private var settings: Settings
     @EnvironmentObject private var play: Play
+    let showTimer: Bool
     @State var seconds = "0:00" // sets width so it doesn't jump at 0
-    let shouldShowTimer = true
 
     var body: some ToolbarContent {
         Group {
@@ -48,7 +48,7 @@ struct GameToolbarView: ToolbarContent {
             MenuItem(name: "Solve", notificationName: .gameSolve)
         } label: {
             HStack {
-                if settings.timerOn {
+                if showTimer {
                     Text("\(seconds)")
                         .foregroundColor(seconds == "0:00" ? .clear : .white)
                         .monospacedDigit() // uses system font vs. monospace()
@@ -91,11 +91,12 @@ struct GameToolbarView_Previews: PreviewProvider {
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarBackground(.green, for: .navigationBar)
             .toolbar {
-                GameToolbarView()
+                GameToolbarView(showTimer: true)
             }
         }
         .environmentObject(Navigator())
         .environmentObject(Settings())
+        .environmentObject(Play())
     }
 }
 

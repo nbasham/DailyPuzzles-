@@ -48,5 +48,6 @@ struct MainBallView: View {
 struct MainBallView_Previews: PreviewProvider {
     static var previews: some View {
         MainBallView(game: .sudoku)
+            .frame(maxWidth: 64)
     }
 }

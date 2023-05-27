@@ -22,7 +22,8 @@ struct SettingsView: View {
                 }
                 .disabled(play.soundOn == false)
                 NavigationLink("Choose games", destination: SettingsGameChooserView())
-                NavigationLink("Order games", destination: SettingsGameOrderView())
+                // Use GameDescriptor.all instead of onGames so we have a complete list, thus always in sync with each game
+                NavigationLink("Order games", destination: SettingsGameOrderView(data: GameDescriptor.all))
                 Spacer()
             }
             .tint(Color("top"))

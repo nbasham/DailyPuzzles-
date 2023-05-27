@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsGameOrderView: View {
-    @State var data = Settings.onGames()
+    @State var data: [GameDescriptor]
 
     var body: some View {
         ZStack {
@@ -13,12 +13,7 @@ struct SettingsGameOrderView: View {
                         .tint(game.color)
                 }).onMove { (source: IndexSet, destination: Int) in
                     data.move(fromOffsets: source, toOffset: destination)
-                    print("source \(source)")
-                    print("destination \(destination)")
-                    print("data \(data)")
-                    if let ordereddata = try? JSONEncoder().encode(data) {
-                        UserDefaults.standard.set(ordereddata, forKey: "settings_game_order")
-                    }
+//                    Settings.saveGameOrder(data)
                 }
             }.environment(\.editMode, .constant(.active))
         }
@@ -30,6 +25,6 @@ struct SettingsGameOrderView: View {
 
 struct SettingsGameOrderView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsGameOrderView()
+        SettingsGameOrderView(data: GameDescriptor.all)
     }
 }

@@ -16,6 +16,7 @@ protocol GameHost {
 struct GameHostView: View, GameHost {
     @EnvironmentObject private var navigator: Navigator
     @EnvironmentObject private var play: Play
+    @EnvironmentObject private var settings: Settings
     @StateObject var viewModel: GameHostViewModel
     var game: GameDescriptor { viewModel.game }
     @State private var isGameDisabled = false
@@ -56,7 +57,7 @@ struct GameHostView: View, GameHost {
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(viewModel.game.color, for: .navigationBar)
         .toolbar {
-            GameToolbarView(seconds: viewModel.gameModel.elapsedSeconds.timerValue)
+            GameToolbarView(showTimer: settings.timerOn, seconds: viewModel.gameModel.elapsedSeconds.timerValue)
         }
     }
 
@@ -78,9 +79,12 @@ struct GameHostView: View, GameHost {
 
 struct GameHostView_Previews: PreviewProvider {
     static var previews: some View {
-        GameHostView(viewModel: GameHostViewModel(game: .quotefalls))
-            .environmentObject(Navigator())
-            .environmentObject(Play())
+        NavigationStack {
+            GameHostView(viewModel: GameHostViewModel(game: .quotefalls))
+                .environmentObject(Navigator())
+                .environmentObject(Settings())
+                .environmentObject(Play())
+        }
     }
 }
 
@@ -161,8 +165,8 @@ struct GameSolvedView: View {
     }
 }
 
-struct GameSolvedView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameSolvedView()
-    }
-}
+//struct GameSolvedView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GameSolvedView()
+//    }
+//}

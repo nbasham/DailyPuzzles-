@@ -23,7 +23,6 @@ class Settings: ObservableObject {
         let key = "settings_game_order"
         if let data = UserDefaults.standard.object(forKey: key) as? Data,
         let orderedGames = try? JSONDecoder().decode([GameDescriptor].self, from: data) {
-            //  TODO games on could have changed after ordering and this list is no longer correct
             return orderedGames
         }
         return onGames

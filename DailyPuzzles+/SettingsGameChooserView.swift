@@ -32,7 +32,6 @@ struct SettingsGameChooserView: View {
                     }
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        //  TODO Sync with ordered games
                         Settings.toggleGame(game)
                         isOn[index] = Settings.isGameOn(game)
                     }

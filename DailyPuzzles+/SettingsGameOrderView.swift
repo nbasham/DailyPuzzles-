@@ -8,18 +8,31 @@ struct SettingsGameOrderView: View {
             Color("background")
                 .ignoresSafeArea()
             List {
-                ForEach(data, id: \.id, content: { game in
-                    Text(game.displayName)
-                        .tint(game.color)
+                VStack {
+                    Text("Order games")
+                        .font(.headline)
+                        .padding(.bottom, 4)
+                    Text("Use the tab on the right to drag games into the order you wish to play them")
+                        .foregroundColor(.secondary)
+                        .font(.caption)
+                }
+                ForEach(data.indices, id: \.self, content: { index in
+                    let game = data[index]
+                   HStack {
+                       Image(systemName: "\(index+1).circle")
+                           .foregroundColor(game.color)
+                       Text(game.displayName)
+                   }
                 }).onMove { (source: IndexSet, destination: Int) in
                     data.move(fromOffsets: source, toOffset: destination)
-//                    Settings.saveGameOrder(data)
+                    Settings.saveGameOrder(data)
                 }
-            }.environment(\.editMode, .constant(.active))
+            }
+                .environment(\.editMode, .constant(.active))
+                .listStyle(InsetListStyle())
+                .clipShape(RoundedRectangle(cornerRadius: 11))
+                .padding()
         }
-        .listStyle(InsetListStyle())
-        .clipShape(RoundedRectangle(cornerRadius: 11))
-        .padding()
     }
 }
 

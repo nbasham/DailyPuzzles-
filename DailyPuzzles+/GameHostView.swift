@@ -17,6 +17,7 @@ struct GameHostView: View, GameHost {
     @EnvironmentObject private var navigator: Navigator
     @EnvironmentObject private var play: Play
     @EnvironmentObject private var settings: Settings
+    @Environment(\.isPreview) var isPreview
     @StateObject var viewModel: GameHostViewModel
     var game: GameDescriptor { viewModel.game }
     @State private var isGameDisabled = false
@@ -41,6 +42,7 @@ struct GameHostView: View, GameHost {
             }
         }
         .onAppear {
+            guard !isPreview else { return }
             viewModel.start()
         }
         .onDisappear {
@@ -92,18 +94,16 @@ class GameHostViewModel: ObservableObject {
     let game: GameDescriptor
     @Published var isSolved = false
     @Published var showSolved = false
-    var gameModel: GameModel
+    var gameModel = GameModel()
     let timer = SecondsTimer()
 
     init(game: GameDescriptor) {
         self.game = game
-        gameModel = GameModel.load(game: game)
     }
 
     //  init is called twice, appear (which calls this) only once
     func start() {
-        NotificationCenter.default.addObserver(self, selector: #selector(appBecameActive), name: UIApplication.didBecomeActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        gameModel = GameModel.load(game: game)
         timer.start(initialSeconds: gameModel.elapsedSeconds) { secs in
             self.gameModel.elapsedSeconds = secs
             NotificationCenter.default.post(name: .gameTimer, object: ["secs": NSNumber(value: secs)])

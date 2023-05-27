@@ -17,6 +17,7 @@ struct SettingsGameChooserView: View {
                     Text("Select the games you want to play, only selected games will appear. At least one game must be selected.")
                         .foregroundColor(.secondary)
                         .font(.caption)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 ForEach(Array(zip(GameDescriptor.all.indices, GameDescriptor.all)), id: \.0) { index, game in
                     HStack {

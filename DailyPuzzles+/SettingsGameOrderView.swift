@@ -15,6 +15,7 @@ struct SettingsGameOrderView: View {
                     Text("Use the tab on the right to drag games into the order you wish to play them")
                         .foregroundColor(.secondary)
                         .font(.caption)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 ForEach(data.indices, id: \.self, content: { index in
                     let game = data[index]

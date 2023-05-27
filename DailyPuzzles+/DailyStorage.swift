@@ -8,28 +8,22 @@ extension UserDefaults {
 
 fileprivate extension UserDefaults {
     static func clearDaily() {
-#if !isPreview
         let dictionary = UserDefaults.daily.dictionaryRepresentation()
         dictionary.keys.forEach { key in
             UserDefaults.daily.removeObject(forKey: key)
         }
         UserDefaults.daily.synchronize()
-#endif
     }
 }
 
 struct DailyStorage {
     @discardableResult
     static func isNewDay() -> Bool {
-#if isPreview
-        return false
-#else
         guard let datestamp = UserDefaults.daily.object(forKey: "daily.datestamp") as? String else { return false }
         guard datestamp != Date.yymmdd else { return false }
         UserDefaults.clearDaily()
         NotificationCenter.default.post(name: .dateChange, object: nil)
         return true
-#endif
     }
 
     private static func key(game: GameDescriptor) -> String {
@@ -41,11 +35,7 @@ struct DailyStorage {
     }
 
     static func isCompleted(game: GameDescriptor) -> Bool {
-#if isPreview
-        return false
-#else
         UserDefaults.daily.value(forKey: key(game: game)) != nil
-#endif
     }
 
     static func allCompleted(games: [GameDescriptor]) -> Bool {

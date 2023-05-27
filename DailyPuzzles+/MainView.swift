@@ -54,6 +54,7 @@ class MainViewModel: ObservableObject {
 struct MainView: View {
     @EnvironmentObject private var navigator: Navigator
     @EnvironmentObject private var play: Play
+    @Environment(\.isPreview) var isPreview
     @State private var coverScreen: FullCoverPath?
     @StateObject var viewModel: MainViewModel
 
@@ -76,6 +77,7 @@ struct MainView: View {
             }
         }
         .onAppear {
+            guard !isPreview else { return }
             DailyStorage.isNewDay()
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in

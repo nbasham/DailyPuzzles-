@@ -1,7 +1,6 @@
 import SwiftUI
 
 final class ContentService: ObservableObject {
-
     private var _factoids: [String]?
     private var factoids: [String] {
         if let _factoids { return _factoids }

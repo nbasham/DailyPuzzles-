@@ -4,6 +4,7 @@ struct MainBallView: View {
     let game: GameDescriptor
     @State private var isCompleted = false
     @State private var animateBall = false
+    @Environment(\.isPreview) var isPreview
 
     var body: some View {
         Circle()
@@ -22,6 +23,7 @@ struct MainBallView: View {
                 }
             }
             .onAppear {
+                guard !isPreview else { return }
                 isCompleted = DailyStorage.isCompleted(game: game)
             }
     }

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct FactoidView: View {
     @EnvironmentObject private var service: ContentService
+    @Environment(\.isPreview) var isPreview
     @State private var message: LocalizedStringKey = """
         Visit Apple: [click here](https://apple.com) This is **bold** text, this is *italic* text, and this is ***bold, italic*** text. ~~A strikethrough example~~ `Monospaced works too` 🙃
         """
@@ -16,6 +17,7 @@ struct FactoidView: View {
             .padding(.top, 8)
             .padding(.bottom, 4)
             .onAppear {
+                guard !isPreview else { return }
                 message = LocalizedStringKey(service.factoid)
             }
             .onReceive(NotificationCenter.default.publisher(for: .dateChange)) { _ in
@@ -27,5 +29,6 @@ struct FactoidView: View {
 struct FactoidView_Previews: PreviewProvider {
     static var previews: some View {
         FactoidView()
+            .padding(.horizontal)
     }
 }

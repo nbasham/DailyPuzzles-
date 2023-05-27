@@ -13,6 +13,7 @@ struct DailyPuzzles_App: App {
     @StateObject private var navigator = Navigator()
     @StateObject private var settings = Settings()
     @StateObject private var play = Play()
+    @Environment(\.isPreview) var isPreview
 
     var body: some Scene {
         WindowGroup {
@@ -22,6 +23,7 @@ struct DailyPuzzles_App: App {
                 .environmentObject(play)
                 .environmentObject(service)
                 .onAppear {
+                    guard !isPreview else { return }
                     //  Stop flashing white corners on rotation
                     if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first {
                         window.rootViewController?.view.backgroundColor = UIColor(named: "background")

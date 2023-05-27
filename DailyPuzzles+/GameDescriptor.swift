@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum GameDescriptor: String, Identifiable {
+enum GameDescriptor: String, Identifiable, Codable {
 
     case cryptogram, crypto_families, quotefalls, sudoku, word_search, memory, triplets, sample_game
 

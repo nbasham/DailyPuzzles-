@@ -22,6 +22,7 @@ struct SettingsView: View {
                 }
                 .disabled(play.soundOn == false)
                 NavigationLink("Choose games", destination: SettingsGameChooserView())
+                NavigationLink("Order games", destination: SettingsGameOrderView())
                 Spacer()
             }
             .tint(Color("top"))

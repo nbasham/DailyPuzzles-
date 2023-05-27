@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct DailyPuzzles_App: App {
+    @StateObject private var service = ContentService()
     @StateObject private var navigator = Navigator()
     @StateObject private var settings = Settings()
     @StateObject private var play = Play()
@@ -19,6 +20,7 @@ struct DailyPuzzles_App: App {
                 .environmentObject(navigator)
                 .environmentObject(settings)
                 .environmentObject(play)
+                .environmentObject(service)
                 .onAppear {
                     //  Stop flashing white corners on rotation
                     if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first {

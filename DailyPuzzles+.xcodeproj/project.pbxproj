@@ -72,6 +72,8 @@
 		209025412A104CD2004B6790 /* MainToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025402A104CD2004B6790 /* MainToolbarView.swift */; };
 		209025432A104EA4004B6790 /* CryptogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025422A104EA4004B6790 /* CryptogramView.swift */; };
 		209025452A1053CA004B6790 /* GameToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025442A1053CA004B6790 /* GameToolbarView.swift */; };
+		209AAA7C2A2290630072B17D /* ContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209AAA7B2A2290630072B17D /* ContentService.swift */; };
+		209AAA7E2A22915B0072B17D /* factoids.txt in Resources */ = {isa = PBXBuildFile; fileRef = 209AAA7D2A22915B0072B17D /* factoids.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +142,8 @@
 		209025402A104CD2004B6790 /* MainToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainToolbarView.swift; sourceTree = "<group>"; };
 		209025422A104EA4004B6790 /* CryptogramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptogramView.swift; sourceTree = "<group>"; };
 		209025442A1053CA004B6790 /* GameToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToolbarView.swift; sourceTree = "<group>"; };
+		209AAA7B2A2290630072B17D /* ContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentService.swift; sourceTree = "<group>"; };
+		209AAA7D2A22915B0072B17D /* factoids.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = factoids.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,12 +241,14 @@
 		20292BF929F2104C00C51913 /* DailyPuzzles+ */ = {
 			isa = PBXGroup;
 			children = (
+				209AAA7B2A2290630072B17D /* ContentService.swift */,
 				20292BFC29F2104C00C51913 /* ContentView.swift */,
 				209025422A104EA4004B6790 /* CryptogramView.swift */,
 				20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */,
 				2060634B2A1C06640044AC81 /* DailyStorage.swift */,
 				2060632C2A1AE4240044AC81 /* EmailView.swift */,
 				201E65562A17E535005404B9 /* Extension.swift */,
+				209AAA7D2A22915B0072B17D /* factoids.txt */,
 				2060634D2A1C0C860044AC81 /* FactoidView.swift */,
 				2090253E2A103958004B6790 /* GameDescriptor.swift */,
 				209025382A0ED937004B6790 /* GameHostView.swift */,
@@ -367,6 +373,7 @@
 				201E65A12A199888005404B9 /* Harp0.aiff in Resources */,
 				201E65B22A199888005404B9 /* Chime2.aiff in Resources */,
 				201E658F2A199888005404B9 /* Highlight.aiff in Resources */,
+				209AAA7E2A22915B0072B17D /* factoids.txt in Resources */,
 				201E65AB2A199888005404B9 /* Harp8.aiff in Resources */,
 				201E65B12A199888005404B9 /* Chime1.aiff in Resources */,
 				201E659F2A199888005404B9 /* Harp11.aiff in Resources */,
@@ -413,6 +420,7 @@
 				2060632D2A1AE4240044AC81 /* EmailView.swift in Sources */,
 				209025412A104CD2004B6790 /* MainToolbarView.swift in Sources */,
 				201E655B2A190A00005404B9 /* SecondsTimer.swift in Sources */,
+				209AAA7C2A2290630072B17D /* ContentService.swift in Sources */,
 				2060632B2A1AC3A30044AC81 /* MainBallView.swift in Sources */,
 				2060634C2A1C06640044AC81 /* DailyStorage.swift in Sources */,
 				20292BFB29F2104C00C51913 /* DailyPuzzles_App.swift in Sources */,

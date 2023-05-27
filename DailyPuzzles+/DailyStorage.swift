@@ -27,6 +27,7 @@ struct DailyStorage {
         guard let datestamp = UserDefaults.daily.object(forKey: "daily.datestamp") as? String else { return false }
         guard datestamp != Date.yyddmm else { return false }
         UserDefaults.clearDaily()
+        NotificationCenter.default.post(name: .dateChange, object: nil)
         return true
 #endif
     }
@@ -55,4 +56,8 @@ struct DailyStorage {
         }
         return true
     }
+}
+
+extension NSNotification.Name {
+    static let dateChange = NSNotification.Name("dateChange")
 }

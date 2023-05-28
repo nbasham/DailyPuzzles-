@@ -1,0 +1,10 @@
+TODO
+Hook up cloud files
+Register with Apple
+Setup iCloud
+Change logo to DailyPuzzles+?
+
+Submit a test flight app.
+
+Remember
+When uploading to app store changed name from DailyPuzzles+ to DailyPuzzlesPlus

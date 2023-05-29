@@ -130,7 +130,7 @@ struct MainView: View {
 
     private var gameChooserView: some View {
         VStack(spacing: viewModel.chooserLineSpacing) {
-            ForEach(Settings.onGames()) { game in
+            ForEach(Settings.onAndOrderedGames()) { game in
                 HStack {
                     HStack {
                         Spacer()

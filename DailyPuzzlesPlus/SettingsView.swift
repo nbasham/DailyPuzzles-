@@ -4,6 +4,11 @@ struct SettingsView: View {
     @EnvironmentObject var settings: Settings
     @EnvironmentObject private var navigator: Navigator
     @EnvironmentObject private var play: Play
+    var topPadding: CGFloat {
+        guard UIDevice.isPhone else { return 16 }
+        let isPortrait = UIDevice.current.orientation == .portrait
+        return isPortrait ? 8 : 0
+    }
 
     var body: some View {
         ZStack {
@@ -12,8 +17,9 @@ struct SettingsView: View {
             Form {
                 NavigationLink("Choose games", destination: SettingsGameChooserView())
                // Use GameDescriptor.all instead of onGames so we have a complete list, thus always in sync with each game
-                NavigationLink("Order games", destination: SettingsGameOrderView(data: GameDescriptor.all))
+                NavigationLink("Order games", destination: SettingsGameOrderView(data: Settings.onGames()))
                     .accentColor(Color("top"))
+                Toggle("Show incorrect guesses", isOn: settings.$showIncorrect)
                 Toggle("Show timer", isOn: settings.$timerOn)
                 Toggle("Play sounds", isOn: $play.soundOn)
                 VStack(spacing: 4) {
@@ -35,7 +41,7 @@ struct SettingsView: View {
             .padding(.horizontal, UIDevice.isPad ? 64 : 16)
             .scrollContentBackground(.hidden)
             .tint(Color("top"))
-            .padding(.top)
+            .padding(.top, topPadding)
         }
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(Color("top"), for: .navigationBar)

@@ -24,6 +24,12 @@ struct SettingsGameOrderView: View {
                        Image(systemName: "\(index+1).circle")
                            .foregroundColor(game.color)
                        Text(game.displayName)
+                       if !Settings.isGameOn(game) {
+                           Text("(not shown)")
+                               .foregroundColor(.secondary)
+                               .font(.caption)
+                       }
+                       Spacer()
                    }
                 }).onMove { (source: IndexSet, destination: Int) in
                     data.move(fromOffsets: source, toOffset: destination)
@@ -35,6 +41,17 @@ struct SettingsGameOrderView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 11))
                 .padding()
         }
+        .onAppear {
+            data = Settings.loadGameOrder()
+        }
+        .navigationBarItems(trailing:
+                                Button(action: {
+            Settings.restoreOrder()
+            data = GameDescriptor.all
+        }) {
+            Text("Restore")
+        }
+        )
     }
 }
 

@@ -43,26 +43,14 @@ struct SettingsGameChooserView: View {
             .clipShape(RoundedRectangle(cornerRadius: 11))
             .padding()
         }
-//        .toolbarBackground(.visible, for: .navigationBar)
-//        .toolbarBackground(Color("top"), for: .navigationBar)
-//        .navigationBarBackButtonHidden()
-//        .toolbar {
-//            ToolbarItem(placement: .navigationBarLeading) {
-//                Button(action: {
-//                    play.tap()
-//                    navigator.pop()
-//                }, label: {
-//                    HStack {
-//                        Label("back", systemImage: "chevron.left.circle.fill")
-//                            .imageScale(.large)
-//                            .foregroundColor(.white)
-//                        Text("back")
-//                            .foregroundColor(.white)
-//                            .fontWeight(.light)
-//                    }
-//                })
-//            }
-//        }
+        .navigationBarItems(trailing:
+            Button(action: {
+                Settings.turnAllOn()
+                isOn = GameDescriptor.all.map { Settings.isGameOn($0) }
+            }) {
+                Text("Restore")
+            }
+        )
     }
 }
 

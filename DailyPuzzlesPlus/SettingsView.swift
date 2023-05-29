@@ -19,16 +19,20 @@ struct SettingsView: View {
                 VStack(spacing: 4) {
                     Text("Volume level")
                         .foregroundColor(.secondary)
+                        .frame(maxWidth: .infinity)
                     Picker("Volume level", selection: $play.soundVolume) {
                         Text("Low").tag(0.2)
                         Text("Med").tag(0.5)
                         Text("High").tag(1.0)
                     }
                     .pickerStyle(.segmented)
+                    .frame(maxWidth: 320)
                 }
+                .listRowSeparator(Visibility.hidden)
                 .padding(.horizontal)
                 .disabled(play.soundOn == false)
             }
+            .padding(.horizontal, UIDevice.isPad ? 64 : 16)
             .scrollContentBackground(.hidden)
             .tint(Color("top"))
             .padding(.top)

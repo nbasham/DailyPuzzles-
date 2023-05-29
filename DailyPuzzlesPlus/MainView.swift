@@ -145,7 +145,6 @@ struct MainView: View {
                         .frame(maxHeight: 34)
                     Spacer()
                 }
-//                .padding(.leading)
                 .padding(.leading)
                 .contentShape(Rectangle())
                 .onTapGesture {

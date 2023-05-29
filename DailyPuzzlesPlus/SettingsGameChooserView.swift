@@ -14,6 +14,7 @@ struct SettingsGameChooserView: View {
                     Text("Choose games")
                         .font(.headline)
                         .padding(.bottom, 4)
+                        .frame(maxWidth: .infinity)
                     Text("Select the games you want to play, only selected games will appear. At least one game must be selected.")
                         .foregroundColor(.secondary)
                         .font(.caption)

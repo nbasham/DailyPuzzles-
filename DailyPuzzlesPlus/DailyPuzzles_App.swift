@@ -65,7 +65,6 @@ struct DailyPuzzles_App: App {
 
 class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        print("applicationDidFinishLaunching")
         application.registerForRemoteNotifications()
         return true
     }

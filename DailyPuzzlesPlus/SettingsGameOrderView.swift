@@ -12,6 +12,7 @@ struct SettingsGameOrderView: View {
                     Text("Order games")
                         .font(.headline)
                         .padding(.bottom, 4)
+                        .frame(maxWidth: .infinity)
                     Text("Use the tab on the right to drag games into the order you wish to play them")
                         .foregroundColor(.secondary)
                         .font(.caption)

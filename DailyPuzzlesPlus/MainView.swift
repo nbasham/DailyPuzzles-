@@ -69,6 +69,7 @@ struct MainView: View {
                     .padding(.horizontal)
                     .padding(.horizontal)
                     .ignoresSafeArea()
+                    .frame(maxWidth: .infinity)
                     .frame(height: viewModel.bottomViewHeight)
                     .background(
                         Color("top").opacity(0.2)

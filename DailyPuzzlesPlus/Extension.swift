@@ -144,6 +144,13 @@ public extension EnvironmentValues {
     }
 }
 
+public extension Sequence where Element == String {
+    /// Remove empty lines and lines containing empty quotes.
+    var removeEmptyLines: [String]  {
+        return self.filter { $0.count > 0 }.filter { !$0.isEmpty } // remove lines with empty quotes
+    }
+}
+
 public extension Bundle {
 
     subscript(key: String) -> String { valueFromInfoPList(key) }
@@ -159,6 +166,20 @@ public extension Bundle {
             return value
         }
         fatalError("infoDictionary doesn't contain key \(key)")
+    }
+
+    static func lines(from file: String, ofType type: String = "txt") -> [String]? {
+        if let path = main.path(forResource: file, ofType: type) {
+            do {
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                let lines = data.components(separatedBy: .newlines)
+                return lines
+            } catch {
+                fatalError(error.localizedDescription)
+            }
+        }
+        assertionFailure("'\(file)' not loaded")
+        return nil
     }
 
     /// Gets the app's name.

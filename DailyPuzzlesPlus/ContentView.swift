@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var appDelegate: AppDelegate
     @EnvironmentObject private var navigator: Navigator
 
     var body: some View {

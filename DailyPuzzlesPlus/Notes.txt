@@ -1,10 +1,13 @@
 TODO
-Hook up cloud files
-Register with Apple
-Setup iCloud
 Change logo to DailyPuzzles+?
-
-Submit a test flight app.
+Factoids needs a big Tap Here target
+Should we remove CloudKitDataReceivedNotification?
+Add half ball to factoid
+                ZStack(alignment: .topLeading) {
+                    Circle()
+                        .frame(height: viewModel.bottomViewHeight)
+                        .position(x: -viewModel.bottomViewHeight, y: viewModel.bottomViewHeight/2)
+                }
 
 Remember
 When uploading to app store changed name from DailyPuzzles+ to DailyPuzzlesPlus

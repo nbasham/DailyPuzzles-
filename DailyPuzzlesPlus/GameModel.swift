@@ -1,6 +1,7 @@
 import Foundation
 
 struct GameModel: Codable {
+    var level : Int
     var elapsedSeconds : Int
     var numberOfHintsUsed : Int
     var numberMissed : Int
@@ -10,6 +11,7 @@ struct GameModel: Codable {
     }
 
     init() {
+        self.level = 0
         self.elapsedSeconds = 0
         self.numberOfHintsUsed = 0
         self.numberMissed = 0

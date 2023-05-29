@@ -75,7 +75,21 @@
 		209AAA7C2A2290630072B17D /* ContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209AAA7B2A2290630072B17D /* ContentService.swift */; };
 		209AAA7E2A22915B0072B17D /* factoids.txt in Resources */ = {isa = PBXBuildFile; fileRef = 209AAA7D2A22915B0072B17D /* factoids.txt */; };
 		209AAA812A229B7B0072B17D /* factoidUpdates.txt in Resources */ = {isa = PBXBuildFile; fileRef = 209AAA802A229B7B0072B17D /* factoidUpdates.txt */; };
+		20C0BE852A23F30F00884E76 /* CloudKitObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0BE842A23F30F00884E76 /* CloudKitObserver.swift */; };
+		20E4AD252A244C4900E42A2F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD242A244C4900E42A2F /* File.swift */; };
+		20E4AD272A244EF300E42A2F /* CodeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD262A244EF300E42A2F /* CodeTimer.swift */; };
+		20E4AD2F2A24518100E42A2F /* DailyPuzzlesPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD2E2A24518100E42A2F /* DailyPuzzlesPlusTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		20E4AD302A24518100E42A2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20292BEF29F2104C00C51913 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20292BF629F2104C00C51913;
+			remoteInfo = DailyPuzzlesPlus;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		201E65562A17E535005404B9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -147,6 +161,13 @@
 		209AAA7D2A22915B0072B17D /* factoids.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = factoids.txt; sourceTree = "<group>"; usesTabs = 1; };
 		209AAA7F2A2298640072B17D /* Notes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
 		209AAA802A229B7B0072B17D /* factoidUpdates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = factoidUpdates.txt; sourceTree = "<group>"; usesTabs = 1; };
+		20C0BE822A23F2D700884E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		20C0BE832A23F2E200884E76 /* DailyPuzzlesPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyPuzzlesPlus.entitlements; sourceTree = "<group>"; };
+		20C0BE842A23F30F00884E76 /* CloudKitObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitObserver.swift; sourceTree = "<group>"; };
+		20E4AD242A244C4900E42A2F /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		20E4AD262A244EF300E42A2F /* CodeTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTimer.swift; sourceTree = "<group>"; };
+		20E4AD2C2A24518100E42A2F /* DailyPuzzlesPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyPuzzlesPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20E4AD2E2A24518100E42A2F /* DailyPuzzlesPlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPuzzlesPlusTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +177,13 @@
 			files = (
 				206063302A1B0F7C0044AC81 /* MessageUI.framework in Frameworks */,
 				201E65622A196626005404B9 /* SwiftySound in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20E4AD292A24518100E42A2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				20292BF929F2104C00C51913 /* DailyPuzzlesPlus */,
+				20E4AD2D2A24518100E42A2F /* DailyPuzzlesPlusTests */,
 				2060632E2A1B0F7C0044AC81 /* Frameworks */,
 				20292BF829F2104C00C51913 /* Products */,
 			);
@@ -237,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				20292BF729F2104C00C51913 /* DailyPuzzlesPlus.app */,
+				20E4AD2C2A24518100E42A2F /* DailyPuzzlesPlusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,6 +274,10 @@
 		20292BF929F2104C00C51913 /* DailyPuzzlesPlus */ = {
 			isa = PBXGroup;
 			children = (
+				20C0BE832A23F2E200884E76 /* DailyPuzzlesPlus.entitlements */,
+				20C0BE822A23F2D700884E76 /* Info.plist */,
+				20C0BE842A23F30F00884E76 /* CloudKitObserver.swift */,
+				20E4AD262A244EF300E42A2F /* CodeTimer.swift */,
 				209AAA7B2A2290630072B17D /* ContentService.swift */,
 				20292BFC29F2104C00C51913 /* ContentView.swift */,
 				209025422A104EA4004B6790 /* CryptogramView.swift */,
@@ -254,6 +288,7 @@
 				209AAA7D2A22915B0072B17D /* factoids.txt */,
 				209AAA802A229B7B0072B17D /* factoidUpdates.txt */,
 				2060634D2A1C0C860044AC81 /* FactoidView.swift */,
+				20E4AD242A244C4900E42A2F /* File.swift */,
 				2090253E2A103958004B6790 /* GameDescriptor.swift */,
 				209025382A0ED937004B6790 /* GameHostView.swift */,
 				201E65582A17E994005404B9 /* GameModel.swift */,
@@ -293,6 +328,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		20E4AD2D2A24518100E42A2F /* DailyPuzzlesPlusTests */ = {
+			isa = PBXGroup;
+			children = (
+				20E4AD2E2A24518100E42A2F /* DailyPuzzlesPlusTests.swift */,
+			);
+			path = DailyPuzzlesPlusTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -316,6 +359,24 @@
 			productReference = 20292BF729F2104C00C51913 /* DailyPuzzlesPlus.app */;
 			productType = "com.apple.product-type.application";
 		};
+		20E4AD2B2A24518100E42A2F /* DailyPuzzlesPlusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20E4AD322A24518100E42A2F /* Build configuration list for PBXNativeTarget "DailyPuzzlesPlusTests" */;
+			buildPhases = (
+				20E4AD282A24518100E42A2F /* Sources */,
+				20E4AD292A24518100E42A2F /* Frameworks */,
+				20E4AD2A2A24518100E42A2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20E4AD312A24518100E42A2F /* PBXTargetDependency */,
+			);
+			name = DailyPuzzlesPlusTests;
+			productName = DailyPuzzlesPlusTests;
+			productReference = 20E4AD2C2A24518100E42A2F /* DailyPuzzlesPlusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -328,6 +389,10 @@
 				TargetAttributes = {
 					20292BF629F2104C00C51913 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					20E4AD2B2A24518100E42A2F = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 20292BF629F2104C00C51913;
 					};
 				};
 			};
@@ -348,6 +413,7 @@
 			projectRoot = "";
 			targets = (
 				20292BF629F2104C00C51913 /* DailyPuzzlesPlus */,
+				20E4AD2B2A24518100E42A2F /* DailyPuzzlesPlusTests */,
 			);
 		};
 /* End PBXProject section */
@@ -403,6 +469,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		20E4AD2A2A24518100E42A2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -410,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E4AD252A244C4900E42A2F /* File.swift in Sources */,
 				2090253F2A103958004B6790 /* GameDescriptor.swift in Sources */,
 				209025392A0ED937004B6790 /* GameHostView.swift in Sources */,
 				201E655D2A1957BC005404B9 /* Settings.swift in Sources */,
@@ -418,6 +492,7 @@
 				2085A1712A1DB343004E601F /* SettingsGameChooserView.swift in Sources */,
 				2090253D2A0EDA15004B6790 /* Navigator.swift in Sources */,
 				201E65B92A1A99C7005404B9 /* MainHelpView.swift in Sources */,
+				20C0BE852A23F30F00884E76 /* CloudKitObserver.swift in Sources */,
 				2085A1732A1E859A004E601F /* SettingsGameOrderView.swift in Sources */,
 				201E65572A17E535005404B9 /* Extension.swift in Sources */,
 				201E655F2A195845005404B9 /* SettingsView.swift in Sources */,
@@ -430,13 +505,30 @@
 				2060632B2A1AC3A30044AC81 /* MainBallView.swift in Sources */,
 				2060634C2A1C06640044AC81 /* DailyStorage.swift in Sources */,
 				20292BFB29F2104C00C51913 /* DailyPuzzles_App.swift in Sources */,
+				20E4AD272A244EF300E42A2F /* CodeTimer.swift in Sources */,
 				2060634E2A1C0C860044AC81 /* FactoidView.swift in Sources */,
 				201E65592A17E994005404B9 /* GameModel.swift in Sources */,
 				201E65642A199775005404B9 /* Play.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		20E4AD282A24518100E42A2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E4AD2F2A24518100E42A2F /* DailyPuzzlesPlusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20E4AD312A24518100E42A2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20292BF629F2104C00C51913 /* DailyPuzzlesPlus */;
+			targetProxy = 20E4AD302A24518100E42A2F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		20292C0329F2104E00C51913 /* Debug */ = {
@@ -558,12 +650,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DailyPuzzlesPlus/DailyPuzzlesPlus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyPuzzlesPlus/Preview Content\"";
 				DEVELOPMENT_TEAM = BGR2CU5KFK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyPuzzlesPlus/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -587,12 +681,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DailyPuzzlesPlus/DailyPuzzlesPlus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyPuzzlesPlus/Preview Content\"";
 				DEVELOPMENT_TEAM = BGR2CU5KFK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyPuzzlesPlus/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -608,6 +704,42 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		20E4AD332A24518100E42A2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BGR2CU5KFK;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = blacklabs.DailyPuzzlesPlusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyPuzzlesPlus.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DailyPuzzlesPlus";
+			};
+			name = Debug;
+		};
+		20E4AD342A24518100E42A2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BGR2CU5KFK;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = blacklabs.DailyPuzzlesPlusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyPuzzlesPlus.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DailyPuzzlesPlus";
 			};
 			name = Release;
 		};
@@ -628,6 +760,15 @@
 			buildConfigurations = (
 				20292C0629F2104E00C51913 /* Debug */,
 				20292C0729F2104E00C51913 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20E4AD322A24518100E42A2F /* Build configuration list for PBXNativeTarget "DailyPuzzlesPlusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20E4AD332A24518100E42A2F /* Debug */,
+				20E4AD342A24518100E42A2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

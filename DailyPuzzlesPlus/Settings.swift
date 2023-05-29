@@ -23,7 +23,7 @@ class Settings: ObservableObject {
         let key = "settings_game_order"
         if let data = UserDefaults.standard.object(forKey: key) as? Data,
         let orderedGames = try? JSONDecoder().decode([GameDescriptor].self, from: data) {
-            return orderedGames
+            return orderedGames.filter { Settings.isGameOn($0) }
         }
         return onGames
 #endif

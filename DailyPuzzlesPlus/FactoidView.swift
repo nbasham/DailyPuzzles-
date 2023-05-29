@@ -10,7 +10,6 @@ struct FactoidView: View {
         Text(message)
             //  using .weight will cancel markdown
             .font(.system(size: 18))
-//            .frame(maxWidth: .infinity)
             .minimumScaleFactor(0.1)
             .padding(.horizontal, 0)
             .padding(.top, 8)
@@ -18,12 +17,14 @@ struct FactoidView: View {
             .tint(.primary) // markup links don't show in dark mode, this says make a link look like regular text
 //            .tint(colorScheme == .dark ? .yellow : .blue)
             .multilineTextAlignment(.leading)
-//            .fixedSize(horizontal: false, vertical: false)
             .onAppear {
                 guard !isPreview else { return }
                 message = LocalizedStringKey(service.factoid)
             }
             .onReceive(NotificationCenter.default.publisher(for: .dateChange)) { _ in
+                message = LocalizedStringKey(service.factoid)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: CloudKitDataReceivedNotification)) { _ in
                 message = LocalizedStringKey(service.factoid)
             }
     }

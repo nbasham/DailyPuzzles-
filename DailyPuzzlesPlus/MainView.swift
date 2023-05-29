@@ -59,6 +59,8 @@ struct MainView: View {
     @StateObject var viewModel: MainViewModel
     @Environment(\.safeAreaDefault) var safeAreaDefault
     var safeAreaInsets: EdgeInsets { safeAreaDefault.wrappedValue }
+    @Environment(\.portraitDefault) var portraitDefault
+    var isPortrait: Bool { portraitDefault.wrappedValue }
 
     var body: some View {
         ZStack {

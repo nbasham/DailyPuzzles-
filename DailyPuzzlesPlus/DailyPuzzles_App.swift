@@ -16,6 +16,7 @@ struct DailyPuzzles_App: App {
     @Environment(\.isPreview) var isPreview
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @State private var safeAreaInsets = EdgeInsets()
+    @State private var isPortrait = UIDevice.current.orientation == .portrait
 
     var body: some Scene {
         WindowGroup {
@@ -25,6 +26,7 @@ struct DailyPuzzles_App: App {
                     .environmentObject(settings)
                     .environmentObject(play)
                     .environmentObject(service)
+                    .environment(\.portraitDefault, $isPortrait) // updates env var, including changes e.g. rotation
                     .environment(\.safeAreaDefault, $safeAreaInsets) // updates env var, including changes e.g. rotation
                     .onAppear {
                         if isFirstTime {
@@ -37,9 +39,14 @@ struct DailyPuzzles_App: App {
                             view.backgroundColor = UIColor(named: "background")
                         }
                         safeAreaInsets = geometry.safeAreaInsets
+                        isPortrait = geometry.size.height > geometry.size.width
                     }
                     .onChange(of: geometry.safeAreaInsets) { newInsets in
                         safeAreaInsets = newInsets
+                    }
+                    .onChange(of: geometry.size) { size in
+//                        isPortrait = UIDevice.current.orientation == .portrait
+                        isPortrait = size.height > size.width
                     }
             }
         }
@@ -73,12 +80,20 @@ class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
     }
 }
 
-struct SafeAreaDefault: EnvironmentKey {
-    static var defaultValue: Binding<EdgeInsets> = .constant(EdgeInsets()) {
-        didSet {
-            print("defaultValue \(defaultValue)")
-        }
+struct PortraitDefault: EnvironmentKey {
+//    static var defaultValue: Binding<Bool> = .constant(UIApplication.shared.statusBarOrientation == .portrait)
+    static var defaultValue: Binding<Bool> = .constant(UIDevice.current.orientation == .portrait)
+}
+
+extension EnvironmentValues {
+    var portraitDefault: Binding<Bool> {
+        get { self[PortraitDefault.self] }
+        set { self[PortraitDefault.self] = newValue }
     }
+}
+
+struct SafeAreaDefault: EnvironmentKey {
+    static var defaultValue: Binding<EdgeInsets> = .constant(EdgeInsets())
 }
 
 extension EnvironmentValues {

@@ -1,13 +1,13 @@
 TODO
 Change logo to DailyPuzzles+?
+Add Restore button to order and choose game screens
 Factoids needs a big Tap Here target
 Should we remove CloudKitDataReceivedNotification?
-Add half ball to factoid
-                ZStack(alignment: .topLeading) {
-                    Circle()
-                        .frame(height: viewModel.bottomViewHeight)
-                        .position(x: -viewModel.bottomViewHeight, y: viewModel.bottomViewHeight/2)
-                }
+Move cloud to production
+    import CloudKit
+    CKRecord.subscribeToRecordUpdate(recordType: "FileAssetRecord") { (error) in
+        print(error == nil ? "success" : error?.localizedDescription)
+    }
 
 Remember
 When uploading to app store changed name from DailyPuzzles+ to DailyPuzzlesPlus

@@ -57,6 +57,8 @@ struct MainView: View {
     @Environment(\.isPreview) var isPreview
     @State private var coverScreen: FullCoverPath?
     @StateObject var viewModel: MainViewModel
+    @Environment(\.safeAreaDefault) var safeAreaDefault
+    var safeAreaInsets: EdgeInsets { safeAreaDefault.wrappedValue }
 
     var body: some View {
         ZStack {
@@ -66,7 +68,7 @@ struct MainView: View {
                 gameChooserView
                 Spacer()
                 FactoidView()
-                    .padding(.horizontal)
+                    .padding(.leading, (viewModel.bottomViewHeight + safeAreaInsets.bottom)/2)
                     .padding(.horizontal)
                     .ignoresSafeArea()
                     .frame(maxWidth: .infinity)
@@ -76,6 +78,12 @@ struct MainView: View {
                             .ignoresSafeArea()
                     )
             }
+            Circle()
+                .foregroundColor(Color("top"))
+                .frame(height: viewModel.bottomViewHeight + safeAreaInsets.bottom)
+                .offset(x: -(viewModel.bottomViewHeight + safeAreaInsets.bottom)/2)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+            .ignoresSafeArea()
         }
         .onAppear {
             guard !isPreview else { return }

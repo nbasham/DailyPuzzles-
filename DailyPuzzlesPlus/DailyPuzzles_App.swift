@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-//import CloudKit
 
 @main
 struct DailyPuzzles_App: App {
@@ -16,28 +15,33 @@ struct DailyPuzzles_App: App {
     @StateObject private var play = Play()
     @Environment(\.isPreview) var isPreview
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @State private var safeAreaInsets = EdgeInsets()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(navigator)
-                .environmentObject(settings)
-                .environmentObject(play)
-                .environmentObject(service)
-                .onAppear {
-                    if isFirstTime {
-                        firstTime()
+            GeometryReader { geometry in
+                ContentView()
+                    .environmentObject(navigator)
+                    .environmentObject(settings)
+                    .environmentObject(play)
+                    .environmentObject(service)
+                    .environment(\.safeAreaDefault, $safeAreaInsets) // updates env var, including changes e.g. rotation
+                    .onAppear {
+                        if isFirstTime {
+                            firstTime()
+                        }
+                        guard !isPreview else { return }
+                        if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first,
+                        let view = window.rootViewController?.view {
+                            //  Stop flashing white corners on rotation
+                            view.backgroundColor = UIColor(named: "background")
+                        }
+                        safeAreaInsets = geometry.safeAreaInsets
                     }
-// Do this for production
-//                    CKRecord.subscribeToRecordUpdate(recordType: "FileAssetRecord") { (error) in
-//                        print(error == nil ? "success" : error?.localizedDescription)
-//                    }
-                    guard !isPreview else { return }
-                    //  Stop flashing white corners on rotation
-                    if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first {
-                        window.rootViewController?.view.backgroundColor = UIColor(named: "background")
+                    .onChange(of: geometry.safeAreaInsets) { newInsets in
+                        safeAreaInsets = newInsets
                     }
-                }
+            }
         }
     }
 
@@ -67,5 +71,20 @@ class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         CloudKitObserver.handleRemoteNotification(userInfo: userInfo)
+    }
+}
+
+struct SafeAreaDefault: EnvironmentKey {
+    static var defaultValue: Binding<EdgeInsets> = .constant(EdgeInsets()) {
+        didSet {
+            print("defaultValue \(defaultValue)")
+        }
+    }
+}
+
+extension EnvironmentValues {
+    var safeAreaDefault: Binding<EdgeInsets> {
+        get { self[SafeAreaDefault.self] }
+        set { self[SafeAreaDefault.self] = newValue }
     }
 }

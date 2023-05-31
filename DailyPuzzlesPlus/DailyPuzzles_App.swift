@@ -67,6 +67,7 @@ struct DailyPuzzles_App: App {
         print("First Time")
         CloudKitObserver.fetchCloudKitResources()
         CloudKitObserver.moveDefaultsToAppSupportDir()
+        UserDefaults.standard.set(Date(), forKey: "dailypuzzlesplus_first_day")
     }
 }
 

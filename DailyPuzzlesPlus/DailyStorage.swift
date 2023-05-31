@@ -35,11 +35,11 @@ struct DailyStorage {
     }
 
     static func isCompleted(game: GameDescriptor) -> Bool {
-        UserDefaults.daily.value(forKey: key(game: game)) != nil
+        UserDefaults.daily.object(forKey: key(game: game)) != nil
     }
 
-    static func allCompleted(games: [GameDescriptor]) -> Bool {
-        for game in games {
+    static func allCompleted() -> Bool {
+        for game in Settings.onGames() {
             if !isCompleted(game: game) {
                 return false
             }

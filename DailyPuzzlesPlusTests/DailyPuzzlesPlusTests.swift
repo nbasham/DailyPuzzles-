@@ -16,7 +16,7 @@ final class DailyPuzzlesPlusTests: XCTestCase {
     override func tearDownWithError() throws {
     }
 
-    func testExample() throws {
+    func testFile() throws {
         AppSupportFile.save(lines, fileName: "test.txt")
         let readLines = AppSupportFile.load("test.txt") as? [String]
         XCTAssertEqual(lines, readLines)

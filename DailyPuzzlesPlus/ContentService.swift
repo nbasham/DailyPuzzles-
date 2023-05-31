@@ -21,8 +21,9 @@ final class ContentService: ObservableObject {
     }
 */
     var factoid: String {
+        guard !DailyStorage.allCompleted() else { return "Congratulations, you've solved today's puzzles! More at midnight..." }
         let timer = CodeTimer()
-        let factoidUpdates = AppSupportFile.load("factoidUpdates.txt") as? [String] //?? Bundle.lines(from: "factoidUpdates")
+        let factoidUpdates = AppSupportFile.load("factoidUpdates.txt") as? [String] ?? Bundle.lines(from: "factoidUpdates")
         if let update = factoidUpdates?.first(where: { str in
             str.starts(with: Date.yymmdd)
         }) {

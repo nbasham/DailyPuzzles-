@@ -88,3 +88,9 @@ struct MenuItem: View {
         } )
     }
 }
+
+extension NSNotification.Name {
+    static let contact = NSNotification.Name("contact")
+    static let help = NSNotification.Name("help")
+    static let history = NSNotification.Name("history")
+}

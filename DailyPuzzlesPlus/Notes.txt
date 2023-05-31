@@ -1,8 +1,8 @@
 TODO
 Change logo to DailyPuzzles+?
-Add Restore button to order and choose game screens
 Factoids needs a big Tap Here target
-Should we remove CloudKitDataReceivedNotification?
+Factoid update allow for url
+History/Streak Viewer
 Move cloud to production
     import CloudKit
     CKRecord.subscribeToRecordUpdate(recordType: "FileAssetRecord") { (error) in

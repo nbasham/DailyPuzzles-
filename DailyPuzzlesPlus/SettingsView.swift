@@ -20,6 +20,13 @@ struct SettingsView: View {
                 NavigationLink("Order games", destination: SettingsGameOrderView(data: Settings.onGames()))
                     .accentColor(Color("top"))
                 Toggle("Show incorrect guesses", isOn: settings.$showIncorrect)
+                VStack {
+                    Toggle("Dark mode", isOn: settings.$darkMode)
+                    Text("Choosing 'dark mode' sets it to always on, otherwise 'dark mode' is determeined by the system's settings.")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .infinity)
+                }
                 Toggle("Show timer", isOn: settings.$timerOn)
                 Toggle("Play sounds", isOn: $play.soundOn)
                 VStack(spacing: 4) {

@@ -22,6 +22,7 @@ struct DailyPuzzles_App: App {
         WindowGroup {
             GeometryReader { geometry in
                 ContentView()
+                    .preferredColorScheme(settings.darkMode ? .dark : nil)
                     .environmentObject(navigator)
                     .environmentObject(settings)
                     .environmentObject(play)

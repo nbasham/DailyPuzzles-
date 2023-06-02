@@ -11,7 +11,16 @@ class Settings: ObservableObject {
             }
         }
     }
+
     @AppStorage("showIncorrect") var showIncorrect: Bool = true {
+        willSet {
+            DispatchQueue.main.async {
+                self.objectWillChange.send()
+            }
+        }
+    }
+
+    @AppStorage("darkMode") var darkMode: Bool = false {
         willSet {
             DispatchQueue.main.async {
                 self.objectWillChange.send()

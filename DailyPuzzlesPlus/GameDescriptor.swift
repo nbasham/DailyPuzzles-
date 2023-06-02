@@ -52,7 +52,27 @@ enum GameDescriptor: String, Identifiable, Codable {
         } // next color ff00ff
     }
 
+    @MainActor
+    @ViewBuilder
     func view(host: GameHost, size: CGSize) -> some View {
-        CryptogramView(host: host, size: size)
+        switch self {
+
+            case .cryptogram:
+                CryptogramView(host: host, size: size)
+            case .crypto_families:
+                CryptogramView(host: host, size: size)
+            case .quotefalls:
+                CryptogramView(host: host, size: size)
+            case .sudoku:
+                CryptogramView(host: host, size: size)
+            case .word_search:
+                CryptogramView(host: host, size: size)
+            case .memory:
+                MemoryView(viewModel: MemoryViewModel(host: host, size: size))
+            case .triplets:
+                CryptogramView(host: host, size: size)
+            case .sample_game:
+                CryptogramView(host: host, size: size)
+        }
     }
 }

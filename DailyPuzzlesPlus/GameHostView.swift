@@ -1,6 +1,7 @@
 import SwiftUI
 
 protocol GameHost {
+    //  why does game need GameDescriptor? it knows what it is
     var game: GameDescriptor { get }
     func didSolve()
     func incMisses()

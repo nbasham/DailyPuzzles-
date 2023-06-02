@@ -197,6 +197,7 @@
 		2012DE462A27E2B800BB2DB5 /* games */ = {
 			isa = PBXGroup;
 			children = (
+				2012DE4C2A2AB5EF00BB2DB5 /* cryptogram */,
 				2012DE472A27E2C300BB2DB5 /* memory */,
 			);
 			path = games;
@@ -209,6 +210,14 @@
 				2012DE4A2A27E8C900BB2DB5 /* memory.xcassets */,
 			);
 			path = memory;
+			sourceTree = "<group>";
+		};
+		2012DE4C2A2AB5EF00BB2DB5 /* cryptogram */ = {
+			isa = PBXGroup;
+			children = (
+				209025422A104EA4004B6790 /* CryptogramView.swift */,
+			);
+			path = cryptogram;
 			sourceTree = "<group>";
 		};
 		201E65652A199888005404B9 /* Sounds */ = {
@@ -301,7 +310,6 @@
 				20E4AD262A244EF300E42A2F /* CodeTimer.swift */,
 				209AAA7B2A2290630072B17D /* ContentService.swift */,
 				20292BFC29F2104C00C51913 /* ContentView.swift */,
-				209025422A104EA4004B6790 /* CryptogramView.swift */,
 				20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */,
 				2060634B2A1C06640044AC81 /* DailyStorage.swift */,
 				2060632C2A1AE4240044AC81 /* EmailView.swift */,

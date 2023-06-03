@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2012DE492A27E2D600BB2DB5 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2012DE482A27E2D600BB2DB5 /* MemoryView.swift */; };
 		2012DE4B2A27E8C900BB2DB5 /* memory.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2012DE4A2A27E8C900BB2DB5 /* memory.xcassets */; };
+		2012DE502A2AB9D400BB2DB5 /* AlreadySelected.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2012DE4E2A2AB9D400BB2DB5 /* AlreadySelected.aiff */; };
 		201E65572A17E535005404B9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E65562A17E535005404B9 /* Extension.swift */; };
 		201E65592A17E994005404B9 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E65582A17E994005404B9 /* GameModel.swift */; };
 		201E655B2A190A00005404B9 /* SecondsTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E655A2A190A00005404B9 /* SecondsTimer.swift */; };
@@ -96,6 +97,7 @@
 /* Begin PBXFileReference section */
 		2012DE482A27E2D600BB2DB5 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
 		2012DE4A2A27E8C900BB2DB5 /* memory.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = memory.xcassets; sourceTree = "<group>"; };
+		2012DE4E2A2AB9D400BB2DB5 /* AlreadySelected.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = AlreadySelected.aiff; sourceTree = "<group>"; };
 		201E65562A17E535005404B9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		201E65582A17E994005404B9 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		201E655A2A190A00005404B9 /* SecondsTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondsTimer.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				2012DE482A27E2D600BB2DB5 /* MemoryView.swift */,
 				2012DE4A2A27E8C900BB2DB5 /* memory.xcassets */,
+				2012DE4D2A2AB9D400BB2DB5 /* sounds */,
 			);
 			path = memory;
 			sourceTree = "<group>";
@@ -218,6 +221,14 @@
 				209025422A104EA4004B6790 /* CryptogramView.swift */,
 			);
 			path = cryptogram;
+			sourceTree = "<group>";
+		};
+		2012DE4D2A2AB9D400BB2DB5 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				2012DE4E2A2AB9D400BB2DB5 /* AlreadySelected.aiff */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 		201E65652A199888005404B9 /* Sounds */ = {
@@ -485,6 +496,7 @@
 				201E65982A199888005404B9 /* Hint.aiff in Resources */,
 				201E65AE2A199888005404B9 /* Harp13.aiff in Resources */,
 				201E65A92A199888005404B9 /* Harp4.aiff in Resources */,
+				2012DE502A2AB9D400BB2DB5 /* AlreadySelected.aiff in Resources */,
 				2012DE4B2A27E8C900BB2DB5 /* memory.xcassets in Resources */,
 				201E65AA2A199888005404B9 /* Harp18.aiff in Resources */,
 				201E65B52A199888005404B9 /* Marker.aiff in Resources */,

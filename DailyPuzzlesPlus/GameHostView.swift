@@ -6,6 +6,8 @@ protocol GameHost {
     func didSolve()
     func incMisses()
     func incHints()
+    func prepareSound(soundName: String)
+    func playSound(soundName: String)
     func playTap()
     func playHighlight()
     func playIncorrect()
@@ -72,6 +74,8 @@ struct GameHostView: View, GameHost {
 
     func incMisses() { viewModel.incMisses() }
     func incHints() { viewModel.incHints() }
+    func prepareSound(soundName: String) { play.prepare(soundName) }
+    func playSound(soundName: String) { play.play(soundName) }
     func playTap() { play.tap() }
     func playHighlight() { play.highlight() }
     func playIncorrect() { play.incorrect() }

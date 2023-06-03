@@ -14,7 +14,6 @@ enum Level: Int {
 @MainActor
 class MemoryViewModel: ObservableObject {
     let host: GameHost
-//    let size: CGSize
     let level: Level
     let cards: [Card]
     @Published var numCols = 0
@@ -26,10 +25,14 @@ class MemoryViewModel: ObservableObject {
 
     init(host: GameHost, size: CGSize, level: Level = .easy) {
         self.host = host
-//        self.size = size
         self.level = level
         cards = Card.sample(level: level)
         update(size: size)
+        host.prepareSound(soundName: "AlreadySelected")
+    }
+
+    func playAlreadySelected() {
+        host.playSound(soundName: "AlreadySelected")
     }
 
     func update(size: CGSize) {
@@ -57,6 +60,7 @@ struct MemoryView: View {
                 LazyVGrid(columns: Array(repeating: .init(), count: viewModel.numCols), spacing: viewModel.spacing) {
                     ForEach(viewModel.cards, id: \.id) { card in
                         MemoryCardView()
+                            .environmentObject(viewModel)
                             .aspectRatio(viewModel.cardAspectRatio, contentMode: .fit)
                             .frame(width: viewModel.cardWidth)
                             .frame(height: viewModel.cardHeight)
@@ -145,6 +149,7 @@ struct MemoryView_Previews: PreviewProvider {
 
 
 struct MemoryCardView: View {
+    @EnvironmentObject var viewModel: MemoryViewModel
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
@@ -175,6 +180,7 @@ struct MemoryCardView: View {
             BackView(degree: $backDegree)
         }
         .onTapGesture {
+            viewModel.playAlreadySelected()
             flipCard ()
         }
     }

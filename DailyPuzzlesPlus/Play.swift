@@ -15,6 +15,7 @@ class Play: ObservableObject {
     private let correctSound: Sound?
     private let hintSound: Sound?
     private let eraseSound: Sound?
+    private var gameSounds: [String: Sound] = [:]
 
     init() {
         tapSound = Play.load("Touch")
@@ -38,6 +39,21 @@ class Play: ObservableObject {
     private func _play(_ sound: Sound?) {
         sound?.volume = Float(soundVolume)
         sound?.play()
+    }
+
+    func prepare(_ soundName: String) {
+        guard gameSounds[soundName] == nil else { return }
+        if let sound = Play.load(soundName) {
+            gameSounds[soundName] = sound
+        }
+    }
+
+    func play(_ soundName: String) {
+        if let sound = gameSounds[soundName] {
+            _play(sound)
+        } else {
+            print("\(soundName) not found, be sure you called prepare.")
+        }
     }
 
     func tap() { _play(tapSound) }

@@ -52,6 +52,27 @@ enum GameDescriptor: String, Identifiable, Codable {
         } // next color ff00ff
     }
 
+    var hasLevels: Bool {
+        switch self {
+            case .cryptogram:
+                return false
+            case .crypto_families:
+                return false
+            case .quotefalls:
+                return false
+            case .sudoku:
+                return true
+            case .word_search:
+                return true
+            case .memory:
+                return true
+            case .triplets:
+                return true
+            case .sample_game:
+                return false
+        } // next color ff00ff
+    }
+
     @MainActor
     @ViewBuilder
     func view(host: GameHost, size: CGSize) -> some View {

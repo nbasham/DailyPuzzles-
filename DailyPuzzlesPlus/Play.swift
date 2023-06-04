@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftySound
 
+@MainActor
 //  https://swiftpackageindex.com/adamcichy/SwiftySound
 class Play: ObservableObject {
     @Published var soundVolume: Double = 1.0
@@ -28,7 +29,7 @@ class Play: ObservableObject {
     }
 
     private static func load(_ name: String) -> Sound? {
-        if let url = Bundle.main.url(forResource: name, withExtension: "aiff"),
+       if let url = Bundle.main.url(forResource: name, withExtension: "aiff"),
            let sound = Sound(url: url) {
             return sound
         }
@@ -37,14 +38,23 @@ class Play: ObservableObject {
     }
 
     private func _play(_ sound: Sound?) {
-        sound?.volume = Float(soundVolume)
-        sound?.play()
+        if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+        } else {
+            guard UserDefaults.standard.object(forKey: "isPreview") as? Bool == false else { return }
+            sound?.volume = Float(soundVolume)
+            sound?.play()
+        }
     }
 
     func prepare(_ soundName: String) {
-        guard gameSounds[soundName] == nil else { return }
-        if let sound = Play.load(soundName) {
-            gameSounds[soundName] = sound
+        if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+            print("Ignoring Play.prepare() for previews")
+        } else {
+            print("Play.prepare() is implemented")
+            guard gameSounds[soundName] == nil else { return }
+            if let sound = Play.load(soundName) {
+                gameSounds[soundName] = sound
+            }
         }
     }
 

@@ -33,6 +33,9 @@ struct DailyPuzzles_App: App {
                         if isFirstTime {
                             firstTime()
                         }
+                        // Since env vars can only be accessed without warning from View, we set a flag that view models or any other ObservableObject can use
+                        UserDefaults.standard.set(false, forKey: "isPreview")
+                        UserDefaults.standard.set(isPreview, forKey: "isPreview")
                         guard !isPreview else { return }
                         if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first,
                         let view = window.rootViewController?.view {

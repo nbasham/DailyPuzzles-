@@ -87,7 +87,7 @@ struct GameHostView: View, GameHost {
 struct GameHostView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            GameHostView(viewModel: GameHostViewModel(game: .quotefalls))
+            GameHostView(viewModel: GameHostViewModel(game: .memory))
                 .environmentObject(Navigator())
                 .environmentObject(Settings())
                 .environmentObject(Play())

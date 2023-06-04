@@ -50,9 +50,10 @@ class MemoryViewModel: ObservableObject {
 }
 
 struct MemoryView: View {
-    @ObservedObject var viewModel: MemoryViewModel
+    @StateObject var viewModel: MemoryViewModel
     @Environment(\.portraitDefault) var portraitDefault
     var isPortrait: Bool { portraitDefault.wrappedValue }
+    let isPad = UIDevice.current.userInterfaceIdiom == .pad
 
     var body: some View {
         VStack {
@@ -61,7 +62,7 @@ struct MemoryView: View {
                     ForEach(viewModel.cards, id: \.id) { card in
                         MemoryCardView()
                             .environmentObject(viewModel)
-                            .aspectRatio(viewModel.cardAspectRatio, contentMode: .fit)
+                            .aspectRatio(isPad ? 1 : viewModel.cardAspectRatio, contentMode: .fit)
                             .frame(width: viewModel.cardWidth)
                             .frame(height: viewModel.cardHeight)
                     }
@@ -83,13 +84,14 @@ struct Card: Identifiable {
     }
 
     static func spacing(level: Level, isPortrait: Bool) -> CGFloat {
+        let isPad = UIDevice.current.userInterfaceIdiom == .pad
         switch level {
             case .easy:
-                return 12
+                return isPad ? (isPortrait ? 24 : 12) : 12
             case .medium:
-                return 16
+                return isPad ? 16 : 16
             case .hard:
-                return 12
+                return isPad ? 12 : 12
         }
     }
 
@@ -137,12 +139,23 @@ struct Card: Identifiable {
 }
 struct MemoryView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack {
-            GeometryReader { proxy in
-                MemoryView(viewModel: MemoryViewModel(host: GameHostView(viewModel: GameHostViewModel(game: .memory)), size: CGSize(width: 100, height: 100)))
-                    .padding()
-                    .padding(.top)
-            }
+        let host = GameHostView(viewModel: GameHostViewModel(game: .memory))
+        host.environmentObject(Play())
+        host.environmentObject(Settings())
+        Group {
+            MemoryView(viewModel: MemoryViewModel(host: host, size: CGSize(width: 320, height: 500)))
+                .environmentObject(Play())
+                .environmentObject(Settings())
+                .previewInterfaceOrientation(.portrait)
+                .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
+                .previewDisplayName("iPhone 14")
+
+            MemoryView(viewModel: MemoryViewModel(host: host, size: CGSize(width: 500, height: 300)))
+                .environmentObject(Play())
+                .environmentObject(Settings())
+                .previewInterfaceOrientation(.landscapeRight)
+                .previewDisplayName("iPhone 14 landscape")
+                .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
         }
     }
 }
@@ -153,7 +166,7 @@ struct MemoryCardView: View {
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
-    let durationAndDelay : CGFloat = 0.3
+    let durationAndDelay : CGFloat = 0.18
 
     func flipCard () {
         isFlipped = !isFlipped

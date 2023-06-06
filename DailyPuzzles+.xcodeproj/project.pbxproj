@@ -373,7 +373,7 @@
 		200FC0112A2EE6A6002A4175 /* nicubunu-Toy-rocket-800px.png in Resources */ = {isa = PBXBuildFile; fileRef = 200FBEA62A2EE6A6002A4175 /* nicubunu-Toy-rocket-800px.png */; };
 		200FC0152A2EE6FA002A4175 /* factoids.txt in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0132A2EE6FA002A4175 /* factoids.txt */; };
 		200FC0162A2EE6FA002A4175 /* factoidUpdates.txt in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0142A2EE6FA002A4175 /* factoidUpdates.txt */; };
-		200FC01A2A2EEA05002A4175 /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 200FC0192A2EEA05002A4175 /* SwiftySound */; };
+		200FC01D2A2F007B002A4175 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC01C2A2F007B002A4175 /* Sound.swift */; };
 		2012DE492A27E2D600BB2DB5 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2012DE482A27E2D600BB2DB5 /* MemoryView.swift */; };
 		2012DE4B2A27E8C900BB2DB5 /* memory.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2012DE4A2A27E8C900BB2DB5 /* memory.xcassets */; };
 		201E65572A17E535005404B9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E65562A17E535005404B9 /* Extension.swift */; };
@@ -784,6 +784,7 @@
 		200FC0132A2EE6FA002A4175 /* factoids.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = factoids.txt; sourceTree = "<group>"; };
 		200FC0142A2EE6FA002A4175 /* factoidUpdates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = factoidUpdates.txt; sourceTree = "<group>"; };
 		200FC01B2A2EEA7B002A4175 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		200FC01C2A2F007B002A4175 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
 		2012DE482A27E2D600BB2DB5 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
 		2012DE4A2A27E8C900BB2DB5 /* memory.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = memory.xcassets; sourceTree = "<group>"; };
 		201E65562A17E535005404B9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -826,7 +827,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				200FC01A2A2EEA05002A4175 /* SwiftySound in Frameworks */,
 				206063302A1B0F7C0044AC81 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1322,6 +1322,7 @@
 				2085A1702A1DB343004E601F /* SettingsGameChooserView.swift */,
 				2085A1722A1E859A004E601F /* SettingsGameOrderView.swift */,
 				201E655E2A195845005404B9 /* SettingsView.swift */,
+				200FC01C2A2F007B002A4175 /* Sound.swift */,
 				20292BFE29F2104E00C51913 /* Assets.xcassets */,
 				209AAA7F2A2298640072B17D /* Notes.txt */,
 				200FC01B2A2EEA7B002A4175 /* .gitignore */,
@@ -1362,7 +1363,6 @@
 			);
 			name = DailyPuzzlesPlus;
 			packageProductDependencies = (
-				200FC0192A2EEA05002A4175 /* SwiftySound */,
 			);
 			productName = "DailyPuzzles+";
 			productReference = 20292BF729F2104C00C51913 /* DailyPuzzlesPlus.app */;
@@ -1415,7 +1415,6 @@
 			);
 			mainGroup = 20292BEE29F2104C00C51913;
 			packageReferences = (
-				200FC0182A2EEA05002A4175 /* XCRemoteSwiftPackageReference "SwiftySound" */,
 			);
 			productRefGroup = 20292BF829F2104C00C51913 /* Products */;
 			projectDirPath = "";
@@ -1834,6 +1833,7 @@
 				209025372A0ED7B5004B6790 /* MainView.swift in Sources */,
 				200FBD382A2EE634002A4175 /* GameLevel.swift in Sources */,
 				2060632D2A1AE4240044AC81 /* EmailView.swift in Sources */,
+				200FC01D2A2F007B002A4175 /* Sound.swift in Sources */,
 				209025412A104CD2004B6790 /* MainToolbarView.swift in Sources */,
 				201E655B2A190A00005404B9 /* SecondsTimer.swift in Sources */,
 				2060632B2A1AC3A30044AC81 /* MainBallView.swift in Sources */,
@@ -2106,25 +2106,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		200FC0182A2EEA05002A4175 /* XCRemoteSwiftPackageReference "SwiftySound" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/adamcichy/SwiftySound.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		200FC0192A2EEA05002A4175 /* SwiftySound */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 200FC0182A2EEA05002A4175 /* XCRemoteSwiftPackageReference "SwiftySound" */;
-			productName = SwiftySound;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 20292BEF29F2104C00C51913 /* Project object */;
 }

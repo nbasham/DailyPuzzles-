@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftySound
 
 @MainActor
 //  https://swiftpackageindex.com/adamcichy/SwiftySound

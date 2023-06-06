@@ -8,7 +8,7 @@ let CloudKitDataReceivedNotification = Notification.Name(rawValue: "CloudKitData
 class CloudKitObserver: NSObject {
     
     internal static let CLOUD_KIT_ASSET_NAME = "data"
-    internal static let CLOUD_KIT_RESOURCES = ["factoids", "factoidUpdates"]
+    internal static let CLOUD_KIT_RESOURCES = ["factoids", "factoidUpdates", "memory_puzzles_easy", "memory_puzzles_medium", "memory_puzzles_hard", "memoryImageFileNames"]
 //    internal static let CLOUD_KIT_RESOURCES = ["cryptogram_year", "cryptofamilies_year", "memory_year", "quotefalls_year", "sudoku_year", "wordsearch", "factoids_year", "factoid_updates"]
 
     fileprivate static func isKnownRecordName(_ name: String) -> Bool {

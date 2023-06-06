@@ -7,14 +7,10 @@
 
 import SwiftUI
 
-enum Level: Int {
-    case easy = 1, medium = 2, hard = 3
-}
-
 @MainActor
 class MemoryViewModel: ObservableObject {
     let host: GameHost
-    let level: Level
+    let level: GameLevel
     let cards: [Card]
     @Published var numCols = 0
     @Published var numRows = 0
@@ -23,12 +19,20 @@ class MemoryViewModel: ObservableObject {
     @Published var cardHeight: CGFloat = 4
     @Published var cardAspectRatio: CGFloat = 64 / 94
 
-    init(host: GameHost, size: CGSize, level: Level = .easy) {
+    init(host: GameHost, size: CGSize, level: GameLevel = .easy) {
         self.host = host
         self.level = level
         cards = Card.sample(level: level)
         update(size: size)
         host.prepareSound(soundName: "AlreadySelected")
+        /*
+         let lines = Bundle.lines(from: "memoryImageFileNames")
+         for line in lines! {
+         if UIImage(named: line) == nil {
+         print(line)
+         }
+         }
+         */
     }
 
     func playAlreadySelected() {
@@ -83,7 +87,7 @@ struct Card: Identifiable {
         isPortrait ? 64 / 94 :  94 / 64
     }
 
-    static func spacing(level: Level, isPortrait: Bool) -> CGFloat {
+    static func spacing(level: GameLevel, isPortrait: Bool) -> CGFloat {
         let isPad = UIDevice.current.userInterfaceIdiom == .pad
         switch level {
             case .easy:
@@ -95,7 +99,7 @@ struct Card: Identifiable {
         }
     }
 
-    static func numRows(level: Level, isPortrait: Bool) -> Int {
+    static func numRows(level: GameLevel, isPortrait: Bool) -> Int {
         switch level {
             case .easy:
                 return isPortrait ? 4 : 3
@@ -106,7 +110,7 @@ struct Card: Identifiable {
         }
     }
 
-    static func numCols(level: Level, isPortrait: Bool) -> Int {
+    static func numCols(level: GameLevel, isPortrait: Bool) -> Int {
         switch level {
             case .easy:
                 return isPortrait ? 3 : 4
@@ -117,7 +121,7 @@ struct Card: Identifiable {
         }
     }
 
-    static func sample(level: Level) -> [Card] {
+    static func sample(level: GameLevel) -> [Card] {
         switch level {
             case .easy:
                 return sampleEasy
@@ -160,7 +164,7 @@ struct MemoryView_Previews: PreviewProvider {
     }
 }
 
-
+//  https://betterprogramming.pub/card-flip-animation-in-swiftui-45d8b8210a00
 struct MemoryCardView: View {
     @EnvironmentObject var viewModel: MemoryViewModel
     @State var backDegree = 0.0

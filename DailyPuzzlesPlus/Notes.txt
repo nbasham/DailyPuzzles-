@@ -11,3 +11,7 @@ Move cloud to production
 
 Remember
 When uploading to app store changed name from DailyPuzzles+ to DailyPuzzlesPlus
+
+Why DP+
+Levels for certain games
+

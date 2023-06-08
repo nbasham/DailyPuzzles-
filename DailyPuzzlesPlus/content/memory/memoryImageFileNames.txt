@@ -133,7 +133,7 @@ Palette-and-brush-800px.png
 lute.png
 cyborg-alien-green-800px.png
 Eimer-800px.png
-TheresaKnott-Red-Shoe-800px.png
+theresaKnott-Red-Shoe-800px.png
 Purple-Cartoon-Cat-800px.png
 convertible.png
 chicken leg.png
@@ -146,7 +146,7 @@ Purple-Monster-800px.png
 StudioFibonacci-Cartoon-monsters-1-800px.png
 tree.png
 stuuf-Flowers-800px.png
-Pferd-coloured-800px.png
+pferd-coloured-800px.png
 Popsicle-Red-800px.png
 Purple-Popsicle-Monster-800px.png
 Daisy5-800px.png
@@ -174,7 +174,7 @@ trex-800px.png
 branch-800px.png
 RobGTX-Cardinal-remix-2-plain-800px.png
 moon.png
-Schuhe-coloured-800px.png
+schuhe-coloured-800px.png
 pinkrabbit-800px.png
 internet-cloud-800px.png
 maweki-Nimm2-type-candy-800px.png
@@ -190,7 +190,7 @@ scissors.png
 xmas03-800px.png
 chick.png
 sun2.png
-Biene-800px.png
+biene-800px.png
 cat.png
 Super-Fish-800px.png
 UFO-800px.png
@@ -216,7 +216,7 @@ Planet-800px.png
 donkey-pegasus2-800px.png
 Kamel-800px.png
 tiothy-bluething-800px.png
-DooFi-Piggybank-800px.png
+dooFi-Piggybank-800px.png
 dahlia.png
 KofferV3-800px.png
 pot-of-gold-800px.png
@@ -267,7 +267,7 @@ aubagine-800px.png
 Gerald-G-Soft-Ice-Cream-Cones-FF-Menu-800px.png
 Schlange-800px.png
 Bird-800px.png
-Schwan-800px.png
+schwan-800px.png
 globe-310324-800px.png
 bananas.png
 jaguar-800px.png
@@ -296,7 +296,7 @@ tennis ball.png
 Gerald-G-Fast-Food-Drinks-FF-Menu-4-800px.png
 StudioFibonacci-Cartoon-Grasshopper-800px.png
 aboy-800px.png
-Pfirsich-coloured-800px.png
+pfirsich-coloured-800px.png
 Tasche-800px.png
 bell.png
 three.png
@@ -338,9 +338,9 @@ sun3.png
 Palm-Tree-800px.png
 placidoaps-cactus-800px.png
 fox.png
-Schnecke-800px.png
+schnecke-800px.png
 drops.png
-Wiege-coloured-800px.png
+wiege-coloured-800px.png
 ladybug.png
 simple-apple-800px.png
 dog3.png

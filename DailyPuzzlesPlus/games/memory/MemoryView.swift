@@ -1,19 +1,61 @@
-//
-//  MemoryView.swift
-//  DailyPuzzlesPlus
-//
-//  Created by Norman Basham on 5/31/23.
-//
-
 import SwiftUI
+
+class MemoryPuzzle: ObservableObject {
+    @Published var numRows: Int
+    @Published var numCols: Int
+    var numCards: Int { numCols * numRows }
+    let imageNames: [String]
+    let level: GameLevel
+//    static private let allImageNames = Data.toString("memoryImageFileNames.txt")!.toLines
+    static private let allImageNames = Data.toString("memorySymbolNames.txt")!.toLines
+
+    subscript(index: Int) -> String {
+        return imageNames[index] // ?? Image(systemName: "photo.fill")
+    }
+
+    init(id: String, puzzleString: String, level: GameLevel) {
+        self.level = level
+        let indexes = puzzleString.components(separatedBy: ",").map { Int($0)!}
+        imageNames = indexes.map { MemoryPuzzle.allImageNames[$0] }
+        numRows = MemoryPuzzle.numRows(level: level, isPortrait: UIDevice.current.orientation == .portrait)
+        numCols = MemoryPuzzle.numCols(level: level, isPortrait: UIDevice.current.orientation == .portrait)
+    }
+
+    func update(isPortrait: Bool) {
+        numRows = MemoryPuzzle.numRows(level: level, isPortrait: isPortrait)
+        numCols = MemoryPuzzle.numCols(level: level, isPortrait: isPortrait)
+    }
+
+    static func numRows(level: GameLevel, isPortrait: Bool) -> Int {
+        switch level {
+            case .easy:
+                return isPortrait ? 4 : 3
+            case .medium:
+                return isPortrait ? 6 : 4
+            case .hard:
+                return isPortrait ? 8 : 5
+        }
+    }
+
+    static func numCols(level: GameLevel, isPortrait: Bool) -> Int {
+        switch level {
+            case .easy:
+                return isPortrait ? 3 : 4
+            case .medium:
+                return isPortrait ? 4 : 6
+            case .hard:
+                return isPortrait ? 5 : 8
+        }
+    }
+}
 
 @MainActor
 class MemoryViewModel: ObservableObject {
     let host: GameHost
     let level: GameLevel
     let cards: [Card]
-    @Published var numCols = 0
-    @Published var numRows = 0
+    @Published var puzzle: MemoryPuzzle
+//    @Published var numRows = 0
     @Published var spacing: CGFloat = 12
     @Published var cardWidth: CGFloat = 4
     @Published var cardHeight: CGFloat = 4
@@ -23,16 +65,9 @@ class MemoryViewModel: ObservableObject {
         self.host = host
         self.level = level
         cards = Card.sample(level: level)
+        puzzle = MemoryPuzzle(id: "id", puzzleString: "239,145,330,337,239,21,330,57,337,57,145,21", level: .easy)
         update(size: size)
         host.prepareSound(soundName: "AlreadySelected")
-        /*
-         let lines = Bundle.lines(from: "memoryImageFileNames")
-         for line in lines! {
-         if UIImage(named: line) == nil {
-         print(line)
-         }
-         }
-         */
     }
 
     func playAlreadySelected() {
@@ -43,12 +78,10 @@ class MemoryViewModel: ObservableObject {
         let isPortrait = size.width < size.height
         cardAspectRatio = Card.aspectRatio(isPortrait: isPortrait)
         spacing = Card.spacing(level: level, isPortrait: isPortrait)
-        print(cardAspectRatio)
-        numCols = Card.numCols(level: level, isPortrait: isPortrait)
-        numRows = Card.numRows(level: level, isPortrait: isPortrait)
-        cardWidth = (size.width - CGFloat(numCols-1)*CGFloat(spacing/2)) / CGFloat(numCols) - 1
+        puzzle.update(isPortrait: isPortrait)
+        cardWidth = (size.width - CGFloat(puzzle.numCols-1)*CGFloat(spacing/2)) / CGFloat(puzzle.numCols) - 1
         cardWidth = max(0, cardWidth)
-        cardHeight = (size.height - CGFloat(numRows+1)*CGFloat(spacing)) / CGFloat(numRows) - 1
+        cardHeight = (size.height - CGFloat(puzzle.numRows+1)*CGFloat(spacing)) / CGFloat(puzzle.numRows) - 1
         cardHeight = max(0, cardHeight)
     }
 }
@@ -62,9 +95,9 @@ struct MemoryView: View {
     var body: some View {
         VStack {
             GeometryReader { proxy in
-                LazyVGrid(columns: Array(repeating: .init(), count: viewModel.numCols), spacing: viewModel.spacing) {
-                    ForEach(viewModel.cards, id: \.id) { card in
-                        MemoryCardView()
+                LazyVGrid(columns: Array(repeating: .init(), count: viewModel.puzzle.numCols), spacing: viewModel.spacing) {
+                    ForEach(0..<viewModel.puzzle.numCards, id: \.self) { index in
+                        MemoryCardView(imageName: viewModel.puzzle[index])
                             .environmentObject(viewModel)
                             .aspectRatio(isPad ? 1 : viewModel.cardAspectRatio, contentMode: .fit)
                             .frame(width: viewModel.cardWidth)
@@ -170,6 +203,7 @@ struct MemoryCardView: View {
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
+    let imageName: String
     let durationAndDelay : CGFloat = 0.18
 
     func flipCard () {
@@ -193,7 +227,7 @@ struct MemoryCardView: View {
 
     var body: some View {
         ZStack {
-            FrontView(degree: $frontDegree)
+            FrontView(imageName: imageName, degree: $frontDegree)
             BackView(degree: $backDegree)
         }
         .onTapGesture {
@@ -204,6 +238,7 @@ struct MemoryCardView: View {
 
 
     struct FrontView : View {
+        let imageName: String
         @Binding var degree : Double
 
         var body: some View {
@@ -214,8 +249,10 @@ struct MemoryCardView: View {
                     .background(RoundedRectangle(cornerRadius: 7)
 .fill(Color(uiColor: UIColor.secondarySystemGroupedBackground)))
 
-                Image(systemName: "suit.club.fill")
+//                Image(uiImage: UIImage(named: imageName)!)
+                Image(systemName: imageName)
                     .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .foregroundColor(GameDescriptor.memory.color)
                     .padding()
             }

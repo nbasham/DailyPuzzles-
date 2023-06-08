@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200EE4A62A30222C00869E7B /* memorySymbolNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = 200EE4A52A301A9000869E7B /* memorySymbolNames.txt */; };
 		200FBD382A2EE634002A4175 /* GameLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FBD372A2EE634002A4175 /* GameLevel.swift */; };
 		200FBEA72A2EE6A6002A4175 /* memory_puzzles_hard.txt in Resources */ = {isa = PBXBuildFile; fileRef = 200FBD3A2A2EE6A5002A4175 /* memory_puzzles_hard.txt */; };
 		200FBEA82A2EE6A6002A4175 /* ContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FBD3B2A2EE6A5002A4175 /* ContentService.swift */; };
@@ -374,6 +375,46 @@
 		200FC0152A2EE6FA002A4175 /* factoids.txt in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0132A2EE6FA002A4175 /* factoids.txt */; };
 		200FC0162A2EE6FA002A4175 /* factoidUpdates.txt in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0142A2EE6FA002A4175 /* factoidUpdates.txt */; };
 		200FC01D2A2F007B002A4175 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC01C2A2F007B002A4175 /* Sound.swift */; };
+		200FC0482A2FD421002A4175 /* Highlight.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC01F2A2FD421002A4175 /* Highlight.aiff */; };
+		200FC0492A2FD421002A4175 /* Type.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0202A2FD421002A4175 /* Type.aiff */; };
+		200FC04A2A2FD421002A4175 /* Incorrect.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0212A2FD421002A4175 /* Incorrect.aiff */; };
+		200FC04B2A2FD421002A4175 /* MarkerConflict.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0222A2FD421002A4175 /* MarkerConflict.aiff */; };
+		200FC04C2A2FD421002A4175 /* Correct.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0232A2FD421002A4175 /* Correct.aiff */; };
+		200FC04D2A2FD421002A4175 /* MarkerErase.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0242A2FD421002A4175 /* MarkerErase.aiff */; };
+		200FC04E2A2FD421002A4175 /* NumberHighlightOn.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0252A2FD421002A4175 /* NumberHighlightOn.aiff */; };
+		200FC04F2A2FD421002A4175 /* Match.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0262A2FD421002A4175 /* Match.aiff */; };
+		200FC0502A2FD421002A4175 /* GameComplete.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0272A2FD421002A4175 /* GameComplete.aiff */; };
+		200FC0512A2FD421002A4175 /* Hint.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0282A2FD421002A4175 /* Hint.aiff */; };
+		200FC0522A2FD421002A4175 /* Erase.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0292A2FD421002A4175 /* Erase.aiff */; };
+		200FC0532A2FD421002A4175 /* NumberHighlightOff.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC02A2A2FD421002A4175 /* NumberHighlightOff.aiff */; };
+		200FC0542A2FD421002A4175 /* Touch.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC02B2A2FD421002A4175 /* Touch.aiff */; };
+		200FC0552A2FD421002A4175 /* Tink.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC02C2A2FD421002A4175 /* Tink.aiff */; };
+		200FC0562A2FD421002A4175 /* Chime0.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC02E2A2FD421002A4175 /* Chime0.aiff */; };
+		200FC0572A2FD421002A4175 /* Harp1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0302A2FD421002A4175 /* Harp1.aiff */; };
+		200FC0582A2FD421002A4175 /* Harp11.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0312A2FD421002A4175 /* Harp11.aiff */; };
+		200FC0592A2FD421002A4175 /* Harp10.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0322A2FD421002A4175 /* Harp10.aiff */; };
+		200FC05A2A2FD421002A4175 /* Harp0.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0332A2FD421002A4175 /* Harp0.aiff */; };
+		200FC05B2A2FD421002A4175 /* Harp17.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0342A2FD421002A4175 /* Harp17.aiff */; };
+		200FC05C2A2FD421002A4175 /* Harp7.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0352A2FD421002A4175 /* Harp7.aiff */; };
+		200FC05D2A2FD421002A4175 /* Harp6.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0362A2FD421002A4175 /* Harp6.aiff */; };
+		200FC05E2A2FD421002A4175 /* Harp16.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0372A2FD421002A4175 /* Harp16.aiff */; };
+		200FC05F2A2FD421002A4175 /* Harp15.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0382A2FD421002A4175 /* Harp15.aiff */; };
+		200FC0602A2FD421002A4175 /* Harp9.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0392A2FD421002A4175 /* Harp9.aiff */; };
+		200FC0612A2FD421002A4175 /* Harp5.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC03A2A2FD421002A4175 /* Harp5.aiff */; };
+		200FC0622A2FD421002A4175 /* Harp4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC03B2A2FD421002A4175 /* Harp4.aiff */; };
+		200FC0632A2FD421002A4175 /* Harp18.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC03C2A2FD421002A4175 /* Harp18.aiff */; };
+		200FC0642A2FD421002A4175 /* Harp8.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC03D2A2FD421002A4175 /* Harp8.aiff */; };
+		200FC0652A2FD421002A4175 /* Harp14.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC03E2A2FD421002A4175 /* Harp14.aiff */; };
+		200FC0662A2FD421002A4175 /* Harp3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC03F2A2FD421002A4175 /* Harp3.aiff */; };
+		200FC0672A2FD421002A4175 /* Harp13.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0402A2FD421002A4175 /* Harp13.aiff */; };
+		200FC0682A2FD421002A4175 /* Harp12.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0412A2FD421002A4175 /* Harp12.aiff */; };
+		200FC0692A2FD421002A4175 /* Harp2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0422A2FD421002A4175 /* Harp2.aiff */; };
+		200FC06A2A2FD421002A4175 /* Chime1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0432A2FD421002A4175 /* Chime1.aiff */; };
+		200FC06B2A2FD421002A4175 /* Chime2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0442A2FD421002A4175 /* Chime2.aiff */; };
+		200FC06C2A2FD421002A4175 /* Chime3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0452A2FD421002A4175 /* Chime3.aiff */; };
+		200FC06D2A2FD421002A4175 /* Chime4.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0462A2FD421002A4175 /* Chime4.aiff */; };
+		200FC06E2A2FD421002A4175 /* Marker.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0472A2FD421002A4175 /* Marker.aiff */; };
+		200FC0712A2FD42B002A4175 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200FC0702A2FD42B002A4175 /* Preview Assets.xcassets */; };
 		2012DE492A27E2D600BB2DB5 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2012DE482A27E2D600BB2DB5 /* MemoryView.swift */; };
 		2012DE4B2A27E8C900BB2DB5 /* memory.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2012DE4A2A27E8C900BB2DB5 /* memory.xcassets */; };
 		201E65572A17E535005404B9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E65562A17E535005404B9 /* Extension.swift */; };
@@ -417,6 +458,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		200EE4A52A301A9000869E7B /* memorySymbolNames.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = memorySymbolNames.txt; sourceTree = "<group>"; };
 		200FBD372A2EE634002A4175 /* GameLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLevel.swift; sourceTree = "<group>"; };
 		200FBD3A2A2EE6A5002A4175 /* memory_puzzles_hard.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = memory_puzzles_hard.txt; sourceTree = "<group>"; };
 		200FBD3B2A2EE6A5002A4175 /* ContentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentService.swift; sourceTree = "<group>"; };
@@ -785,6 +827,46 @@
 		200FC0142A2EE6FA002A4175 /* factoidUpdates.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = factoidUpdates.txt; sourceTree = "<group>"; };
 		200FC01B2A2EEA7B002A4175 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		200FC01C2A2F007B002A4175 /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		200FC01F2A2FD421002A4175 /* Highlight.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Highlight.aiff; sourceTree = "<group>"; };
+		200FC0202A2FD421002A4175 /* Type.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Type.aiff; sourceTree = "<group>"; };
+		200FC0212A2FD421002A4175 /* Incorrect.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Incorrect.aiff; sourceTree = "<group>"; };
+		200FC0222A2FD421002A4175 /* MarkerConflict.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = MarkerConflict.aiff; sourceTree = "<group>"; };
+		200FC0232A2FD421002A4175 /* Correct.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Correct.aiff; sourceTree = "<group>"; };
+		200FC0242A2FD421002A4175 /* MarkerErase.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = MarkerErase.aiff; sourceTree = "<group>"; };
+		200FC0252A2FD421002A4175 /* NumberHighlightOn.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = NumberHighlightOn.aiff; sourceTree = "<group>"; };
+		200FC0262A2FD421002A4175 /* Match.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Match.aiff; sourceTree = "<group>"; };
+		200FC0272A2FD421002A4175 /* GameComplete.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = GameComplete.aiff; sourceTree = "<group>"; };
+		200FC0282A2FD421002A4175 /* Hint.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Hint.aiff; sourceTree = "<group>"; };
+		200FC0292A2FD421002A4175 /* Erase.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Erase.aiff; sourceTree = "<group>"; };
+		200FC02A2A2FD421002A4175 /* NumberHighlightOff.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = NumberHighlightOff.aiff; sourceTree = "<group>"; };
+		200FC02B2A2FD421002A4175 /* Touch.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Touch.aiff; sourceTree = "<group>"; };
+		200FC02C2A2FD421002A4175 /* Tink.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Tink.aiff; sourceTree = "<group>"; };
+		200FC02E2A2FD421002A4175 /* Chime0.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Chime0.aiff; sourceTree = "<group>"; };
+		200FC0302A2FD421002A4175 /* Harp1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp1.aiff; sourceTree = "<group>"; };
+		200FC0312A2FD421002A4175 /* Harp11.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp11.aiff; sourceTree = "<group>"; };
+		200FC0322A2FD421002A4175 /* Harp10.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp10.aiff; sourceTree = "<group>"; };
+		200FC0332A2FD421002A4175 /* Harp0.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp0.aiff; sourceTree = "<group>"; };
+		200FC0342A2FD421002A4175 /* Harp17.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp17.aiff; sourceTree = "<group>"; };
+		200FC0352A2FD421002A4175 /* Harp7.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp7.aiff; sourceTree = "<group>"; };
+		200FC0362A2FD421002A4175 /* Harp6.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp6.aiff; sourceTree = "<group>"; };
+		200FC0372A2FD421002A4175 /* Harp16.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp16.aiff; sourceTree = "<group>"; };
+		200FC0382A2FD421002A4175 /* Harp15.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp15.aiff; sourceTree = "<group>"; };
+		200FC0392A2FD421002A4175 /* Harp9.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp9.aiff; sourceTree = "<group>"; };
+		200FC03A2A2FD421002A4175 /* Harp5.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp5.aiff; sourceTree = "<group>"; };
+		200FC03B2A2FD421002A4175 /* Harp4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp4.aiff; sourceTree = "<group>"; };
+		200FC03C2A2FD421002A4175 /* Harp18.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp18.aiff; sourceTree = "<group>"; };
+		200FC03D2A2FD421002A4175 /* Harp8.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp8.aiff; sourceTree = "<group>"; };
+		200FC03E2A2FD421002A4175 /* Harp14.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp14.aiff; sourceTree = "<group>"; };
+		200FC03F2A2FD421002A4175 /* Harp3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp3.aiff; sourceTree = "<group>"; };
+		200FC0402A2FD421002A4175 /* Harp13.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp13.aiff; sourceTree = "<group>"; };
+		200FC0412A2FD421002A4175 /* Harp12.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp12.aiff; sourceTree = "<group>"; };
+		200FC0422A2FD421002A4175 /* Harp2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Harp2.aiff; sourceTree = "<group>"; };
+		200FC0432A2FD421002A4175 /* Chime1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Chime1.aiff; sourceTree = "<group>"; };
+		200FC0442A2FD421002A4175 /* Chime2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Chime2.aiff; sourceTree = "<group>"; };
+		200FC0452A2FD421002A4175 /* Chime3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Chime3.aiff; sourceTree = "<group>"; };
+		200FC0462A2FD421002A4175 /* Chime4.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Chime4.aiff; sourceTree = "<group>"; };
+		200FC0472A2FD421002A4175 /* Marker.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Marker.aiff; sourceTree = "<group>"; };
+		200FC0702A2FD42B002A4175 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2012DE482A27E2D600BB2DB5 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
 		2012DE4A2A27E8C900BB2DB5 /* memory.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = memory.xcassets; sourceTree = "<group>"; };
 		201E65562A17E535005404B9 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -844,9 +926,11 @@
 		200FBD392A2EE6A5002A4175 /* content */ = {
 			isa = PBXGroup;
 			children = (
-				200FC0122A2EE6C0002A4175 /* daily */,
 				200FBD3B2A2EE6A5002A4175 /* ContentService.swift */,
+				200FC0122A2EE6C0002A4175 /* daily */,
 				200FC0172A2EE762002A4175 /* memory */,
+				200FC06F2A2FD42B002A4175 /* Preview Content */,
+				200FC01E2A2FD421002A4175 /* Sounds */,
 			);
 			path = content;
 			sourceTree = "<group>";
@@ -1239,10 +1323,81 @@
 			isa = PBXGroup;
 			children = (
 				200FBD3C2A2EE6A5002A4175 /* memoryImageFileNames.txt */,
+				200EE4A52A301A9000869E7B /* memorySymbolNames.txt */,
 				200FBD3E2A2EE6A5002A4175 /* sounds */,
 				200FBD412A2EE6A5002A4175 /* clipart */,
 			);
 			path = memory;
+			sourceTree = "<group>";
+		};
+		200FC01E2A2FD421002A4175 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				200FC01F2A2FD421002A4175 /* Highlight.aiff */,
+				200FC0202A2FD421002A4175 /* Type.aiff */,
+				200FC0212A2FD421002A4175 /* Incorrect.aiff */,
+				200FC0222A2FD421002A4175 /* MarkerConflict.aiff */,
+				200FC0232A2FD421002A4175 /* Correct.aiff */,
+				200FC0242A2FD421002A4175 /* MarkerErase.aiff */,
+				200FC0252A2FD421002A4175 /* NumberHighlightOn.aiff */,
+				200FC0262A2FD421002A4175 /* Match.aiff */,
+				200FC0272A2FD421002A4175 /* GameComplete.aiff */,
+				200FC0282A2FD421002A4175 /* Hint.aiff */,
+				200FC0292A2FD421002A4175 /* Erase.aiff */,
+				200FC02A2A2FD421002A4175 /* NumberHighlightOff.aiff */,
+				200FC02B2A2FD421002A4175 /* Touch.aiff */,
+				200FC02C2A2FD421002A4175 /* Tink.aiff */,
+				200FC02D2A2FD421002A4175 /* Q */,
+				200FC0472A2FD421002A4175 /* Marker.aiff */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		200FC02D2A2FD421002A4175 /* Q */ = {
+			isa = PBXGroup;
+			children = (
+				200FC02E2A2FD421002A4175 /* Chime0.aiff */,
+				200FC02F2A2FD421002A4175 /* Harp */,
+				200FC0432A2FD421002A4175 /* Chime1.aiff */,
+				200FC0442A2FD421002A4175 /* Chime2.aiff */,
+				200FC0452A2FD421002A4175 /* Chime3.aiff */,
+				200FC0462A2FD421002A4175 /* Chime4.aiff */,
+			);
+			path = Q;
+			sourceTree = "<group>";
+		};
+		200FC02F2A2FD421002A4175 /* Harp */ = {
+			isa = PBXGroup;
+			children = (
+				200FC0302A2FD421002A4175 /* Harp1.aiff */,
+				200FC0312A2FD421002A4175 /* Harp11.aiff */,
+				200FC0322A2FD421002A4175 /* Harp10.aiff */,
+				200FC0332A2FD421002A4175 /* Harp0.aiff */,
+				200FC0342A2FD421002A4175 /* Harp17.aiff */,
+				200FC0352A2FD421002A4175 /* Harp7.aiff */,
+				200FC0362A2FD421002A4175 /* Harp6.aiff */,
+				200FC0372A2FD421002A4175 /* Harp16.aiff */,
+				200FC0382A2FD421002A4175 /* Harp15.aiff */,
+				200FC0392A2FD421002A4175 /* Harp9.aiff */,
+				200FC03A2A2FD421002A4175 /* Harp5.aiff */,
+				200FC03B2A2FD421002A4175 /* Harp4.aiff */,
+				200FC03C2A2FD421002A4175 /* Harp18.aiff */,
+				200FC03D2A2FD421002A4175 /* Harp8.aiff */,
+				200FC03E2A2FD421002A4175 /* Harp14.aiff */,
+				200FC03F2A2FD421002A4175 /* Harp3.aiff */,
+				200FC0402A2FD421002A4175 /* Harp13.aiff */,
+				200FC0412A2FD421002A4175 /* Harp12.aiff */,
+				200FC0422A2FD421002A4175 /* Harp2.aiff */,
+			);
+			path = Harp;
+			sourceTree = "<group>";
+		};
+		200FC06F2A2FD42B002A4175 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				200FC0702A2FD42B002A4175 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		2012DE462A27E2B800BB2DB5 /* games */ = {
@@ -1431,11 +1586,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				200FC0542A2FD421002A4175 /* Touch.aiff in Resources */,
 				200FBF332A2EE6A6002A4175 /* flip flops.png in Resources */,
 				200FBF4A2A2EE6A6002A4175 /* twitter-bird-evandro-800px.png in Resources */,
 				200FBFAC2A2EE6A6002A4175 /* monkey.png in Resources */,
 				200FBFFD2A2EE6A6002A4175 /* pimiento-800px.png in Resources */,
 				200FBFC12A2EE6A6002A4175 /* star1.png in Resources */,
+				200FC0612A2FD421002A4175 /* Harp5.aiff in Resources */,
 				200FBEEE2A2EE6A6002A4175 /* key.png in Resources */,
 				200FBF322A2EE6A6002A4175 /* feet-800px.png in Resources */,
 				200FBF0C2A2EE6A6002A4175 /* schwan-800px.png in Resources */,
@@ -1451,6 +1608,7 @@
 				200FBF2F2A2EE6A6002A4175 /* sun2.png in Resources */,
 				200FBFE82A2EE6A6002A4175 /* baby-tux-800px.png in Resources */,
 				200FBFF92A2EE6A6002A4175 /* Tisch-800px.png in Resources */,
+				200FC04E2A2FD421002A4175 /* NumberHighlightOn.aiff in Resources */,
 				200FBFF02A2EE6A6002A4175 /* Purple-Cartoon-Cat-800px.png in Resources */,
 				200FBF7B2A2EE6A6002A4175 /* dice.png in Resources */,
 				200FBFD32A2EE6A6002A4175 /* Balloon-Horse-800px.png in Resources */,
@@ -1469,13 +1627,18 @@
 				200FBF3D2A2EE6A6002A4175 /* scissors.png in Resources */,
 				200FBFDC2A2EE6A6002A4175 /* dalmation.png in Resources */,
 				200FBEC42A2EE6A6002A4175 /* amug-800px.png in Resources */,
+				200FC04D2A2FD421002A4175 /* MarkerErase.aiff in Resources */,
 				200FBF912A2EE6A6002A4175 /* lizard.png in Resources */,
+				200FC04B2A2FD421002A4175 /* MarkerConflict.aiff in Resources */,
 				200FBFB72A2EE6A6002A4175 /* Kamel-800px.png in Resources */,
 				200FBF7E2A2EE6A6002A4175 /* baby-feet-800px.png in Resources */,
 				200FBFA52A2EE6A6002A4175 /* chiuci-800px.png in Resources */,
+				200FC04F2A2FD421002A4175 /* Match.aiff in Resources */,
 				200FBF982A2EE6A6002A4175 /* orange-800px.png in Resources */,
 				200FBFFE2A2EE6A6002A4175 /* liftarn-Green-hat-800px.png in Resources */,
 				200FBECF2A2EE6A6002A4175 /* tv.png in Resources */,
+				200FC05C2A2FD421002A4175 /* Harp7.aiff in Resources */,
+				200FC05B2A2FD421002A4175 /* Harp17.aiff in Resources */,
 				200FBFA12A2EE6A6002A4175 /* Robot-001-800px.png in Resources */,
 				200FC0072A2EE6A6002A4175 /* Mond2-800px.png in Resources */,
 				200FC00B2A2EE6A6002A4175 /* green-bird-2-800px.png in Resources */,
@@ -1498,6 +1661,7 @@
 				200FBFF32A2EE6A6002A4175 /* radish.png in Resources */,
 				200FBFA72A2EE6A6002A4175 /* Purple-Popsicle-Monster-800px.png in Resources */,
 				200FBFEA2A2EE6A6002A4175 /* trumpet.png in Resources */,
+				200FC0652A2FD421002A4175 /* Harp14.aiff in Resources */,
 				200FBED62A2EE6A6002A4175 /* duck2.png in Resources */,
 				200FBF5A2A2EE6A6002A4175 /* aubagine-800px.png in Resources */,
 				200FC0112A2EE6A6002A4175 /* nicubunu-Toy-rocket-800px.png in Resources */,
@@ -1520,9 +1684,11 @@
 				200FBF442A2EE6A6002A4175 /* Pink-Monster-800px.png in Resources */,
 				200FC00A2A2EE6A6002A4175 /* simple-apple-800px.png in Resources */,
 				200FBECE2A2EE6A6002A4175 /* hotdog.png in Resources */,
+				200FC0582A2FD421002A4175 /* Harp11.aiff in Resources */,
 				20292BFF29F2104E00C51913 /* Assets.xcassets in Resources */,
 				200FBFBA2A2EE6A6002A4175 /* stuuf-Flowers-800px.png in Resources */,
 				200FBED22A2EE6A6002A4175 /* dog3.png in Resources */,
+				200FC0632A2FD421002A4175 /* Harp18.aiff in Resources */,
 				200FBFD82A2EE6A6002A4175 /* fox_1-800px.png in Resources */,
 				200FBF542A2EE6A6002A4175 /* birthday01-800px.png in Resources */,
 				200FBEE52A2EE6A6002A4175 /* silhouette-tractor-800px.png in Resources */,
@@ -1543,10 +1709,12 @@
 				200FBFC92A2EE6A6002A4175 /* schuhe-coloured-800px.png in Resources */,
 				200FBF212A2EE6A6002A4175 /* monkey face.png in Resources */,
 				200FBFA62A2EE6A6002A4175 /* pitr-Toy-train-icon-800px.png in Resources */,
+				200FC0522A2FD421002A4175 /* Erase.aiff in Resources */,
 				200FBF4E2A2EE6A6002A4175 /* weather.png in Resources */,
 				200FC0082A2EE6A6002A4175 /* triceratops.png in Resources */,
 				200FBF632A2EE6A6002A4175 /* Hammer-800px.png in Resources */,
 				200FBEEF2A2EE6A6002A4175 /* dragonfly.png in Resources */,
+				200FC04A2A2FD421002A4175 /* Incorrect.aiff in Resources */,
 				200FBECB2A2EE6A6002A4175 /* bell.png in Resources */,
 				200FBF652A2EE6A6002A4175 /* binoculars.png in Resources */,
 				200FBF152A2EE6A6002A4175 /* chicken.png in Resources */,
@@ -1563,15 +1731,19 @@
 				200FBFEB2A2EE6A6002A4175 /* award.png in Resources */,
 				200FBF362A2EE6A6002A4175 /* nicubunu-Closed-mouth-800px.png in Resources */,
 				200FBF9B2A2EE6A6002A4175 /* maidis-Vertical-Striped-Hot-Air-Balloons-2-800px.png in Resources */,
+				200FC0662A2FD421002A4175 /* Harp3.aiff in Resources */,
 				200FBF6F2A2EE6A6002A4175 /* baby duck.png in Resources */,
 				200FBFD92A2EE6A6002A4175 /* Elefant-800px.png in Resources */,
 				200FBEE22A2EE6A6002A4175 /* rose.png in Resources */,
 				200FBEB82A2EE6A6002A4175 /* candle2.png in Resources */,
+				200FC0562A2FD421002A4175 /* Chime0.aiff in Resources */,
 				200FBEBE2A2EE6A6002A4175 /* Palette-and-brush-800px.png in Resources */,
 				200FBEEA2A2EE6A6002A4175 /* ship.png in Resources */,
 				200FBF682A2EE6A6002A4175 /* fleur.png in Resources */,
+				200FC06C2A2FD421002A4175 /* Chime3.aiff in Resources */,
 				200FBF552A2EE6A6002A4175 /* Green-Monster-800px.png in Resources */,
 				200FBF582A2EE6A6002A4175 /* watermelon.png in Resources */,
+				200FC06D2A2FD421002A4175 /* Chime4.aiff in Resources */,
 				200FBF952A2EE6A6002A4175 /* video.png in Resources */,
 				200FBF5C2A2EE6A6002A4175 /* ChristmasTree-800px.png in Resources */,
 				200FC0162A2EE6FA002A4175 /* factoidUpdates.txt in Resources */,
@@ -1591,6 +1763,8 @@
 				200FC0012A2EE6A6002A4175 /* finch.png in Resources */,
 				200FBFFA2A2EE6A6002A4175 /* smile.png in Resources */,
 				200FBF102A2EE6A6002A4175 /* lemmling-Cartoon-goat-800px.png in Resources */,
+				200FC0602A2FD421002A4175 /* Harp9.aiff in Resources */,
+				200FC06E2A2FD421002A4175 /* Marker.aiff in Resources */,
 				200FBF402A2EE6A6002A4175 /* faucet-800px.png in Resources */,
 				200FBF472A2EE6A6002A4175 /* dinosaur.png in Resources */,
 				200FBEFA2A2EE6A6002A4175 /* Daily-Boxes-6-800px.png in Resources */,
@@ -1606,6 +1780,7 @@
 				200FBF3B2A2EE6A6002A4175 /* cupcake-small-800px.png in Resources */,
 				200FBF962A2EE6A6002A4175 /* Red-Bird-800px.png in Resources */,
 				200FBF942A2EE6A6002A4175 /* racer.png in Resources */,
+				200FC06B2A2FD421002A4175 /* Chime2.aiff in Resources */,
 				200FBEC22A2EE6A6002A4175 /* turtle.png in Resources */,
 				200FBFDB2A2EE6A6002A4175 /* star2.png in Resources */,
 				200FC0022A2EE6A6002A4175 /* maidis-Vertical-Striped-Hot-Air-Balloons-3-800px.png in Resources */,
@@ -1617,10 +1792,12 @@
 				200FBEEC2A2EE6A6002A4175 /* dahlia.png in Resources */,
 				200FBF222A2EE6A6002A4175 /* six.png in Resources */,
 				200FBFC62A2EE6A6002A4175 /* redtiki-800px.png in Resources */,
+				200FC0712A2FD42B002A4175 /* Preview Assets.xcassets in Resources */,
 				200FBF742A2EE6A6002A4175 /* hat-800px.png in Resources */,
 				200FBF3A2A2EE6A6002A4175 /* Planet-800px.png in Resources */,
 				200FBF4F2A2EE6A6002A4175 /* maidis-Vertical-Striped-Hot-Air-Balloons-1-800px.png in Resources */,
 				200FBF922A2EE6A6002A4175 /* maidis-Horizontal-Striped-Hot-Air-Balloons-800px.png in Resources */,
+				200FC0672A2FD421002A4175 /* Harp13.aiff in Resources */,
 				200FBF5B2A2EE6A6002A4175 /* cherries.png in Resources */,
 				200FBF372A2EE6A6002A4175 /* KofferV3-800px.png in Resources */,
 				200FBFD02A2EE6A6002A4175 /* eyes.png in Resources */,
@@ -1636,6 +1813,7 @@
 				200FBF242A2EE6A6002A4175 /* home.png in Resources */,
 				200FBEF62A2EE6A6002A4175 /* cartoon-frog-800px.png in Resources */,
 				200FBEF92A2EE6A6002A4175 /* Tasche-800px.png in Resources */,
+				200FC0622A2FD421002A4175 /* Harp4.aiff in Resources */,
 				200FBF142A2EE6A6002A4175 /* cake-800px.png in Resources */,
 				200FBFB82A2EE6A6002A4175 /* drops.png in Resources */,
 				200FBF052A2EE6A6002A4175 /* pumpkin-01-800px.png in Resources */,
@@ -1647,6 +1825,7 @@
 				200FBEAD2A2EE6A6002A4175 /* globe-310324-800px.png in Resources */,
 				200FBF192A2EE6A6002A4175 /* nicubunu-Card-backs-simple-blue-800px.png in Resources */,
 				200FBFD62A2EE6A6002A4175 /* xmas01-800px.png in Resources */,
+				200FC0502A2FD421002A4175 /* GameComplete.aiff in Resources */,
 				200FBF6E2A2EE6A6002A4175 /* agirl-800px.png in Resources */,
 				200FBFE22A2EE6A6002A4175 /* Schlange-800px.png in Resources */,
 				200FBEC62A2EE6A6002A4175 /* cartoon-bee-800px.png in Resources */,
@@ -1664,12 +1843,14 @@
 				200FBFAB2A2EE6A6002A4175 /* owl-cute-800px.png in Resources */,
 				200FBF2A2A2EE6A6002A4175 /* StudioFibonacci-Cartoon-monsters-1-800px.png in Resources */,
 				200FBFDF2A2EE6A6002A4175 /* cyberscooty-cartoon-car-800px.png in Resources */,
+				200FC0572A2FD421002A4175 /* Harp1.aiff in Resources */,
 				200FBEF12A2EE6A6002A4175 /* elephant.png in Resources */,
 				200FBF4C2A2EE6A6002A4175 /* chovynz-Bell-Icon-800px.png in Resources */,
 				2012DE4B2A27E8C900BB2DB5 /* memory.xcassets in Resources */,
 				200FBFF52A2EE6A6002A4175 /* nine.png in Resources */,
 				200FBEAB2A2EE6A6002A4175 /* AlreadySelected.aiff in Resources */,
 				200FBF6B2A2EE6A6002A4175 /* french horn.png in Resources */,
+				200FC05F2A2FD421002A4175 /* Harp15.aiff in Resources */,
 				200FBEEB2A2EE6A6002A4175 /* StudioFibonacci-Cartoon-hippo-800px.png in Resources */,
 				200FBF9E2A2EE6A6002A4175 /* forukuman.png in Resources */,
 				200FBEB32A2EE6A6002A4175 /* Green-Spaceship-800px.png in Resources */,
@@ -1687,6 +1868,7 @@
 				200FBF992A2EE6A6002A4175 /* Raspberry-Penguin-800px.png in Resources */,
 				200FC0062A2EE6A6002A4175 /* pot-of-gold-800px.png in Resources */,
 				200FC0042A2EE6A6002A4175 /* Purple-Monster-800px.png in Resources */,
+				200FC06A2A2FD421002A4175 /* Chime1.aiff in Resources */,
 				200FBF782A2EE6A6002A4175 /* adog-800px.png in Resources */,
 				200FBF892A2EE6A6002A4175 /* tree.png in Resources */,
 				200FBF832A2EE6A6002A4175 /* Machovka-cactus-1-800px.png in Resources */,
@@ -1702,6 +1884,7 @@
 				200FBEFF2A2EE6A6002A4175 /* lock.png in Resources */,
 				200FBFE62A2EE6A6002A4175 /* farbeimer-lila-800px.png in Resources */,
 				200FBEFC2A2EE6A6002A4175 /* MyNameMattersNot-Merry-Mutant-800px.png in Resources */,
+				200FC04C2A2FD421002A4175 /* Correct.aiff in Resources */,
 				200FBED32A2EE6A6002A4175 /* chicken leg.png in Resources */,
 				200FBF5E2A2EE6A6002A4175 /* moon.png in Resources */,
 				200FC0052A2EE6A6002A4175 /* fish.png in Resources */,
@@ -1710,6 +1893,7 @@
 				200FBEC32A2EE6A6002A4175 /* piano.png in Resources */,
 				200FBF382A2EE6A6002A4175 /* ant.png in Resources */,
 				200FBF1C2A2EE6A6002A4175 /* bird.png in Resources */,
+				200FC0482A2FD421002A4175 /* Highlight.aiff in Resources */,
 				200FC0152A2EE6FA002A4175 /* factoids.txt in Resources */,
 				200FBF412A2EE6A6002A4175 /* house.png in Resources */,
 				200FBEBB2A2EE6A6002A4175 /* Gerald-G-Fast-Food-Drinks-FF-Menu-4-800px.png in Resources */,
@@ -1717,6 +1901,8 @@
 				200FBF732A2EE6A6002A4175 /* lemmling-Cartoon-polarbear2-800px.png in Resources */,
 				200FBFA82A2EE6A6002A4175 /* half oranges.png in Resources */,
 				200FBFDD2A2EE6A6002A4175 /* schnecke-800px.png in Resources */,
+				200FC0492A2FD421002A4175 /* Type.aiff in Resources */,
+				200EE4A62A30222C00869E7B /* memorySymbolNames.txt in Resources */,
 				200FBF232A2EE6A6002A4175 /* mangos-800px.png in Resources */,
 				200FBFA02A2EE6A6002A4175 /* shinto-torii.png in Resources */,
 				200FBF182A2EE6A6002A4175 /* cactus.png in Resources */,
@@ -1732,14 +1918,18 @@
 				200FBF1B2A2EE6A6002A4175 /* cornns-800px.png in Resources */,
 				200FBF312A2EE6A6002A4175 /* Popsicle-Green-800px.png in Resources */,
 				200FBFD12A2EE6A6002A4175 /* internet-cloud-800px.png in Resources */,
+				200FC0592A2FD421002A4175 /* Harp10.aiff in Resources */,
 				200FBF0A2A2EE6A6002A4175 /* nature-flower-blue-motif-800px.png in Resources */,
 				200FBFBC2A2EE6A6002A4175 /* pferd-coloured-800px.png in Resources */,
 				200FBEDE2A2EE6A6002A4175 /* flowerpaz-peace-symbol-800px.png in Resources */,
+				200FC0552A2FD421002A4175 /* Tink.aiff in Resources */,
 				200FBFD42A2EE6A6002A4175 /* waterbottle.png in Resources */,
 				200FBF792A2EE6A6002A4175 /* rocket.png in Resources */,
 				200FBFBE2A2EE6A6002A4175 /* seven.png in Resources */,
+				200FC0642A2FD421002A4175 /* Harp8.aiff in Resources */,
 				200FBF482A2EE6A6002A4175 /* Arbol-2011-02-800px.png in Resources */,
 				200FBEF02A2EE6A6002A4175 /* drunken-duck-cartoon-globefish-kugelfisch-800px.png in Resources */,
+				200FC05A2A2FD421002A4175 /* Harp0.aiff in Resources */,
 				200FBED42A2EE6A6002A4175 /* StudioFibonacci-Cartoon-peacock-800px.png in Resources */,
 				200FC00C2A2EE6A6002A4175 /* UFO-800px.png in Resources */,
 				200FBF0F2A2EE6A6002A4175 /* theresaKnott-Red-Shoe-800px.png in Resources */,
@@ -1758,8 +1948,10 @@
 				200FBEDF2A2EE6A6002A4175 /* dog2.png in Resources */,
 				200FBF562A2EE6A6002A4175 /* Gerald-G-Fast-Food-Lunch-Dinner-FF-Menu-1-800px.png in Resources */,
 				200FBF082A2EE6A6002A4175 /* lute.png in Resources */,
+				200FC0512A2FD421002A4175 /* Hint.aiff in Resources */,
 				200FBED12A2EE6A6002A4175 /* tools-800px.png in Resources */,
 				200FBFD72A2EE6A6002A4175 /* PeterM-Feather-800px.png in Resources */,
+				200FC05E2A2FD421002A4175 /* Harp16.aiff in Resources */,
 				200FBF522A2EE6A6002A4175 /* lemmling-Cartoon-owl-800px.png in Resources */,
 				200FBEE72A2EE6A6002A4175 /* flower2.png in Resources */,
 				200FBFE42A2EE6A6002A4175 /* tiothy-bluething-800px.png in Resources */,
@@ -1774,6 +1966,7 @@
 				200FBF352A2EE6A6002A4175 /* Penguin-800px.png in Resources */,
 				200FBFBB2A2EE6A6002A4175 /* Simple-Water-Icon-3-800px.png in Resources */,
 				200FBFAF2A2EE6A6002A4175 /* Super-Fish-800px.png in Resources */,
+				200FC05D2A2FD421002A4175 /* Harp6.aiff in Resources */,
 				200FBF872A2EE6A6002A4175 /* beet-800px.png in Resources */,
 				200FBF042A2EE6A6002A4175 /* googley-eye-bird-pink-800px.png in Resources */,
 				200FBFCC2A2EE6A6002A4175 /* Foca-800px.png in Resources */,
@@ -1781,6 +1974,7 @@
 				200FBED82A2EE6A6002A4175 /* maweki-Nimm2-type-candy-800px.png in Resources */,
 				200FBFBD2A2EE6A6002A4175 /* crazy-lion-800px.png in Resources */,
 				200FBF802A2EE6A6002A4175 /* Igel-small-800px.png in Resources */,
+				200FC0682A2FD421002A4175 /* Harp12.aiff in Resources */,
 				200FBEDC2A2EE6A6002A4175 /* lab.png in Resources */,
 				200FBEE02A2EE6A6002A4175 /* lemmling-Cartoon-giraffe-800px.png in Resources */,
 				200FBFD22A2EE6A6002A4175 /* egg.png in Resources */,
@@ -1789,10 +1983,12 @@
 				200FBF702A2EE6A6002A4175 /* jelly-fish-800px.png in Resources */,
 				200FBFA22A2EE6A6002A4175 /* Erbsen-800px.png in Resources */,
 				200FBFC52A2EE6A6002A4175 /* bee-800px.png in Resources */,
+				200FC0532A2FD421002A4175 /* NumberHighlightOff.aiff in Resources */,
 				200FBEB12A2EE6A6002A4175 /* chovynz-Pineapple-Icon-800px.png in Resources */,
 				200FBFEE2A2EE6A6002A4175 /* wiege-coloured-800px.png in Resources */,
 				200FBFC22A2EE6A6002A4175 /* Winteraktiv-coloured-800px.png in Resources */,
 				200FBFA42A2EE6A6002A4175 /* football.png in Resources */,
+				200FC0692A2FD421002A4175 /* Harp2.aiff in Resources */,
 				200FBF122A2EE6A6002A4175 /* pink-erlephant-800px.png in Resources */,
 				200FBF252A2EE6A6002A4175 /* two.png in Resources */,
 				200FBF432A2EE6A6002A4175 /* ladybug.png in Resources */,
@@ -1996,6 +2192,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2026,6 +2223,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

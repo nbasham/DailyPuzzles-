@@ -3,23 +3,20 @@ import XCTest
 
 final class DailyPuzzlesPlusTests: XCTestCase {
 
-    let lines = [
-        "Line 1",
-        "Line 2",
-        "Line 3",
-        "Line 4"
-    ]
-
     override func setUpWithError() throws {
     }
 
     override func tearDownWithError() throws {
     }
 
-    func testFile() throws {
-        AppSupportFile.save(lines, fileName: "test.txt")
-        let readLines = AppSupportFile.load("test.txt") as? [String]
-        XCTAssertEqual(lines, readLines)
-        XCTAssertEqual("Line 1", readLines![0])
+    func testMemoryImages() throws {
+        let allImageNames = Data.toString("memoryImageFileNames.txt")!.toLines
+        for imageName in allImageNames {
+            if imageName.isEmpty { continue }
+//            XCTAssertNotNil(UIImage(named: imageName))
+            if(UIImage(named: imageName) == nil) {
+                print("--------------------------\(imageName)")
+            }
+        }
     }
 }

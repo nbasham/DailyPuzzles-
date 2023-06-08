@@ -64,6 +64,16 @@ extension UIColor {
     }
 }
 
+public extension String {
+    var trim: String {
+        return self.trimmingCharacters(in: .whitespaces)
+    }
+    var toLines: [String] {
+        let lines = self.components(separatedBy: CharacterSet.newlines).map { $0.trim }
+        return lines
+    }
+}
+
 extension UIColor {
     // Add value to component ensuring the result is
     // between 0 and 1

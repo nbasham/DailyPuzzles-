@@ -1,5 +1,6 @@
 import XCTest
 @testable import DailyPuzzlesPlus
+import SnapshotTesting
 
 final class DailyPuzzlesPlusTests: XCTestCase {
 
@@ -7,6 +8,11 @@ final class DailyPuzzlesPlusTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+    }
+
+    func testSnapshots() {
+        let view = MainBallView(game: .memory)
+        assertSnapshot(matching: view, as: .image)
     }
 
     func testMemoryImages() throws {

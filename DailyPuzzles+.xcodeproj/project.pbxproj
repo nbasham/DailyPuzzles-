@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		200EE4A62A30222C00869E7B /* memorySymbolNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = 200EE4A52A301A9000869E7B /* memorySymbolNames.txt */; };
+		200EE4AC2A33A48700869E7B /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 200EE4AB2A33A48700869E7B /* SnapshotTesting */; };
 		200FBD382A2EE634002A4175 /* GameLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FBD372A2EE634002A4175 /* GameLevel.swift */; };
 		200FBEA72A2EE6A6002A4175 /* memory_puzzles_hard.txt in Resources */ = {isa = PBXBuildFile; fileRef = 200FBD3A2A2EE6A5002A4175 /* memory_puzzles_hard.txt */; };
 		200FBEA82A2EE6A6002A4175 /* ContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FBD3B2A2EE6A5002A4175 /* ContentService.swift */; };
@@ -917,6 +918,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				200EE4AC2A33A48700869E7B /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1537,6 +1539,9 @@
 				20E4AD312A24518100E42A2F /* PBXTargetDependency */,
 			);
 			name = DailyPuzzlesPlusTests;
+			packageProductDependencies = (
+				200EE4AB2A33A48700869E7B /* SnapshotTesting */,
+			);
 			productName = DailyPuzzlesPlusTests;
 			productReference = 20E4AD2C2A24518100E42A2F /* DailyPuzzlesPlusTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -1570,6 +1575,7 @@
 			);
 			mainGroup = 20292BEE29F2104C00C51913;
 			packageReferences = (
+				200EE4AA2A33A48700869E7B /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 20292BF829F2104C00C51913 /* Products */;
 			projectDirPath = "";
@@ -2304,6 +2310,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		200EE4AA2A33A48700869E7B /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		200EE4AB2A33A48700869E7B /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 200EE4AA2A33A48700869E7B /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 20292BEF29F2104C00C51913 /* Project object */;
 }

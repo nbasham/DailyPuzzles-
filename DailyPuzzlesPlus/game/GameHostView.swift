@@ -27,7 +27,7 @@ struct GameHostView: View, GameHost {
 
     var body: some View {
         ZStack {
-            Color("background")
+            Color.background
                 .ignoresSafeArea()
             ZStack {
                 Color.clear

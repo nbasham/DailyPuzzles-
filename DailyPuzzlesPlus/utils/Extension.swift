@@ -104,6 +104,7 @@ extension Color {
 
 extension Color {
     static let top = Color("top")
+    static let background = Color("background")
 }
 
 extension UIDevice {

@@ -16,7 +16,7 @@ struct MainHelpView: View {
     var body: some View {
         NavigationStack {
             ZStack(alignment: .topLeading) {
-                Color("background")
+                Color.background
                     .ignoresSafeArea()
                 ScrollView {
                     VStack(alignment: .leading) {

@@ -64,7 +64,7 @@ struct MainView: View {
 
     var body: some View {
         ZStack {
-            Color("background")
+            Color.background
                 .ignoresSafeArea()
             VStack(alignment: .leading, spacing: 0) {
                 gameChooserView

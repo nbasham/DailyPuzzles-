@@ -5,7 +5,7 @@ struct SettingsGameOrderView: View {
 
     var body: some View {
         ZStack {
-            Color("background")
+            Color.background
                 .ignoresSafeArea()
             List {
                 VStack {

@@ -68,8 +68,10 @@ struct GameHostView: View, GameHost {
 
     func didSolve() {
         DailyStorage.completed(game: game)
-        isGameDisabled = true
-        viewModel.didSolve()
+        withAnimation {
+            isGameDisabled = true
+            viewModel.didSolve()
+        }
     }
 
     func incMisses() { viewModel.incMisses() }

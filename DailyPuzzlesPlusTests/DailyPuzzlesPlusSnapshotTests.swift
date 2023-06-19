@@ -2,12 +2,15 @@ import XCTest
 @testable import DailyPuzzlesPlus
 import SnapshotTesting
 
+/*
+ TO Run
+    - On line 12 switch to XCTSkipIf(false)
+    - Set device to iPhone 14 (17.0)
+ */
 final class DailyPuzzlesPlusSnapshotTests: XCTestCase {
 
     override func setUpWithError() throws {
-#if SKIP_SNAPSHOTS
         try XCTSkipIf(true)
-#endif
     }
 
     override func tearDownWithError() throws {

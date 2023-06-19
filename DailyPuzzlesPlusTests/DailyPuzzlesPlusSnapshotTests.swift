@@ -27,6 +27,24 @@ final class DailyPuzzlesPlusSnapshotTests: XCTestCase {
     }
 
     func testMenu() throws {
+        assertSnapshot(matching: MenuView_Previews.menu, as: .image, named: "menu")
+        assertSnapshot(matching: MenuView_Previews.menuDisabled, as: .image, named: "menuDisabled")
+    }
+
+    func testMainMenu() throws {
+        assertSnapshot(matching: MainMenuView_Previews.mainMenu, as: .image, named: "mainMenu")
+        assertSnapshot(matching: MainMenuView_Previews.mainMenuDisabled, as: .image, named: "mainMenuDisabled")
+    }
+
+    func testGameMenu() throws {
+        assertSnapshot(matching: GameMenuView_Previews.noTimer, as: .image, named: "noTimer")
+        assertSnapshot(matching: GameMenuView_Previews.noTimerDisabled, as: .image, named: "noTimerDisabled")
+        assertSnapshot(matching: GameMenuView_Previews.timerZeroSecs, as: .image, named: "timerZeroSecs")
+        assertSnapshot(matching: GameMenuView_Previews.timerOneMinute, as: .image, named: "timerOneMinute")
+        assertSnapshot(matching: GameMenuView_Previews.timerOneMinuteDisabled, as: .image, named: "timerOneMinuteDisabled")
+    }
+
+    func testMenuItem() throws {
         assertSnapshot(matching: MenuItemView_Previews.help, as: .image, named: "help")
         assertSnapshot(matching: MenuItemView_Previews.helpDisabled, as: .image, named: "helpDisabled")
     }

@@ -6,6 +6,7 @@ struct MainMenuTitleView: View {
             Text("menu")
                 .foregroundColor(.white)
                 .fontWeight(.light)
+                .fixedSize(horizontal: true, vertical: true)
             Image(systemName: "info.circle.fill")
                 .imageScale(.large)
                 .foregroundColor(.white)

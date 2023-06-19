@@ -48,26 +48,33 @@ struct MenuView_Previews: PreviewProvider {
         MenuItemViewModel(name: "Help", notificationName: .help),
         MenuItemViewModel(name: "Settings", notificationName: .settings)
     ]
-    static var previews: some View {
-        VStack {
-            Text("Enabled")
-            ZStack {
-                Color("top")
+    static var menu: some View {
+        ZStack {
+            Color("top")
+            VStack {
                 MenuView(items: items) {
                     MainMenuTitleView()
                 }
-                .environmentObject(Play())
             }
-            .frame(maxHeight: 44)
-            Text("Disabled")
-            ZStack {
-                Color("top")
-                MenuView(items: []) {
+        }
+        .frame(maxHeight: 44)
+    }
+    static var menuDisabled: some View {
+        ZStack {
+            Color("top")
+            VStack {
+                MenuView(items: items) {
                     MainMenuTitleView()
                 }
-                .disabled(true)
             }
-            .frame(maxHeight: 44)
         }
+        .frame(maxHeight: 44)
+        .disabled(true)
+    }
+    static var previews: some View {
+        menu
+            .previewDisplayName("menu")
+        menuDisabled
+            .previewDisplayName("menuDisabled")
     }
 }

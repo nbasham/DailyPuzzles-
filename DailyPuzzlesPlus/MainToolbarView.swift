@@ -1,5 +1,4 @@
 import SwiftUI
-import MessageUI
 
 //  DOESN'T WORK IN SIMULATOR, be sure to import MessageUI into the Xcode project
 struct MainToolbarView: ToolbarContent {
@@ -16,7 +15,7 @@ struct MainToolbarView: ToolbarContent {
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                menuView()
+                MainMenuView()
             }
         }
     }
@@ -34,22 +33,6 @@ struct MainToolbarView: ToolbarContent {
         .foregroundColor(.white)
         .fixedSize(horizontal: true, vertical: true)
         .frame(width: 148 - overMinXMargin)
-    }
-
-    private var menuItems: Set<MenuItemViewModel> {
-        var items: Set<MenuItemViewModel> = []
-        if MFMailComposeViewController.canSendMail() {
-            items.insert(MenuItemViewModel(name: "Contact us", notificationName: .contact))
-        }
-        items.insert(MenuItemViewModel(name: "Help", notificationName: .help))
-        items.insert(MenuItemViewModel(name: "Settings", notificationName: .settings))
-        return items
-    }
-
-    private func menuView() -> some View {
-        MenuView(items: menuItems) {
-            MainMenuTitleView()
-        }
     }
 }
 

@@ -44,13 +44,7 @@ struct GameToolbarView: ToolbarContent {
     }
 
     private func menuView(isGameSolved: Bool) -> some View {
-        MenuView(items: menuItems) {
-            if showTimer {
-                TimerMenuTitleView(seconds: debugPreviewTime)
-            } else {
-                MainMenuTitleView()
-            }
-        }
+        GameMenuView(showTimer: showTimer, debugPreviewTime: debugPreviewTime)
         .opacity(isGameSolved ? 0.5 : 1)
         .disabled(isGameSolved)
    }

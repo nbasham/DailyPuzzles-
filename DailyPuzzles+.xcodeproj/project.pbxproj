@@ -428,6 +428,8 @@
 		20292BFB29F2104C00C51913 /* DailyPuzzles_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */; };
 		20292BFD29F2104C00C51913 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20292BFC29F2104C00C51913 /* ContentView.swift */; };
 		20292BFF29F2104E00C51913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20292BFE29F2104E00C51913 /* Assets.xcassets */; };
+		202FF2CE2A40240B000813F1 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FF2CD2A40240B000813F1 /* MainMenuView.swift */; };
+		202FF2D02A4024B5000813F1 /* GameMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FF2CF2A4024B5000813F1 /* GameMenuView.swift */; };
 		2060632B2A1AC3A30044AC81 /* MainBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060632A2A1AC3A30044AC81 /* MainBallView.swift */; };
 		2060632D2A1AE4240044AC81 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060632C2A1AE4240044AC81 /* EmailView.swift */; };
 		206063302A1B0F7C0044AC81 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2060632F2A1B0F7C0044AC81 /* MessageUI.framework */; };
@@ -888,6 +890,8 @@
 		20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPuzzles_App.swift; sourceTree = "<group>"; };
 		20292BFC29F2104C00C51913 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		20292BFE29F2104E00C51913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		202FF2CD2A40240B000813F1 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		202FF2CF2A4024B5000813F1 /* GameMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenuView.swift; sourceTree = "<group>"; };
 		2060632A2A1AC3A30044AC81 /* MainBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBallView.swift; sourceTree = "<group>"; };
 		2060632C2A1AE4240044AC81 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		2060632F2A1B0F7C0044AC81 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -1513,6 +1517,8 @@
 		20CB09E82A3E88390086036B /* menu */ = {
 			isa = PBXGroup;
 			children = (
+				202FF2CD2A40240B000813F1 /* MainMenuView.swift */,
+				202FF2CF2A4024B5000813F1 /* GameMenuView.swift */,
 				20CB09F12A3FD3230086036B /* MainMenuTitleView.swift */,
 				20CB09EF2A3FAD530086036B /* MenuEvent.swift */,
 				20CB09EB2A3E89170086036B /* MenuItemView.swift */,
@@ -2051,6 +2057,7 @@
 				209025392A0ED937004B6790 /* GameHostView.swift in Sources */,
 				20CB09EE2A3E89A50086036B /* MenuItemViewModel.swift in Sources */,
 				20CB09F22A3FD3230086036B /* MainMenuTitleView.swift in Sources */,
+				202FF2D02A4024B5000813F1 /* GameMenuView.swift in Sources */,
 				20CB09F02A3FAD530086036B /* MenuEvent.swift in Sources */,
 				201E655D2A1957BC005404B9 /* Settings.swift in Sources */,
 				209025432A104EA4004B6790 /* CryptogramView.swift in Sources */,
@@ -2075,6 +2082,7 @@
 				2060634C2A1C06640044AC81 /* DailyStorage.swift in Sources */,
 				20292BFB29F2104C00C51913 /* DailyPuzzles_App.swift in Sources */,
 				20CB09E72A3E7D9B0086036B /* MenuView.swift in Sources */,
+				202FF2CE2A40240B000813F1 /* MainMenuView.swift in Sources */,
 				20E4AD272A244EF300E42A2F /* CodeTimer.swift in Sources */,
 				2060634E2A1C0C860044AC81 /* FactoidView.swift in Sources */,
 				201E65592A17E994005404B9 /* GameModel.swift in Sources */,

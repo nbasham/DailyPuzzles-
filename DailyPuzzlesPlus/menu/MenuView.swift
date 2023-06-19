@@ -45,8 +45,8 @@ struct MenuView<Content: View>: View {
 
 struct MenuView_Previews: PreviewProvider {
     static let items: Set<MenuItemViewModel> = [
-        MenuItemViewModel(name: "Help", notificationName: .help),
-        MenuItemViewModel(name: "Settings", notificationName: .settings)
+        .help,
+        .settings
     ]
     static var menu: some View {
         ZStack {

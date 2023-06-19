@@ -30,7 +30,7 @@ struct GameToolbarView: ToolbarContent {
                     })
                 }
                 .onAppear {
-                    MenuEvent.addMenuItem(MenuItemViewModel(name: "Solve", notificationName: .gameSolve))
+                    MenuEvent.addMenuItem(.gameSolve)
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {

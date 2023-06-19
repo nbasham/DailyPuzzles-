@@ -8,9 +8,7 @@ struct GameMenuView: View {
     init(showTimer: Bool = true, debugPreviewTime: String = "0:00") {
         self.showTimer = showTimer
         self.debugPreviewTime = debugPreviewTime
-        menuItems = [
-            MenuItemViewModel(name: "Solve", notificationName: .gameSolve)
-        ]
+        menuItems = [.gameSolve]
     }
 
     var body: some View {

@@ -7,10 +7,10 @@ struct MainMenuView: View {
     init() {
         var items: Set<MenuItemViewModel> = []
         if MFMailComposeViewController.canSendMail() {
-            items.insert(MenuItemViewModel(name: "Contact us", notificationName: .contact))
+            items.insert(.contact)
         }
-        items.insert(MenuItemViewModel(name: "Help", notificationName: .help))
-        items.insert(MenuItemViewModel(name: "Settings", notificationName: .settings))
+        items.insert(.help)
+        items.insert(.settings)
         menuItems = items
     }
 

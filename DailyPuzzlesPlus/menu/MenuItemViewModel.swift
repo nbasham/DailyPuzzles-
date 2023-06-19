@@ -24,3 +24,10 @@ class MenuItemViewModel: ObservableObject, Identifiable, Comparable, Hashable {
         lhs.name > rhs.name
     }
 }
+
+extension MenuItemViewModel {
+    static let help = MenuItemViewModel(name: "Help", notificationName: .help)
+    static let settings = MenuItemViewModel(name: "Settings", notificationName: .settings)
+    static let contact = MenuItemViewModel(name: "Contact us", notificationName: .contact)
+    static let gameSolve = MenuItemViewModel(name: "Solve", notificationName: .gameSolve)
+}

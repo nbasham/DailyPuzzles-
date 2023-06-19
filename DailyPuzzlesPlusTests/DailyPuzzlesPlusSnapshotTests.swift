@@ -5,10 +5,9 @@ import SnapshotTesting
 final class DailyPuzzlesPlusSnapshotTests: XCTestCase {
 
     override func setUpWithError() throws {
-        continueAfterFailure = true
-        // we don't want to run this on Xcode Cloud as snapshots don't currently work and we want to be able to test multiple device types
-        let skip = ProcessInfo.processInfo.environment["SKIP_SNAPSHOTS"] == "TRUE"
-        try XCTSkipIf(skip)
+#if SKIP_SNAPSHOTS
+        try XCTSkipIf(true)
+#endif
     }
 
     override func tearDownWithError() throws {

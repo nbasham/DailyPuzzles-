@@ -28,14 +28,14 @@ struct TimerMenuTitleView: View {
 struct TimerMenuTitleView_Previews: PreviewProvider {
     static var zeroSeconds: some View {
         ZStack {
-            Color("top")
+            Color.top
             TimerMenuTitleView()
         }
         .frame(maxHeight: 44)
     }
     static var oneMinute: some View {
         ZStack {
-            Color("top")
+            Color.top
             TimerMenuTitleView(seconds: "1:00")
         }
         .frame(maxHeight: 44)

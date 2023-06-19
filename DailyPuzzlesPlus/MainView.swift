@@ -76,12 +76,12 @@ struct MainView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: viewModel.bottomViewHeight)
                     .background(
-                        Color("top").opacity(0.2)
+                        Color.top.opacity(0.2)
                             .ignoresSafeArea()
                     )
             }
             Circle()
-                .foregroundColor(Color("top"))
+                .foregroundColor(.top)
                 .frame(height: viewModel.bottomViewHeight + safeAreaInsets.bottom)
                 .offset(x: -(viewModel.bottomViewHeight + safeAreaInsets.bottom)/2)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
@@ -126,7 +126,7 @@ struct MainView: View {
         .navigationBarTitle("") // hides Back on game screen
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarBackground(Color("top"), for: .navigationBar)
+        .toolbarBackground(Color.top, for: .navigationBar)
         .toolbar { MainToolbarView(overMinXMargin: viewModel.overMinXMargin) }
     }
 

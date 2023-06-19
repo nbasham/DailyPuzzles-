@@ -18,7 +18,7 @@ struct SettingsView: View {
                 NavigationLink("Choose games", destination: SettingsGameChooserView())
                // Use GameDescriptor.all instead of onGames so we have a complete list, thus always in sync with each game
                 NavigationLink("Order games", destination: SettingsGameOrderView(data: Settings.onGames()))
-                    .accentColor(Color("top"))
+                    .accentColor(.top)
                 Toggle("Show incorrect guesses", isOn: settings.$showIncorrect)
                 VStack {
                     Toggle("Dark mode", isOn: settings.$darkMode)
@@ -47,11 +47,11 @@ struct SettingsView: View {
             }
             .padding(.horizontal, UIDevice.isPad ? 64 : 16)
             .scrollContentBackground(.hidden)
-            .tint(Color("top"))
+            .tint(.top)
             .padding(.top, topPadding)
         }
         .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarBackground(Color("top"), for: .navigationBar)
+        .toolbarBackground(Color.top, for: .navigationBar)
         .navigationBarBackButtonHidden()
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {

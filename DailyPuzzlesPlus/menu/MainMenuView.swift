@@ -24,14 +24,14 @@ struct MainMenuView: View {
 struct MainMenuView_Previews: PreviewProvider {
     static var mainMenu: some View {
         ZStack {
-            Color("top")
+            Color.top
             MainMenuView()
         }
         .frame(maxHeight: 44)
     }
     static var mainMenuDisabled: some View {
         ZStack {
-            Color("top")
+            Color.top
             MainMenuView()
         }
         .frame(maxHeight: 44)

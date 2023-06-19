@@ -43,7 +43,7 @@ struct MainToolbarView_Previews: PreviewProvider {
                 Text("Preview")
             }
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbarBackground(Color.top, for: .navigationBar)
             .toolbar {
                 MainToolbarView()
             }

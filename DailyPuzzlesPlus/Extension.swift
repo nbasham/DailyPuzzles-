@@ -102,6 +102,10 @@ extension Color {
     }
 }
 
+extension Color {
+    static let top = Color("top")
+}
+
 extension UIDevice {
 
     static let modelName: String = UIDevice.current.modelName

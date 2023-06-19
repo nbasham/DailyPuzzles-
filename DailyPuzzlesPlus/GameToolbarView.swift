@@ -81,7 +81,7 @@ struct GameToolbarView_Previews: PreviewProvider {
                 Text("Preview")
             }
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbarBackground(Color.top, for: .navigationBar)
             .toolbar {
                 GameToolbarView(showTimer: true, isGameSolved: .constant(false))
             }
@@ -93,7 +93,7 @@ struct GameToolbarView_Previews: PreviewProvider {
                 Text("Preview")
             }
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbarBackground(Color.top, for: .navigationBar)
             .toolbar {
                 GameToolbarView(showTimer: true, isGameSolved: .constant(false), debugPreviewTime: "1:00")
             }
@@ -105,7 +105,7 @@ struct GameToolbarView_Previews: PreviewProvider {
                 Text("Preview")
             }
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbarBackground(Color.top, for: .navigationBar)
             .toolbar {
                 GameToolbarView(showTimer: false, isGameSolved: .constant(false))
             }
@@ -117,7 +117,7 @@ struct GameToolbarView_Previews: PreviewProvider {
                 Text("Preview")
             }
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbarBackground(Color.top, for: .navigationBar)
             .toolbar {
                 GameToolbarView(showTimer: true, isGameSolved: .constant(true))
             }
@@ -129,7 +129,7 @@ struct GameToolbarView_Previews: PreviewProvider {
                 Text("Preview")
             }
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbarBackground(Color.top, for: .navigationBar)
             .toolbar {
                 GameToolbarView(showTimer: true, isGameSolved: .constant(true), debugPreviewTime: "1:00")
             }
@@ -141,7 +141,7 @@ struct GameToolbarView_Previews: PreviewProvider {
                 Text("Preview")
             }
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbarBackground(Color.top, for: .navigationBar)
             .toolbar {
                 GameToolbarView(showTimer: false, isGameSolved: .constant(true))
             }

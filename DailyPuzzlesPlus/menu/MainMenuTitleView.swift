@@ -18,7 +18,7 @@ struct MainMenuTitleView: View {
 struct MainMenuTitleView_Previews: PreviewProvider {
     static var main: some View {
         ZStack {
-            Color("top")
+            Color.top
             Menu {
             } label: {
                 MainMenuTitleView()

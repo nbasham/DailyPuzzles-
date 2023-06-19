@@ -50,7 +50,7 @@ struct MenuView_Previews: PreviewProvider {
     ]
     static var menu: some View {
         ZStack {
-            Color("top")
+            Color.top
             VStack {
                 MenuView(items: items) {
                     MainMenuTitleView()
@@ -61,7 +61,7 @@ struct MenuView_Previews: PreviewProvider {
     }
     static var menuDisabled: some View {
         ZStack {
-            Color("top")
+            Color.top
             VStack {
                 MenuView(items: items) {
                     MainMenuTitleView()

@@ -25,21 +25,21 @@ struct GameMenuView: View {
 struct GameMenuView_Previews: PreviewProvider {
     static var timerZeroSecs: some View {
         ZStack {
-            Color("top")
+            Color.top
             GameMenuView()
         }
         .frame(maxHeight: 44)
     }
     static var timerOneMinute: some View {
         ZStack {
-            Color("top")
+            Color.top
             GameMenuView(debugPreviewTime: "1:00")
         }
         .frame(maxHeight: 44)
     }
     static var timerOneMinuteDisabled: some View {
         ZStack {
-            Color("top")
+            Color.top
             GameMenuView(debugPreviewTime: "1:00")
         }
         .frame(maxHeight: 44)
@@ -47,14 +47,14 @@ struct GameMenuView_Previews: PreviewProvider {
     }
     static var noTimer: some View {
         ZStack {
-            Color("top")
+            Color.top
             GameMenuView(showTimer: false)
         }
         .frame(maxHeight: 44)
     }
     static var noTimerDisabled: some View {
         ZStack {
-            Color("top")
+            Color.top
             GameMenuView(showTimer: false)
         }
         .frame(maxHeight: 44)

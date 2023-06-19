@@ -33,7 +33,7 @@ struct MainHelpView: View {
                 }
             }
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbarBackground(Color.top, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("Daily Puzzles+")

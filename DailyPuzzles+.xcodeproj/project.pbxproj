@@ -444,6 +444,12 @@
 		209025452A1053CA004B6790 /* GameToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025442A1053CA004B6790 /* GameToolbarView.swift */; };
 		20C0BE852A23F30F00884E76 /* CloudKitObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C0BE842A23F30F00884E76 /* CloudKitObserver.swift */; };
 		20CB09E52A36528B0086036B /* DailyPuzzlesPlusSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB09E42A36528B0086036B /* DailyPuzzlesPlusSnapshotTests.swift */; };
+		20CB09E72A3E7D9B0086036B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB09E62A3E7D9B0086036B /* MenuView.swift */; };
+		20CB09EC2A3E89170086036B /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB09EB2A3E89170086036B /* MenuItemView.swift */; };
+		20CB09EE2A3E89A50086036B /* MenuItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB09ED2A3E89A50086036B /* MenuItemViewModel.swift */; };
+		20CB09F02A3FAD530086036B /* MenuEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB09EF2A3FAD530086036B /* MenuEvent.swift */; };
+		20CB09F22A3FD3230086036B /* MainMenuTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB09F12A3FD3230086036B /* MainMenuTitleView.swift */; };
+		20CB09F42A3FD8A10086036B /* TimerMenuTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB09F32A3FD8A10086036B /* TimerMenuTitleView.swift */; };
 		20E4AD252A244C4900E42A2F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD242A244C4900E42A2F /* File.swift */; };
 		20E4AD272A244EF300E42A2F /* CodeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD262A244EF300E42A2F /* CodeTimer.swift */; };
 		20E4AD2F2A24518100E42A2F /* DailyPuzzlesPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD2E2A24518100E42A2F /* DailyPuzzlesPlusTests.swift */; };
@@ -901,6 +907,12 @@
 		20C0BE832A23F2E200884E76 /* DailyPuzzlesPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailyPuzzlesPlus.entitlements; sourceTree = "<group>"; };
 		20C0BE842A23F30F00884E76 /* CloudKitObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitObserver.swift; sourceTree = "<group>"; };
 		20CB09E42A36528B0086036B /* DailyPuzzlesPlusSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPuzzlesPlusSnapshotTests.swift; sourceTree = "<group>"; };
+		20CB09E62A3E7D9B0086036B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		20CB09EB2A3E89170086036B /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		20CB09ED2A3E89A50086036B /* MenuItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewModel.swift; sourceTree = "<group>"; };
+		20CB09EF2A3FAD530086036B /* MenuEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEvent.swift; sourceTree = "<group>"; };
+		20CB09F12A3FD3230086036B /* MainMenuTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTitleView.swift; sourceTree = "<group>"; };
+		20CB09F32A3FD8A10086036B /* TimerMenuTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerMenuTitleView.swift; sourceTree = "<group>"; };
 		20E4AD242A244C4900E42A2F /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		20E4AD262A244EF300E42A2F /* CodeTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTimer.swift; sourceTree = "<group>"; };
 		20E4AD2C2A24518100E42A2F /* DailyPuzzlesPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyPuzzlesPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1473,6 +1485,7 @@
 				2060632A2A1AC3A30044AC81 /* MainBallView.swift */,
 				201E65B82A1A99C7005404B9 /* MainHelpView.swift */,
 				209025402A104CD2004B6790 /* MainToolbarView.swift */,
+				20CB09E82A3E88390086036B /* menu */,
 				209025362A0ED7B5004B6790 /* MainView.swift */,
 				2090253C2A0EDA15004B6790 /* Navigator.swift */,
 				201E65632A199775005404B9 /* Play.swift */,
@@ -1495,6 +1508,19 @@
 				2060632F2A1B0F7C0044AC81 /* MessageUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		20CB09E82A3E88390086036B /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				20CB09F12A3FD3230086036B /* MainMenuTitleView.swift */,
+				20CB09EF2A3FAD530086036B /* MenuEvent.swift */,
+				20CB09EB2A3E89170086036B /* MenuItemView.swift */,
+				20CB09ED2A3E89A50086036B /* MenuItemViewModel.swift */,
+				20CB09E62A3E7D9B0086036B /* MenuView.swift */,
+				20CB09F32A3FD8A10086036B /* TimerMenuTitleView.swift */,
+			);
+			path = menu;
 			sourceTree = "<group>";
 		};
 		20E4AD2D2A24518100E42A2F /* DailyPuzzlesPlusTests */ = {
@@ -2023,6 +2049,9 @@
 				20E4AD252A244C4900E42A2F /* File.swift in Sources */,
 				2090253F2A103958004B6790 /* GameDescriptor.swift in Sources */,
 				209025392A0ED937004B6790 /* GameHostView.swift in Sources */,
+				20CB09EE2A3E89A50086036B /* MenuItemViewModel.swift in Sources */,
+				20CB09F22A3FD3230086036B /* MainMenuTitleView.swift in Sources */,
+				20CB09F02A3FAD530086036B /* MenuEvent.swift in Sources */,
 				201E655D2A1957BC005404B9 /* Settings.swift in Sources */,
 				209025432A104EA4004B6790 /* CryptogramView.swift in Sources */,
 				209025452A1053CA004B6790 /* GameToolbarView.swift in Sources */,
@@ -2031,6 +2060,7 @@
 				201E65B92A1A99C7005404B9 /* MainHelpView.swift in Sources */,
 				20C0BE852A23F30F00884E76 /* CloudKitObserver.swift in Sources */,
 				2085A1732A1E859A004E601F /* SettingsGameOrderView.swift in Sources */,
+				20CB09EC2A3E89170086036B /* MenuItemView.swift in Sources */,
 				201E65572A17E535005404B9 /* Extension.swift in Sources */,
 				201E655F2A195845005404B9 /* SettingsView.swift in Sources */,
 				200FBEA82A2EE6A6002A4175 /* ContentService.swift in Sources */,
@@ -2044,9 +2074,11 @@
 				2060632B2A1AC3A30044AC81 /* MainBallView.swift in Sources */,
 				2060634C2A1C06640044AC81 /* DailyStorage.swift in Sources */,
 				20292BFB29F2104C00C51913 /* DailyPuzzles_App.swift in Sources */,
+				20CB09E72A3E7D9B0086036B /* MenuView.swift in Sources */,
 				20E4AD272A244EF300E42A2F /* CodeTimer.swift in Sources */,
 				2060634E2A1C0C860044AC81 /* FactoidView.swift in Sources */,
 				201E65592A17E994005404B9 /* GameModel.swift in Sources */,
+				20CB09F42A3FD8A10086036B /* TimerMenuTitleView.swift in Sources */,
 				201E65642A199775005404B9 /* Play.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

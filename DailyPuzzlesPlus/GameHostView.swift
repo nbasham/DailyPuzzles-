@@ -62,7 +62,7 @@ struct GameHostView: View, GameHost {
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(viewModel.game.color, for: .navigationBar)
         .toolbar {
-            GameToolbarView(showTimer: settings.timerOn, seconds: viewModel.gameModel.elapsedSeconds.timerValue)
+            GameToolbarView(showTimer: settings.timerOn, isGameSolved: $viewModel.isSolved)
         }
     }
 

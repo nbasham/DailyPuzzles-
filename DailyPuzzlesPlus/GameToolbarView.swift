@@ -5,7 +5,10 @@ struct GameToolbarView: ToolbarContent {
     @EnvironmentObject private var settings: Settings
     @EnvironmentObject private var play: Play
     let showTimer: Bool
-    @State var seconds = "0:00" // sets width so it doesn't jump at 0
+    @State private var menuItems: Set<MenuItemViewModel> = []
+    @Binding var isGameSolved: Bool
+    //  debugPreviewTime only exists to exercise Previews
+    @State var debugPreviewTime: String = "0:00"
 
     var body: some ToolbarContent {
         Group {
@@ -26,49 +29,33 @@ struct GameToolbarView: ToolbarContent {
                         }
                     })
                 }
-                .onReceive(NotificationCenter.default.publisher(for: .gameTimer)) { notification in
-                    if let info = notification.object as? [String:Int] {
-                        let secs = info["secs"] ?? 0
-                        seconds = secs.timerValue
-                    }
+                .onAppear {
+                    MenuEvent.addMenuItem(MenuItemViewModel(name: "Solve", notificationName: .gameSolve))
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-//                if viewModel.showShareMenu {
-//                    shareMenuView()
-//                } else {
-                    menuView()
-//                }
+                //                if viewModel.showShareMenu {
+                //                    shareMenuView()
+                //                } else {
+                menuView(isGameSolved: isGameSolved)
+                //                }
             }
         }
     }
 
-    private func menuView() -> some View {
-        Menu {
-            MenuItem(name: "Solve", notificationName: .gameSolve)
-        } label: {
-            HStack {
-                if showTimer {
-                    Text("\(seconds)")
-                        .foregroundColor(seconds == "0:00" ? .clear : .white)
-                        .monospacedDigit() // uses system font vs. monospace()
-                        .fontWeight(.light)
-                } else {
-                    Text("menu")
-                        .foregroundColor(.white)
-                        .fontWeight(.light)
-                }
-                Label("menu", systemImage: "info.circle.fill")
-                    .imageScale(.large)
-                    .tint(.white)
+    private func menuView(isGameSolved: Bool) -> some View {
+        MenuView(items: menuItems) {
+            if showTimer {
+                TimerMenuTitleView(seconds: debugPreviewTime)
+            } else {
+                MainMenuTitleView()
             }
         }
-        .onTapGesture {
-            play.tap()
-        }
-    }
+        .opacity(isGameSolved ? 0.5 : 1)
+        .disabled(isGameSolved)
+   }
 
-    private func shareMenuView() -> some View {
+    private func shareButton() -> some View {
         Button(action: { /*viewModel.showShare = true*/ }, label: {
             HStack {
                 Text("share")
@@ -83,51 +70,102 @@ struct GameToolbarView: ToolbarContent {
 }
 
 struct GameToolbarView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
+    struct WrapperView<Content: View>: View {
+        @ViewBuilder var content: Content
+        var body: some View {
+            NavigationStack {
+                content
+            }
+            .environmentObject(Navigator())
+            .environmentObject(Settings())
+            .environmentObject(Play())
+        }
+    }
+    static var notSolvedWithTimerAtZero: some View {
+        WrapperView {
             VStack {
                 Text("Preview")
             }
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(.green, for: .navigationBar)
+            .toolbarBackground(Color("top"), for: .navigationBar)
             .toolbar {
-                GameToolbarView(showTimer: true)
+                GameToolbarView(showTimer: true, isGameSolved: .constant(false))
             }
         }
-        .environmentObject(Navigator())
-        .environmentObject(Settings())
-        .environmentObject(Play())
+    }
+    static var notSolvedWithTimerOneMinute: some View {
+        WrapperView {
+            VStack {
+                Text("Preview")
+            }
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbar {
+                GameToolbarView(showTimer: true, isGameSolved: .constant(false), debugPreviewTime: "1:00")
+            }
+        }
+    }
+    static var notSolvedNoTimer: some View {
+        WrapperView {
+            VStack {
+                Text("Preview")
+            }
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbar {
+                GameToolbarView(showTimer: false, isGameSolved: .constant(false))
+            }
+        }
+    }
+    static var solvedWithTimerAtZero: some View {
+        WrapperView {
+            VStack {
+                Text("Preview")
+            }
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbar {
+                GameToolbarView(showTimer: true, isGameSolved: .constant(true))
+            }
+        }
+    }
+    static var solvedWithTimerOneMinute: some View {
+        WrapperView {
+            VStack {
+                Text("Preview")
+            }
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbar {
+                GameToolbarView(showTimer: true, isGameSolved: .constant(true), debugPreviewTime: "1:00")
+            }
+        }
+    }
+    static var solvedNoTimer: some View {
+        WrapperView {
+            VStack {
+                Text("Preview")
+            }
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(Color("top"), for: .navigationBar)
+            .toolbar {
+                GameToolbarView(showTimer: false, isGameSolved: .constant(true))
+            }
+        }
+    }
+    static var previews: some View {
+        notSolvedWithTimerAtZero
+            .previewDisplayName("notSolvedWithTimerAtZero")
+        notSolvedWithTimerOneMinute
+            .previewDisplayName("notSolvedWithTimerOneMinute")
+        notSolvedNoTimer
+            .previewDisplayName("notSolvedNoTimer")
+        solvedWithTimerAtZero
+            .previewDisplayName("solvedWithTimerAtZero")
+        solvedWithTimerOneMinute
+            .previewDisplayName("solvedWithTimerOneMinute")
+        solvedNoTimer
+            .previewDisplayName("solvedNoTimer")
     }
 }
 
-/*
- // Posting a notification
- NotificationCenter.default.post(name: .eventOccurred, object: nil)
-
- // Adding an observer
- NotificationCenter.default.addObserver(self, selector: #selector(someMethod), name: .eventOccurred, object: nil)
-
- // Or with SwiftUI's onReceive modifier
- .onReceive(NotificationCenter.default.publisher(for: .eventOccurred)) { _ in
- // Handle the notification
- }
- */
-extension NSNotification.Name {
-    static let settings = NSNotification.Name("settings")
-    static let gameTimer = NSNotification.Name("gameTimer")
-    static let gameBackButton = NSNotification.Name("gameBackButton")
-    static let gameHelp = NSNotification.Name("gameHelp")
-    static let gameSolve = NSNotification.Name("gameSolve")
-    static let gameStartAgain = NSNotification.Name("gameStartAgain")
-    //  quotefalls
-    static let autoAdvance = NSNotification.Name("autoAdvance")
-    //  sudoku
-    static let completeLastNumber = NSNotification.Name("completeLastNumber")
-    static let placeMarkersTrailing = NSNotification.Name("placeMarkersTrailing")
-    static let selectRowCol = NSNotification.Name("selectRowCol")
-    static let undo = NSNotification.Name("undo")
-    //  word search
-    static let hideClues = NSNotification.Name("hideClues")
-    //  debug
-    static let almostSolveEvent = NSNotification.Name("almostSolveEvent")
-}

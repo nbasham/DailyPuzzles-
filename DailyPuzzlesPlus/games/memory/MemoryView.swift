@@ -70,6 +70,12 @@ class MemoryViewModel: ObservableObject {
         host.prepareSound(soundName: "AlreadySelected")
     }
 
+    func start(size: CGSize) {
+        let item = MenuItemViewModel(name: "Testing game item", notificationName: .help)
+        MenuEvent.addMenuItem(item)
+        update(size: size)
+    }
+
     func playAlreadySelected() {
         host.playSound(soundName: "AlreadySelected")
     }
@@ -105,7 +111,7 @@ struct MemoryView: View {
                     }
                 }
                 .onAppear {
-                    viewModel.update(size: proxy.size)
+                    viewModel.start(size: proxy.size)
                 }
             }
             .padding()

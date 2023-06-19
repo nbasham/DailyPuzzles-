@@ -17,7 +17,7 @@ struct MenuView<Content: View>: View {
     var body: some View {
         Menu {
             ForEach(Array(items).sorted(by: >)) { item in
-                MenuItemView(name: item.name, notificationName: item.notificationName)
+                MenuItemView(name: item.name, notificationName: item.notificationName, image: item.image)
             }
         } label: {
             content

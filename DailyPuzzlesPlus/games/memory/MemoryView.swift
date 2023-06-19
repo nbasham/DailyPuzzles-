@@ -71,7 +71,7 @@ class MemoryViewModel: ObservableObject {
     }
 
     func start(size: CGSize) {
-        let item = MenuItemViewModel(name: "Testing game item", notificationName: .help)
+        let item = MenuItemViewModel(name: "Testing game menu item", notificationName: .help, image: "wand.and.stars")
         MenuEvent.addMenuItem(item)
         update(size: size)
     }

@@ -5,11 +5,13 @@ class MenuItemViewModel: ObservableObject, Identifiable, Comparable, Hashable {
     let id: String
     let name: String
     let notificationName: NSNotification.Name
+    let image: String
 
-    init(name: String, notificationName: NSNotification.Name) {
+    init(name: String, notificationName: NSNotification.Name, image: String) {
         self.id = notificationName.rawValue
         self.name = name
         self.notificationName = notificationName
+        self.image = image
     }
 
     public func hash(into hasher: inout Hasher) {
@@ -26,8 +28,8 @@ class MenuItemViewModel: ObservableObject, Identifiable, Comparable, Hashable {
 }
 
 extension MenuItemViewModel {
-    static let help = MenuItemViewModel(name: "Help", notificationName: .help)
-    static let settings = MenuItemViewModel(name: "Settings", notificationName: .settings)
-    static let contact = MenuItemViewModel(name: "Contact us", notificationName: .contact)
-    static let gameSolve = MenuItemViewModel(name: "Solve", notificationName: .gameSolve)
+    static let help = MenuItemViewModel(name: "Help", notificationName: .help, image: "questionmark.circle")
+    static let settings = MenuItemViewModel(name: "Settings", notificationName: .settings, image: "gearshape")
+    static let contact = MenuItemViewModel(name: "Contact us", notificationName: .contact, image: "square.and.pencil")
+    static let gameSolve = MenuItemViewModel(name: "Solve", notificationName: .gameSolve, image: "pencil.and.scribble")
 }

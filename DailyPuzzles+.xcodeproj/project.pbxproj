@@ -947,6 +947,7 @@
 			isa = PBXGroup;
 			children = (
 				200FBD3B2A2EE6A5002A4175 /* ContentService.swift */,
+				20292BFE29F2104E00C51913 /* Assets.xcassets */,
 				200FC0122A2EE6C0002A4175 /* daily */,
 				200FC0172A2EE762002A4175 /* memory */,
 				200FC06F2A2FD42B002A4175 /* Preview Content */,
@@ -1468,42 +1469,81 @@
 		20292BF929F2104C00C51913 /* DailyPuzzlesPlus */ = {
 			isa = PBXGroup;
 			children = (
+				200FC01B2A2EEA7B002A4175 /* .gitignore */,
 				20C0BE832A23F2E200884E76 /* DailyPuzzlesPlus.entitlements */,
 				20C0BE822A23F2D700884E76 /* Info.plist */,
-				20C0BE842A23F30F00884E76 /* CloudKitObserver.swift */,
-				20E4AD262A244EF300E42A2F /* CodeTimer.swift */,
-				200FBD392A2EE6A5002A4175 /* content */,
 				20292BFC29F2104C00C51913 /* ContentView.swift */,
 				20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */,
-				2060634B2A1C06640044AC81 /* DailyStorage.swift */,
+				209AAA7F2A2298640072B17D /* Notes.txt */,
+				200FBD392A2EE6A5002A4175 /* content */,
+				202FF2D32A40A9C6000813F1 /* game */,
+				202FF2D22A40A985000813F1 /* main */,
+				20CB09E82A3E88390086036B /* menu */,
+				202FF2D42A40AA26000813F1 /* resources */,
+				202FF2D52A40AAF8000813F1 /* utils */,
+			);
+			path = DailyPuzzlesPlus;
+			sourceTree = "<group>";
+		};
+		202FF2D12A40A978000813F1 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				201E655C2A1957BC005404B9 /* Settings.swift */,
+				2085A1702A1DB343004E601F /* SettingsGameChooserView.swift */,
+				2085A1722A1E859A004E601F /* SettingsGameOrderView.swift */,
+				201E655E2A195845005404B9 /* SettingsView.swift */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		202FF2D22A40A985000813F1 /* main */ = {
+			isa = PBXGroup;
+			children = (
 				2060632C2A1AE4240044AC81 /* EmailView.swift */,
-				201E65562A17E535005404B9 /* Extension.swift */,
 				2060634D2A1C0C860044AC81 /* FactoidView.swift */,
-				20E4AD242A244C4900E42A2F /* File.swift */,
+				2060632A2A1AC3A30044AC81 /* MainBallView.swift */,
+				201E65B82A1A99C7005404B9 /* MainHelpView.swift */,
+				209025402A104CD2004B6790 /* MainToolbarView.swift */,
+				209025362A0ED7B5004B6790 /* MainView.swift */,
+				202FF2D12A40A978000813F1 /* settings */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		202FF2D32A40A9C6000813F1 /* game */ = {
+			isa = PBXGroup;
+			children = (
 				2090253E2A103958004B6790 /* GameDescriptor.swift */,
 				209025382A0ED937004B6790 /* GameHostView.swift */,
 				200FBD372A2EE634002A4175 /* GameLevel.swift */,
 				201E65582A17E994005404B9 /* GameModel.swift */,
 				209025442A1053CA004B6790 /* GameToolbarView.swift */,
-				2012DE462A27E2B800BB2DB5 /* games */,
-				2060632A2A1AC3A30044AC81 /* MainBallView.swift */,
-				201E65B82A1A99C7005404B9 /* MainHelpView.swift */,
-				209025402A104CD2004B6790 /* MainToolbarView.swift */,
-				20CB09E82A3E88390086036B /* menu */,
-				209025362A0ED7B5004B6790 /* MainView.swift */,
-				2090253C2A0EDA15004B6790 /* Navigator.swift */,
-				201E65632A199775005404B9 /* Play.swift */,
 				201E655A2A190A00005404B9 /* SecondsTimer.swift */,
-				201E655C2A1957BC005404B9 /* Settings.swift */,
-				2085A1702A1DB343004E601F /* SettingsGameChooserView.swift */,
-				2085A1722A1E859A004E601F /* SettingsGameOrderView.swift */,
-				201E655E2A195845005404B9 /* SettingsView.swift */,
-				200FC01C2A2F007B002A4175 /* Sound.swift */,
-				20292BFE29F2104E00C51913 /* Assets.xcassets */,
-				209AAA7F2A2298640072B17D /* Notes.txt */,
-				200FC01B2A2EEA7B002A4175 /* .gitignore */,
+				2012DE462A27E2B800BB2DB5 /* games */,
 			);
-			path = DailyPuzzlesPlus;
+			path = game;
+			sourceTree = "<group>";
+		};
+		202FF2D42A40AA26000813F1 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				20C0BE842A23F30F00884E76 /* CloudKitObserver.swift */,
+				2060634B2A1C06640044AC81 /* DailyStorage.swift */,
+				20E4AD242A244C4900E42A2F /* File.swift */,
+				201E65632A199775005404B9 /* Play.swift */,
+				200FC01C2A2F007B002A4175 /* Sound.swift */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		202FF2D52A40AAF8000813F1 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				20E4AD262A244EF300E42A2F /* CodeTimer.swift */,
+				201E65562A17E535005404B9 /* Extension.swift */,
+				2090253C2A0EDA15004B6790 /* Navigator.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		2060632E2A1B0F7C0044AC81 /* Frameworks */ = {

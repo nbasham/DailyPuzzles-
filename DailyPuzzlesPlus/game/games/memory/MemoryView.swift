@@ -110,6 +110,11 @@ struct MemoryView: View {
                             .frame(height: viewModel.cardHeight)
                     }
                 }
+                .onChange(of: proxy.size) { size in
+                    withAnimation {
+                        viewModel.update(size: size)
+                    }
+                }
                 .onAppear {
                     viewModel.start(size: proxy.size)
                 }

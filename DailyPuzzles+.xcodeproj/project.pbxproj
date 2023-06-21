@@ -430,6 +430,7 @@
 		20292BFF29F2104E00C51913 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20292BFE29F2104E00C51913 /* Assets.xcassets */; };
 		202FF2CE2A40240B000813F1 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FF2CD2A40240B000813F1 /* MainMenuView.swift */; };
 		202FF2D02A4024B5000813F1 /* GameMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FF2CF2A4024B5000813F1 /* GameMenuView.swift */; };
+		202FF2D72A412AA5000813F1 /* MemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FF2D62A412AA5000813F1 /* MemoryViewModel.swift */; };
 		2060632B2A1AC3A30044AC81 /* MainBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060632A2A1AC3A30044AC81 /* MainBallView.swift */; };
 		2060632D2A1AE4240044AC81 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060632C2A1AE4240044AC81 /* EmailView.swift */; };
 		206063302A1B0F7C0044AC81 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2060632F2A1B0F7C0044AC81 /* MessageUI.framework */; };
@@ -892,6 +893,7 @@
 		20292BFE29F2104E00C51913 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		202FF2CD2A40240B000813F1 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		202FF2CF2A4024B5000813F1 /* GameMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenuView.swift; sourceTree = "<group>"; };
+		202FF2D62A412AA5000813F1 /* MemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewModel.swift; sourceTree = "<group>"; };
 		2060632A2A1AC3A30044AC81 /* MainBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBallView.swift; sourceTree = "<group>"; };
 		2060632C2A1AE4240044AC81 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		2060632F2A1B0F7C0044AC81 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -1434,6 +1436,7 @@
 			isa = PBXGroup;
 			children = (
 				2012DE482A27E2D600BB2DB5 /* MemoryView.swift */,
+				202FF2D62A412AA5000813F1 /* MemoryViewModel.swift */,
 				2012DE4A2A27E8C900BB2DB5 /* memory.xcassets */,
 			);
 			path = memory;
@@ -2104,6 +2107,7 @@
 				209025452A1053CA004B6790 /* GameToolbarView.swift in Sources */,
 				2085A1712A1DB343004E601F /* SettingsGameChooserView.swift in Sources */,
 				2090253D2A0EDA15004B6790 /* Navigator.swift in Sources */,
+				202FF2D72A412AA5000813F1 /* MemoryViewModel.swift in Sources */,
 				201E65B92A1A99C7005404B9 /* MainHelpView.swift in Sources */,
 				20C0BE852A23F30F00884E76 /* CloudKitObserver.swift in Sources */,
 				2085A1732A1E859A004E601F /* SettingsGameOrderView.swift in Sources */,

@@ -5,6 +5,7 @@ class MemoryPuzzle: ObservableObject {
     @Published var numCols: Int
     var numCards: Int { numCols * numRows }
     let imageNames: [String]
+    let indexes: [Int]
     let level: GameLevel
 //    static private let allImageNames = Data.toString("memoryImageFileNames.txt")!.toLines
     static private let allImageNames = Data.toString("memorySymbolNames.txt")!.toLines
@@ -15,7 +16,7 @@ class MemoryPuzzle: ObservableObject {
 
     init(id: String, puzzleString: String, level: GameLevel) {
         self.level = level
-        let indexes = puzzleString.components(separatedBy: ",").map { Int($0)!}
+        indexes = puzzleString.components(separatedBy: ",").map { Int($0)!}
         imageNames = indexes.map { MemoryPuzzle.allImageNames[$0] }
         numRows = MemoryPuzzle.numRows(level: level, isPortrait: UIDevice.current.orientation == .portrait)
         numCols = MemoryPuzzle.numCols(level: level, isPortrait: UIDevice.current.orientation == .portrait)
@@ -49,49 +50,6 @@ class MemoryPuzzle: ObservableObject {
     }
 }
 
-@MainActor
-class MemoryViewModel: ObservableObject {
-    let host: GameHost
-    let level: GameLevel
-    let cards: [Card]
-    @Published var puzzle: MemoryPuzzle
-//    @Published var numRows = 0
-    @Published var spacing: CGFloat = 12
-    @Published var cardWidth: CGFloat = 4
-    @Published var cardHeight: CGFloat = 4
-    @Published var cardAspectRatio: CGFloat = 64 / 94
-
-    init(host: GameHost, size: CGSize, level: GameLevel = .easy) {
-        self.host = host
-        self.level = level
-        cards = Card.sample(level: level)
-        puzzle = MemoryPuzzle(id: "id", puzzleString: "239,145,330,337,239,21,330,57,337,57,145,21", level: .easy)
-        update(size: size)
-        host.prepareSound(soundName: "AlreadySelected")
-    }
-
-    func start(size: CGSize) {
-        let item = MenuItemViewModel(name: "Testing game menu item", notificationName: .help, image: "wand.and.stars")
-        MenuEvent.addMenuItem(item)
-        update(size: size)
-    }
-
-    func playAlreadySelected() {
-        host.playSound(soundName: "AlreadySelected")
-    }
-
-    func update(size: CGSize) {
-        let isPortrait = size.width < size.height
-        cardAspectRatio = Card.aspectRatio(isPortrait: isPortrait)
-        spacing = Card.spacing(level: level, isPortrait: isPortrait)
-        puzzle.update(isPortrait: isPortrait)
-        cardWidth = (size.width - CGFloat(puzzle.numCols-1)*CGFloat(spacing/2)) / CGFloat(puzzle.numCols) - 1
-        cardWidth = max(0, cardWidth)
-        cardHeight = (size.height - CGFloat(puzzle.numRows+1)*CGFloat(spacing)) / CGFloat(puzzle.numRows) - 1
-        cardHeight = max(0, cardHeight)
-    }
-}
-
 struct MemoryView: View {
     @StateObject var viewModel: MemoryViewModel
     @Environment(\.portraitDefault) var portraitDefault
@@ -103,7 +61,7 @@ struct MemoryView: View {
             GeometryReader { proxy in
                 LazyVGrid(columns: Array(repeating: .init(), count: viewModel.puzzle.numCols), spacing: viewModel.spacing) {
                     ForEach(0..<viewModel.puzzle.numCards, id: \.self) { index in
-                        MemoryCardView(imageName: viewModel.puzzle[index])
+                        MemoryCardView(index: index, imageName: viewModel.puzzle[index], found: viewModel.found[index])
                             .environmentObject(viewModel)
                             .aspectRatio(isPad ? 1 : viewModel.cardAspectRatio, contentMode: .fit)
                             .frame(width: viewModel.cardWidth)
@@ -213,9 +171,19 @@ struct MemoryCardView: View {
     @EnvironmentObject var viewModel: MemoryViewModel
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
-    @State var isFlipped = false
+    let index: Int
     let imageName: String
+    let found: Bool
+    @State var isFlipped = false
     let durationAndDelay : CGFloat = 0.18
+    @State private var rotation = 0.0
+
+    func rotateCard() {
+        withAnimation(.linear(duration: 0.75).delay(durationAndDelay)){
+            rotation = 360
+            print("rotating")
+        }
+    }
 
     func flipCard () {
         isFlipped = !isFlipped
@@ -238,12 +206,31 @@ struct MemoryCardView: View {
 
     var body: some View {
         ZStack {
-            FrontView(imageName: imageName, degree: $frontDegree)
+            FrontView(imageName: imageName, degree: $frontDegree, found: found)
+                .rotationEffect(Angle(degrees: rotation))
             BackView(degree: $backDegree)
         }
+        .onReceive(NotificationCenter.default.publisher(for: .flipCard)) { notification in
+            if let info = notification.object as? [String:Int] {
+                if let i = info["index"] {
+                    if i == index {
+                        flipCard()
+                    }
+                }
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .rotateCard)) { notification in
+            if let info = notification.object as? [String:Int] {
+                if let i = info["index"] {
+                    if i == index {
+                        rotateCard()
+                    }
+                }
+            }
+        }
         .onTapGesture {
-            viewModel.playAlreadySelected()
-            flipCard ()
+//            flipCard ()
+            viewModel.cardTap(index: index)
         }
     }
 
@@ -251,12 +238,13 @@ struct MemoryCardView: View {
     struct FrontView : View {
         let imageName: String
         @Binding var degree : Double
+        let found: Bool
 
         var body: some View {
             ZStack {
 
                 RoundedRectangle(cornerRadius: 7)
-                    .strokeBorder(GameDescriptor.memory.color, lineWidth: 5)
+                    .strokeBorder(GameDescriptor.memory.color, lineWidth: found ? 0 : 5)
                     .background(RoundedRectangle(cornerRadius: 7)
 .fill(Color(uiColor: UIColor.secondarySystemGroupedBackground)))
 

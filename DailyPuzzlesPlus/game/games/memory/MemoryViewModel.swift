@@ -172,5 +172,4 @@ extension MemoryViewModel {
     func clearSelections() {
         selection1 = nil
     }
-
 }

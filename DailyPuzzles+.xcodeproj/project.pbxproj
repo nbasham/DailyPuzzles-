@@ -436,6 +436,7 @@
 		206063302A1B0F7C0044AC81 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2060632F2A1B0F7C0044AC81 /* MessageUI.framework */; };
 		2060634C2A1C06640044AC81 /* DailyStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060634B2A1C06640044AC81 /* DailyStorage.swift */; };
 		2060634E2A1C0C860044AC81 /* FactoidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060634D2A1C0C860044AC81 /* FactoidView.swift */; };
+		20624B622A43837800906C71 /* MemoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20624B612A43837800906C71 /* MemoryCardView.swift */; };
 		2085A1712A1DB343004E601F /* SettingsGameChooserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085A1702A1DB343004E601F /* SettingsGameChooserView.swift */; };
 		2085A1732A1E859A004E601F /* SettingsGameOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085A1722A1E859A004E601F /* SettingsGameOrderView.swift */; };
 		209025372A0ED7B5004B6790 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025362A0ED7B5004B6790 /* MainView.swift */; };
@@ -899,6 +900,7 @@
 		2060632F2A1B0F7C0044AC81 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		2060634B2A1C06640044AC81 /* DailyStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStorage.swift; sourceTree = "<group>"; };
 		2060634D2A1C0C860044AC81 /* FactoidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoidView.swift; sourceTree = "<group>"; };
+		20624B612A43837800906C71 /* MemoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCardView.swift; sourceTree = "<group>"; };
 		2085A1702A1DB343004E601F /* SettingsGameChooserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGameChooserView.swift; sourceTree = "<group>"; };
 		2085A1722A1E859A004E601F /* SettingsGameOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGameOrderView.swift; sourceTree = "<group>"; };
 		209025362A0ED7B5004B6790 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -1435,6 +1437,7 @@
 		2012DE472A27E2C300BB2DB5 /* memory */ = {
 			isa = PBXGroup;
 			children = (
+				20624B612A43837800906C71 /* MemoryCardView.swift */,
 				2012DE482A27E2D600BB2DB5 /* MemoryView.swift */,
 				202FF2D62A412AA5000813F1 /* MemoryViewModel.swift */,
 				2012DE4A2A27E8C900BB2DB5 /* memory.xcassets */,
@@ -2115,6 +2118,7 @@
 				201E65572A17E535005404B9 /* Extension.swift in Sources */,
 				201E655F2A195845005404B9 /* SettingsView.swift in Sources */,
 				200FBEA82A2EE6A6002A4175 /* ContentService.swift in Sources */,
+				20624B622A43837800906C71 /* MemoryCardView.swift in Sources */,
 				20292BFD29F2104C00C51913 /* ContentView.swift in Sources */,
 				209025372A0ED7B5004B6790 /* MainView.swift in Sources */,
 				200FBD382A2EE634002A4175 /* GameLevel.swift in Sources */,

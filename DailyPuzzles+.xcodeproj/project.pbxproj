@@ -454,9 +454,12 @@
 		20CB09F02A3FAD530086036B /* MenuEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB09EF2A3FAD530086036B /* MenuEvent.swift */; };
 		20CB09F22A3FD3230086036B /* MainMenuTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB09F12A3FD3230086036B /* MainMenuTitleView.swift */; };
 		20CB09F42A3FD8A10086036B /* TimerMenuTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB09F32A3FD8A10086036B /* TimerMenuTitleView.swift */; };
+		20D39F9C2A43BD030007698B /* MemorySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D39F9B2A43BD030007698B /* MemorySettings.swift */; };
+		20D39F9E2A43BD5F0007698B /* MemorySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D39F9D2A43BD5F0007698B /* MemorySettingsView.swift */; };
 		20E4AD252A244C4900E42A2F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD242A244C4900E42A2F /* File.swift */; };
 		20E4AD272A244EF300E42A2F /* CodeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD262A244EF300E42A2F /* CodeTimer.swift */; };
 		20E4AD2F2A24518100E42A2F /* DailyPuzzlesPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD2E2A24518100E42A2F /* DailyPuzzlesPlusTests.swift */; };
+		20F5D31C2A43FCCC00153663 /* emojiList.txt in Resources */ = {isa = PBXBuildFile; fileRef = 20F5D31B2A43F95900153663 /* emojiList.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -921,10 +924,13 @@
 		20CB09EF2A3FAD530086036B /* MenuEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEvent.swift; sourceTree = "<group>"; };
 		20CB09F12A3FD3230086036B /* MainMenuTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTitleView.swift; sourceTree = "<group>"; };
 		20CB09F32A3FD8A10086036B /* TimerMenuTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerMenuTitleView.swift; sourceTree = "<group>"; };
+		20D39F9B2A43BD030007698B /* MemorySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySettings.swift; sourceTree = "<group>"; };
+		20D39F9D2A43BD5F0007698B /* MemorySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySettingsView.swift; sourceTree = "<group>"; };
 		20E4AD242A244C4900E42A2F /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		20E4AD262A244EF300E42A2F /* CodeTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTimer.swift; sourceTree = "<group>"; };
 		20E4AD2C2A24518100E42A2F /* DailyPuzzlesPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyPuzzlesPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E4AD2E2A24518100E42A2F /* DailyPuzzlesPlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPuzzlesPlusTests.swift; sourceTree = "<group>"; };
+		20F5D31B2A43F95900153663 /* emojiList.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = emojiList.txt; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1349,6 +1355,7 @@
 			children = (
 				200FBD3C2A2EE6A5002A4175 /* memoryImageFileNames.txt */,
 				200EE4A52A301A9000869E7B /* memorySymbolNames.txt */,
+				20F5D31B2A43F95900153663 /* emojiList.txt */,
 				200FBD3E2A2EE6A5002A4175 /* sounds */,
 				200FBD412A2EE6A5002A4175 /* clipart */,
 			);
@@ -1498,6 +1505,7 @@
 				2085A1702A1DB343004E601F /* SettingsGameChooserView.swift */,
 				2085A1722A1E859A004E601F /* SettingsGameOrderView.swift */,
 				201E655E2A195845005404B9 /* SettingsView.swift */,
+				20F5D31D2A45EDB800153663 /* games */,
 			);
 			path = settings;
 			sourceTree = "<group>";
@@ -1582,6 +1590,15 @@
 				20CB09E42A36528B0086036B /* DailyPuzzlesPlusSnapshotTests.swift */,
 			);
 			path = DailyPuzzlesPlusTests;
+			sourceTree = "<group>";
+		};
+		20F5D31D2A45EDB800153663 /* games */ = {
+			isa = PBXGroup;
+			children = (
+				20D39F9B2A43BD030007698B /* MemorySettings.swift */,
+				20D39F9D2A43BD5F0007698B /* MemorySettingsView.swift */,
+			);
+			path = games;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1924,6 +1941,7 @@
 				200FBF8F2A2EE6A6002A4175 /* green monster.png in Resources */,
 				200FBF1E2A2EE6A6002A4175 /* owl-800px.png in Resources */,
 				200FBEF82A2EE6A6002A4175 /* Funky-Old-TV-800px.png in Resources */,
+				20F5D31C2A43FCCC00153663 /* emojiList.txt in Resources */,
 				200FBEB42A2EE6A6002A4175 /* valentine01-800px.png in Resources */,
 				200FBFCA2A2EE6A6002A4175 /* fox.png in Resources */,
 				200FBF172A2EE6A6002A4175 /* sheep.png in Resources */,
@@ -2098,6 +2116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2012DE492A27E2D600BB2DB5 /* MemoryView.swift in Sources */,
+				20D39F9C2A43BD030007698B /* MemorySettings.swift in Sources */,
 				20E4AD252A244C4900E42A2F /* File.swift in Sources */,
 				2090253F2A103958004B6790 /* GameDescriptor.swift in Sources */,
 				209025392A0ED937004B6790 /* GameHostView.swift in Sources */,
@@ -2117,6 +2136,7 @@
 				20CB09EC2A3E89170086036B /* MenuItemView.swift in Sources */,
 				201E65572A17E535005404B9 /* Extension.swift in Sources */,
 				201E655F2A195845005404B9 /* SettingsView.swift in Sources */,
+				20D39F9E2A43BD5F0007698B /* MemorySettingsView.swift in Sources */,
 				200FBEA82A2EE6A6002A4175 /* ContentService.swift in Sources */,
 				20624B622A43837800906C71 /* MemoryCardView.swift in Sources */,
 				20292BFD29F2104C00C51913 /* ContentView.swift in Sources */,

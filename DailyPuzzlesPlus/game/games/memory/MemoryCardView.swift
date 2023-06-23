@@ -6,7 +6,7 @@ struct MemoryCardView: View {
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     let index: Int
-    let imageName: String
+    let image: Image
     let found: Bool
     @State var isFlipped = false
     let durationAndDelay : CGFloat = 0.18
@@ -39,7 +39,7 @@ struct MemoryCardView: View {
 
     var body: some View {
         ZStack {
-            FrontView(imageName: imageName, degree: $frontDegree, found: found)
+            FrontView(image: image, degree: $frontDegree, found: found)
                 .rotationEffect(Angle(degrees: rotation))
             BackView(degree: $backDegree)
         }
@@ -67,7 +67,7 @@ struct MemoryCardView: View {
     }
 
     struct FrontView : View {
-        let imageName: String
+        let image: Image
         @Binding var degree : Double
         let found: Bool
 
@@ -78,9 +78,7 @@ struct MemoryCardView: View {
                     .strokeBorder(GameDescriptor.memory.color, lineWidth: found ? 0 : 5)
                     .background(RoundedRectangle(cornerRadius: 7)
                         .fill(Color(uiColor: UIColor.secondarySystemGroupedBackground)))
-
-                //                Image(uiImage: UIImage(named: imageName)!)
-                Image(systemName: imageName)
+                image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(GameDescriptor.memory.color)
@@ -124,12 +122,12 @@ struct MemoryCardView_Previews: PreviewProvider {
     }
 
     static var front: some View {
-        MemoryCardView.FrontView(imageName: "brain.head.profile", degree: .constant(0.0), found: true)
+        MemoryCardView.FrontView(image: Image(systemName: "brain.head.profile"), degree: .constant(0.0), found: true)
             .padding()
     }
 
     static var frontSelected: some View {
-        MemoryCardView.FrontView(imageName: "brain.head.profile", degree: .constant(0.0), found: false)
+        MemoryCardView.FrontView(image: Image(systemName: "brain.head.profile"), degree: .constant(0.0), found: false)
             .padding()
     }
 

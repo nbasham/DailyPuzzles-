@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct DailyPuzzles_App: App {
-    @StateObject private var service = ContentService()
     @StateObject private var navigator = Navigator()
     @StateObject private var settings = Settings()
     @StateObject private var play = Play()
@@ -27,7 +26,6 @@ struct DailyPuzzles_App: App {
                     .environmentObject(navigator)
                     .environmentObject(settings)
                     .environmentObject(play)
-                    .environmentObject(service)
                     .environment(\.portraitDefault, $isPortrait) // updates env var, including changes e.g. rotation
                     .environment(\.safeAreaDefault, $safeAreaInsets) // updates env var, including changes e.g. rotation
                     .onAppear {

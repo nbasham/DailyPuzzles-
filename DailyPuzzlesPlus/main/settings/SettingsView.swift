@@ -44,6 +44,9 @@ struct SettingsView: View {
                 .listRowSeparator(Visibility.hidden)
                 .padding(.horizontal)
                 .disabled(play.soundOn == false)
+                Section("Games") {
+                    NavigationLink("Memory", destination: MemorySettingsView())
+                }
             }
             .padding(.horizontal, UIDevice.isPad ? 64 : 16)
             .scrollContentBackground(.hidden)

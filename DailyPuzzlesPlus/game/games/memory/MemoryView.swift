@@ -7,17 +7,28 @@ class MemoryPuzzle: ObservableObject {
     let imageNames: [String]
     let indexes: [Int]
     let level: GameLevel
-//    static private let allImageNames = Data.toString("memoryImageFileNames.txt")!.toLines
-    static private let allImageNames = Data.toString("memorySymbolNames.txt")!.toLines
 
     subscript(index: Int) -> String {
-        return imageNames[index] // ?? Image(systemName: "photo.fill")
+        return imageNames[index]
+    }
+
+    static private func imageNames() -> [String] {
+        let imageType = MemorySettings.imageType
+        switch imageType {
+            case .clipArt:
+                return Data.toString("memoryImageFileNames.txt")!.toLines
+            case .emoji:
+                return Data.toString("emojiList.txt")!.toLines
+            case .symbol:
+                return Data.toString("memorySymbolNames.txt")!.toLines
+        }
     }
 
     init(id: String, puzzleString: String, level: GameLevel) {
         self.level = level
         indexes = puzzleString.components(separatedBy: ",").map { Int($0)!}
-        imageNames = indexes.map { MemoryPuzzle.allImageNames[$0] }
+        let allImageNames = MemoryPuzzle.imageNames()
+        imageNames = indexes.map { allImageNames[$0] }
         numRows = MemoryPuzzle.numRows(level: level, isPortrait: UIDevice.current.orientation == .portrait)
         numCols = MemoryPuzzle.numCols(level: level, isPortrait: UIDevice.current.orientation == .portrait)
     }
@@ -51,17 +62,30 @@ class MemoryPuzzle: ObservableObject {
 }
 
 struct MemoryView: View {
+    @EnvironmentObject private var navigator: Navigator
     @StateObject var viewModel: MemoryViewModel
     @Environment(\.portraitDefault) var portraitDefault
     var isPortrait: Bool { portraitDefault.wrappedValue }
     let isPad = UIDevice.current.userInterfaceIdiom == .pad
+
+    func image(_ name: String) -> Image {
+        let imageType = MemorySettings.imageType
+        switch imageType {
+            case .clipArt:
+                return Image(uiImage: UIImage(named: name)!)
+            case .emoji:
+                return name.toImage()
+            case .symbol:
+                return Image(systemName: name)
+        }
+    }
 
     var body: some View {
         VStack {
             GeometryReader { proxy in
                 LazyVGrid(columns: Array(repeating: .init(), count: viewModel.puzzle.numCols), spacing: viewModel.spacing) {
                     ForEach(0..<viewModel.puzzle.numCards, id: \.self) { index in
-                        MemoryCardView(index: index, imageName: viewModel.puzzle[index], found: viewModel.found[index])
+                        MemoryCardView(index: index, image: image(viewModel.puzzle[index]), found: viewModel.found[index])
                             .environmentObject(viewModel)
                             .aspectRatio(isPad ? 1 : viewModel.cardAspectRatio, contentMode: .fit)
                             .frame(width: viewModel.cardWidth)

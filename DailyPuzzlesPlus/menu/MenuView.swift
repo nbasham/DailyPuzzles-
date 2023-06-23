@@ -5,7 +5,7 @@ import SwiftUI
 
  `NotificationCenter` is used to post events when a menu item is choosen. Menu items can also be added or modified by sending a notification enabling games to add menu items e.g.
  ```
- NotificationCenter.default.post(name: .addMenuItem, object: ["menuItem": item])
+ NotificationCenter.default.post(name:me .addMenuItem, object: ["menuItem": item])
 ```
  Storing menu item descriptions as a `Set` means that you can update a menu item by re-adding it. Menu items use their notification name to satisfy `Identifiable`.
  */

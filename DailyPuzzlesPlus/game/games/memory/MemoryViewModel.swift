@@ -28,8 +28,13 @@ class MemoryViewModel: ObservableObject {
     }
 
     func start(size: CGSize) {
-        let item = MenuItemViewModel(name: "Testing game menu item", notificationName: .help, image: "wand.and.stars")
-        MenuEvent.addMenuItem(item)
+        let data = ContentService.memory
+        let items = data.split(separator: "\t")
+        let id = String(items[0])
+        let puzzleString = String(items[1])
+        //  TODO
+        puzzle = MemoryPuzzle(id: id, puzzleString: puzzleString, level: GameLevel.value(forGame: .memory))
+        found = [Bool](repeating:false, count: puzzle.numCards)
     }
 
     func playAlreadySelected() {

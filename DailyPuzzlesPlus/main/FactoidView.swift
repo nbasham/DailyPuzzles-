@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct FactoidView: View {
-    @EnvironmentObject private var service: ContentService
     @Environment(\.isPreview) var isPreview
     @Environment(\.colorScheme) var colorScheme
     @State internal var message: LocalizedStringKey = ""
@@ -19,13 +18,13 @@ struct FactoidView: View {
             .multilineTextAlignment(.leading)
             .onAppear {
                 guard !isPreview else { return }
-                message = LocalizedStringKey(service.factoid)
+                message = LocalizedStringKey(ContentService.factoid)
             }
             .onReceive(NotificationCenter.default.publisher(for: .dateChange)) { _ in
-                message = LocalizedStringKey(service.factoid)
+                message = LocalizedStringKey(ContentService.factoid)
             }
             .onReceive(NotificationCenter.default.publisher(for: CloudKitDataReceivedNotification)) { _ in
-                message = LocalizedStringKey(service.factoid)
+                message = LocalizedStringKey(ContentService.factoid)
             }
     }
 }

@@ -10,8 +10,8 @@ import SwiftUI
  let memoryPuzzle = MemoryPuzzle(content)
  ```
  */
-final class ContentService: ObservableObject {
-    var factoid: String {
+final class ContentService {
+    static var factoid: String {
         guard !DailyStorage.allCompleted() else { return "Congratulations, you've solved today's puzzles! More at midnight..." }
         let timer = CodeTimer()
         let factoidUpdates = AppSupportFile.load("factoidUpdates.txt") as? [String] ?? Bundle.lines(from: "factoidUpdates")
@@ -22,14 +22,14 @@ final class ContentService: ObservableObject {
            return String(update.dropFirst(9))
         }
 
-        return todaysLine(from: "factoids")
+        return String(todaysLine(from: "factoids").dropFirst(5))
     }
 
-    var memory: String {
+    static var memory: String {
         return gameContent(.memory)
     }
 
-    private func gameContent(_ game: GameDescriptor) -> String {
+    private static func gameContent(_ game: GameDescriptor) -> String {
         if game.hasLevels {
             let level = GameLevel.value(forGame: game)
             return todaysLine(from: "\(game.id)_puzzles_\(level.key)")
@@ -37,7 +37,7 @@ final class ContentService: ObservableObject {
         return todaysLine(from: "\(game.id)_puzzles")
     }
 
-    private func todaysLine(from fileName: String) -> String {
+    private static func todaysLine(from fileName: String) -> String {
         let timer = CodeTimer()
         let lines = AppSupportFile.load("\(fileName).txt") as? [String] ?? Bundle.lines(from: fileName)
         let key = Date.ddmm
@@ -46,7 +46,8 @@ final class ContentService: ObservableObject {
         }
         if let line, line.count > 5 {
             timer.log("Time to load line \(key) from '\(fileName).txt':")
-            return String(line.dropFirst(5))
+//            return String(line.dropFirst(5))
+            return line
         } else {
             timer.log("Time:")
             print("Error loading line \(key) from '\(fileName).txt'.")

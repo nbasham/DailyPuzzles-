@@ -3,7 +3,6 @@ import SwiftUI
 //  DOESN'T WORK IN SIMULATOR, be sure to import MessageUI into the Xcode project
 struct MainToolbarView: ToolbarContent {
     @EnvironmentObject private var navigator: Navigator
-    @EnvironmentObject private var play: Play
     @EnvironmentObject private var viewModel: MainViewModel
     @State var overMinXMargin: CGFloat = 0
 
@@ -49,19 +48,17 @@ struct MainToolbarView_Previews: PreviewProvider {
             }
         }
         .environmentObject(Navigator())
-        .environmentObject(Play())
     }
 }
 
 struct MenuItem: View {
     let name: String
     let notificationName: NSNotification.Name
-    @EnvironmentObject private var play: Play
 
     var body: some View {
         Button(name, action: {
             NotificationCenter.default.post(name: notificationName, object: nil)
-            play.tap()
+            Play.tap()
         } )
     }
 }

@@ -3,7 +3,6 @@ import SwiftUI
 struct GameToolbarView: ToolbarContent {
     @EnvironmentObject private var navigator: Navigator
     @EnvironmentObject private var settings: Settings
-    @EnvironmentObject private var play: Play
     let showTimer: Bool
     @State private var menuItems: Set<MenuItemViewModel> = []
     @Binding var isGameSolved: Bool
@@ -15,7 +14,7 @@ struct GameToolbarView: ToolbarContent {
             ToolbarItem(placement: .navigationBarLeading) {
                 ZStack(alignment: .trailing) {
                     Button(action: {
-                        play.tap()
+                        Play.tap()
                         NotificationCenter.default.post(name: .gameBackButton, object: nil)
                         navigator.pop()
                     }, label: {
@@ -72,7 +71,6 @@ struct GameToolbarView_Previews: PreviewProvider {
             }
             .environmentObject(Navigator())
             .environmentObject(Settings())
-            .environmentObject(Play())
         }
     }
     static var notSolvedWithTimerAtZero: some View {

@@ -53,7 +53,6 @@ class MainViewModel: ObservableObject {
  */
 struct MainView: View {
     @EnvironmentObject private var navigator: Navigator
-    @EnvironmentObject private var play: Play
     @Environment(\.isPreview) var isPreview
     @State private var coverScreen: FullCoverPath?
     @StateObject var viewModel: MainViewModel
@@ -150,7 +149,7 @@ struct MainView: View {
                 .padding(.leading)
                 .contentShape(Rectangle())
                 .onTapGesture {
-                    play.tap()
+                    Play.tap()
                 }
             }
         }
@@ -162,6 +161,5 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView(viewModel: MainViewModel())
             .environmentObject(Navigator())
-            .environmentObject(Play())
     }
 }

@@ -170,24 +170,21 @@ struct Card: Identifiable {
 struct MemoryView_Previews: PreviewProvider {
     static var previews: some View {
         let host = GameHostView(viewModel: GameHostViewModel(game: .memory))
-        host.environmentObject(Play())
-        host.environmentObject(Settings())
-        Group {
+//        host.environmentObject(Settings())
+//        Group {
             MemoryView(viewModel: MemoryViewModel(host: host, size: CGSize(width: 320, height: 500)))
                 .environmentObject(Navigator())
-                .environmentObject(Play())
                 .environmentObject(Settings())
                 .previewInterfaceOrientation(.portrait)
                 .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
                 .previewDisplayName("iPhone 14")
 
-            MemoryView(viewModel: MemoryViewModel(host: host, size: CGSize(width: 500, height: 300)))
-                .environmentObject(Navigator())
-                .environmentObject(Play())
-                .environmentObject(Settings())
-                .previewInterfaceOrientation(.landscapeRight)
-                .previewDisplayName("iPhone 14 landscape")
-                .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
-        }
+//            MemoryView(viewModel: MemoryViewModel(host: host, size: CGSize(width: 500, height: 300)))
+//                .environmentObject(Navigator())
+//                .environmentObject(Settings())
+//                .previewInterfaceOrientation(.landscapeRight)
+//                .previewDisplayName("iPhone 14 landscape")
+//                .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
+//        }
     }
 }

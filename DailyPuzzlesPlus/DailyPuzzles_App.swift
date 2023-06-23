@@ -11,7 +11,6 @@ import SwiftUI
 struct DailyPuzzles_App: App {
     @StateObject private var navigator = Navigator()
     @StateObject private var settings = Settings()
-    @StateObject private var play = Play()
     @Environment(\.isPreview) var isPreview
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @State private var safeAreaInsets = EdgeInsets()
@@ -25,7 +24,6 @@ struct DailyPuzzles_App: App {
                     .preferredColorScheme(settings.darkMode ? .dark : nil)
                     .environmentObject(navigator)
                     .environmentObject(settings)
-                    .environmentObject(play)
                     .environment(\.portraitDefault, $isPortrait) // updates env var, including changes e.g. rotation
                     .environment(\.safeAreaDefault, $safeAreaInsets) // updates env var, including changes e.g. rotation
                     .onAppear {

@@ -7,34 +7,31 @@ struct MemorySettingsView: View {
     @State private var isPortrait = UIDevice.current.orientation == .portrait
     @State private var imageType = MemorySettings.imageType
     @State private var levelType = GameLevel.value(forGame: .memory)
+    let selectorLen: CGFloat = 48
 
     var body: some View {
-        ZStack {
-            Color.background
-                .ignoresSafeArea()
-            Form {
-                Section(header: Text("Choose a visual preference")) {
-                    HStack {
-                        Spacer()
-                        selectorButton(image: image, title: "Images", isSelected: imageType == .clipArt)
-                        Spacer()
-                        selectorButton(image: emoji, title: "Emoji", isSelected: imageType == .emoji)
-                        Spacer()
-                        selectorButton(image: symbol, title: "Symbols", isSelected: imageType == .symbol)
-                        Spacer()
-                    }
+        SettingsWrapperView {
+            Section(header: Text("Choose a visual preference")) {
+                HStack {
+                    Spacer()
+                    selectorButton(image: image, title: "Images", isSelected: imageType == .clipArt)
+                    Spacer()
+                    selectorButton(image: emoji, title: "Emoji", isSelected: imageType == .emoji)
+                    Spacer()
+                    selectorButton(image: symbol, title: "Symbols", isSelected: imageType == .symbol)
+                    Spacer()
                 }
+            }
 
-                Section(header: Text("Choose a difficulty level")) {
-                    HStack {
-                        Spacer()
-                        gridSelectorButton(rows: isPortrait ? 4 : 3, cols: isPortrait ? 3 : 4, title: "Easy", isSelected: levelType == .easy)
-                        Spacer()
-                        gridSelectorButton(rows: isPortrait ? 6 : 4, cols: isPortrait ? 4 : 6, title: "Medium", isSelected: levelType == .medium)
-                        Spacer()
-                        gridSelectorButton(rows: isPortrait ? 8 : 5, cols: isPortrait ? 5 : 8, title: "Hard", isSelected: levelType == .hard)
-                        Spacer()
-                    }
+            Section(header: Text("Choose a difficulty level")) {
+                HStack {
+                    Spacer()
+                    gridSelectorButton(rows: isPortrait ? 4 : 3, cols: isPortrait ? 3 : 4, title: "Easy", isSelected: levelType == .easy)
+                    Spacer()
+                    gridSelectorButton(rows: isPortrait ? 6 : 4, cols: isPortrait ? 4 : 6, title: "Medium", isSelected: levelType == .medium)
+                    Spacer()
+                    gridSelectorButton(rows: isPortrait ? 8 : 5, cols: isPortrait ? 5 : 8, title: "Hard", isSelected: levelType == .hard)
+                    Spacer()
                 }
             }
         }
@@ -47,7 +44,7 @@ struct MemorySettingsView: View {
                 VStack {
                     image
                         .resizable()
-                        .frame(width: 48, height: 48)
+                        .frame(width: selectorLen, height: selectorLen)
                     Text(title)
                 }
             )
@@ -77,7 +74,7 @@ struct MemorySettingsView: View {
             .overlay (
                 VStack {
                     gridBody(rows: rows, cols: cols)
-                        .frame(width: 48, height: 48)
+                        .frame(width: selectorLen, height: selectorLen)
                     Text(title)
                 }
             )

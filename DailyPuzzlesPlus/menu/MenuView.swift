@@ -10,7 +10,6 @@ import SwiftUI
  Storing menu item descriptions as a `Set` means that you can update a menu item by re-adding it. Menu items use their notification name to satisfy `Identifiable`.
  */
 struct MenuView<Content: View>: View {
-    @EnvironmentObject private var play: Play
     @State var items: Set<MenuItemViewModel>
     @ViewBuilder var content: Content
 
@@ -38,7 +37,7 @@ struct MenuView<Content: View>: View {
             }
         }
         .onTapGesture {
-            play.tap()
+            Play.tap()
         }
     }
 }

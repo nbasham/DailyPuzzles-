@@ -18,7 +18,6 @@ protocol GameHost {
 
 struct GameHostView: View, GameHost {
     @EnvironmentObject private var navigator: Navigator
-    @EnvironmentObject private var play: Play
     @EnvironmentObject private var settings: Settings
     @Environment(\.isPreview) var isPreview
     @StateObject var viewModel: GameHostViewModel
@@ -77,14 +76,14 @@ struct GameHostView: View, GameHost {
 
     func incMisses() { viewModel.incMisses() }
     func incHints() { viewModel.incHints() }
-    func prepareSound(soundName: String) { play.prepare(soundName) }
-    func playSound(soundName: String) { play.play(soundName) }
-    func playTap() { play.tap() }
-    func playHighlight() { play.highlight() }
-    func playIncorrect() { play.incorrect() }
-    func playCorrect() { play.correct() }
-    func playHint() { play.hint() }
-    func playErase() { play.erase() }
+    func prepareSound(soundName: String) { Play.prepare(soundName) }
+    func playSound(soundName: String) { Play.play(soundName) }
+    func playTap() { Play.tap() }
+    func playHighlight() { Play.highlight() }
+    func playIncorrect() { Play.incorrect() }
+    func playCorrect() { Play.correct() }
+    func playHint() { Play.hint() }
+    func playErase() { Play.erase() }
 }
 
 struct GameHostView_Previews: PreviewProvider {
@@ -93,7 +92,6 @@ struct GameHostView_Previews: PreviewProvider {
             GameHostView(viewModel: GameHostViewModel(game: .memory))
                 .environmentObject(Navigator())
                 .environmentObject(Settings())
-                .environmentObject(Play())
         }
     }
 }

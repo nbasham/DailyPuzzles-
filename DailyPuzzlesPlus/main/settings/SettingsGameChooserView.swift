@@ -2,7 +2,6 @@ import SwiftUI
 
 struct SettingsGameChooserView: View {
     @EnvironmentObject private var navigator: Navigator
-    @EnvironmentObject private var play: Play
     @State private var isOn = GameDescriptor.all.map { Settings.isGameOn($0) }
 
     var body: some View {

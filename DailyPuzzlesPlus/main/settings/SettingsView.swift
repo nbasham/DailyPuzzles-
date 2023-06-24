@@ -70,7 +70,7 @@ struct SettingsWrapperView<Content: View>: View {
             Form {
                 content
             }
-            .padding(.horizontal, UIDevice.isPad ? 64 : 0)
+            .padding(.horizontal, UIDevice.isPhone ? 0 : 64)
             .scrollContentBackground(.hidden)
             .tint(.top)
             .padding(.top, topPadding)

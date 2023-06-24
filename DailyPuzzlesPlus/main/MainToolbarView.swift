@@ -21,14 +21,14 @@ struct MainToolbarView: ToolbarContent {
 
     private var logoView: some View {
         HStack(spacing: 2) {
-            Spacer(minLength: 39)
+            Spacer(minLength: 39 + (UIDevice.isPhone ? 0 : 134))
             Text("Daily")
                 .fontWeight(.light)
             Text("Puzzles")
                 .fontWeight(.heavy)
             Spacer()
         }
-        .font(.system(size: 19))
+        .font(.system(size: UIDevice.isPhone ? 19 : 23))
         .foregroundColor(.white)
         .fixedSize(horizontal: true, vertical: true)
         .frame(width: 148 - overMinXMargin)

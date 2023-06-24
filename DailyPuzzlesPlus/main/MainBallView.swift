@@ -18,6 +18,7 @@ struct MainBallView: View {
             .aspectRatio(1, contentMode: .fit)
             .rotationEffect(.degrees(animateBall ? 5*360 : 0))
             .onTapGesture {
+                Play.tap()
                 withAnimation(.linear(duration: 3).repeatForever(autoreverses: false)) {
                     animateBall.toggle()
                 }
@@ -39,7 +40,7 @@ struct MainBallView: View {
                 .minimumScaleFactor(0.2)
                 .lineLimit(1)
                 .fontWeight(.semibold)
-                .font(.system(size: 13, design: .rounded))
+                .font(.system(size: 19, design: .rounded))
                 .foregroundColor(.white.opacity(0.8))
                 .offset(y: -1)
                 .padding(4) // pushes 'play' from circle edge

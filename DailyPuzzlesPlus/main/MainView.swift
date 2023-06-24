@@ -6,7 +6,7 @@ class MainViewModel: ObservableObject {
     @Published var chooserTopSpacing: CGFloat = 8
     @Published var chooserLineSpacing: CGFloat = 16
     @Published var overMinXMargin: CGFloat = 0
-    var isPad: Bool { UIDevice.current.userInterfaceIdiom == .pad }
+    var isPhone: Bool { UIDevice.current.userInterfaceIdiom == .phone }
     private var isLandscape: Bool { !inPortrait }
 
     init() {
@@ -31,10 +31,7 @@ class MainViewModel: ObservableObject {
         guard orientation != .unknown else { return }
         inPortrait = orientation == .portrait
         overMinXMargin = calcOffset()
-        if isPad {
-            bottomViewHeight = 100
-            chooserTopSpacing = 16
-        } else {
+        if isPhone {
             if inPortrait {
                 bottomViewHeight = 88
                 chooserTopSpacing = 16
@@ -44,6 +41,9 @@ class MainViewModel: ObservableObject {
                 chooserTopSpacing = 8
                 chooserLineSpacing = 5
             }
+        } else {
+            bottomViewHeight = 100
+            chooserTopSpacing = 16
         }
     }
 }
@@ -139,11 +139,11 @@ struct MainView: View {
                     }
                         .frame(maxWidth: 200)
                         .tint(.primary)
-                        .font(.system(size: 18, weight: .semibold))
-                        .frame(width: 148)
+                        .font(.system(size: UIDevice.isPhone ? 18 : 22, weight: .semibold))
+                        .frame(width: UIDevice.isPhone ? 148 : 256)
                     Spacer().frame(width: 16)
                     MainBallView(game: game)
-                        .frame(maxHeight: 34)
+                        .frame(maxHeight: UIDevice.isPhone ? 34 : 54)
                     Spacer()
                 }
                 .padding(.leading)

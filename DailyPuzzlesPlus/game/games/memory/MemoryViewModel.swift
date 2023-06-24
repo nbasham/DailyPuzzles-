@@ -120,12 +120,23 @@ class MemoryViewModel: ObservableObject {
         cardHeight = (size.height - CGFloat(puzzle.numRows+1)*CGFloat(spacing)) / CGFloat(puzzle.numRows) - 1
         print("\(Int(cardWidth)) x \(Int(cardHeight))")
         cardHeight = max(0, cardHeight)
-        cardPadding = min(cardWidth, cardHeight)
-        if cardPadding > 160 { cardSelectionLen = 5 }
-        else if cardPadding > 120 { cardSelectionLen = 4 }
-        else if cardPadding > 80 { cardSelectionLen = 3 }
-        else { cardSelectionLen = 2 }
-        cardPadding = min(2, cardPadding/33)
+        cardPadding = calcPadding(cardWidth: cardWidth, cardHeight: cardHeight)
+        cardSelectionLen = calcSelection(cardWidth: cardWidth, cardHeight: cardHeight)
+    }
+
+    private func calcPadding(cardWidth: CGFloat, cardHeight: CGFloat) -> CGFloat {
+        if UIDevice.isPhone {
+            cardPadding = min(2, cardPadding/33)
+        }
+        return 8
+    }
+
+    private func calcSelection(cardWidth: CGFloat, cardHeight: CGFloat) -> CGFloat {
+        let minLen = min(cardWidth, cardHeight)
+        if minLen > 160 { return 5 }
+        else if minLen > 120 { return 4 }
+        else if minLen > 80 { return 3 }
+        else { return 2 }
     }
 }
 

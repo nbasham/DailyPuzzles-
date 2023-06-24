@@ -99,7 +99,7 @@ struct MemoryCardView: View {
         var body: some View {
             ZStack {
                 RoundedRectangle(cornerRadius: 7)
-                    .strokeBorder(Color(uiColor: UIColor.systemGray3), lineWidth: 1)
+                    .strokeBorder(Color(uiColor: UIColor.systemGray3), lineWidth: UIDevice.isPhone ? 1 : 3)
                     .background(
                         ZStack {
                             RoundedRectangle(cornerRadius: 7)
@@ -109,7 +109,7 @@ struct MemoryCardView: View {
                                 .aspectRatio(1, contentMode: .fit)
                                 .foregroundColor(Color(uiColor: UIColor.systemGray3))
                             //                                .shadow(color: .black, radius: 1, x: 1, y: 1)
-                                .padding(cardPadding)
+                                .padding(UIDevice.isPhone ? cardPadding : cardPadding * 2)
                         }
                     )
 

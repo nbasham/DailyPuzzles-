@@ -136,7 +136,7 @@ struct MemorySettingsView_Previews: PreviewProvider {
 
 extension String {
     func toImage() -> Image {
-        let timer = CodeTimer()
+//        let timer = CodeTimer()
         let nsString = (self as NSString)
         let font = UIFont.systemFont(ofSize: 124) // you can change your font size here
         let stringAttributes = [NSAttributedString.Key.font: font]
@@ -148,7 +148,7 @@ extension String {
         nsString.draw(at: CGPoint.zero, withAttributes: stringAttributes) // draw text within rect
         let image = UIGraphicsGetImageFromCurrentImageContext() // create image from context
         UIGraphicsEndImageContext() //  end image context
-        timer.log("Time to convert emoji:")
+//        timer.log("Time to convert emoji:")
 
         return Image(uiImage: image!)
     }

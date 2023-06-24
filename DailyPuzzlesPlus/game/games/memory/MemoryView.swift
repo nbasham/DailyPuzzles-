@@ -66,7 +66,7 @@ struct MemoryView: View {
     @StateObject var viewModel: MemoryViewModel
     @Environment(\.portraitDefault) var portraitDefault
     var isPortrait: Bool { portraitDefault.wrappedValue }
-    let isPad = UIDevice.current.userInterfaceIdiom == .pad
+    let isPhone = UIDevice.current.userInterfaceIdiom == .phone
 
     func image(_ name: String) -> Image {
         let imageType = MemorySettings.imageType
@@ -87,7 +87,7 @@ struct MemoryView: View {
                     ForEach(0..<viewModel.puzzle.numCards, id: \.self) { index in
                         MemoryCardView(index: index, image: image(viewModel.puzzle[index]), found: viewModel.found[index])
                             .environmentObject(viewModel)
-                            .aspectRatio(isPad ? 1 : viewModel.cardAspectRatio, contentMode: .fit)
+                            .aspectRatio(isPhone ? viewModel.cardAspectRatio : 1, contentMode: .fit)
                             .frame(width: viewModel.cardWidth)
                             .frame(height: viewModel.cardHeight)
                     }
@@ -114,14 +114,14 @@ struct Card: Identifiable {
     }
 
     static func spacing(level: GameLevel, isPortrait: Bool) -> CGFloat {
-        let isPad = UIDevice.current.userInterfaceIdiom == .pad
+        let isPhone = UIDevice.current.userInterfaceIdiom == .phone
         switch level {
             case .easy:
-                return isPad ? (isPortrait ? 24 : 12) : 12
+                return isPhone ? 12 : (isPortrait ? 24 : 12)
             case .medium:
-                return isPad ? 16 : 16
+                return isPhone ? 16 : 16
             case .hard:
-                return isPad ? 12 : 12
+                return isPhone ? 12 : 12
         }
     }
 

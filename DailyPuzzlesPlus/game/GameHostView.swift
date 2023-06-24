@@ -14,6 +14,7 @@ protocol GameHost {
     func playCorrect()
     func playHint()
     func playErase()
+    func gameComplete()
 }
 
 struct GameHostView: View, GameHost {
@@ -84,6 +85,7 @@ struct GameHostView: View, GameHost {
     func playCorrect() { Play.correct() }
     func playHint() { Play.hint() }
     func playErase() { Play.erase() }
+    func gameComplete() { Play.gameComplete() }
 }
 
 struct GameHostView_Previews: PreviewProvider {
@@ -96,6 +98,7 @@ struct GameHostView_Previews: PreviewProvider {
     }
 }
 
+@MainActor
 class GameHostViewModel: ObservableObject {
     let game: GameDescriptor
     @Published var isSolved = false
@@ -144,6 +147,7 @@ class GameHostViewModel: ObservableObject {
     }
 
     func didSolve() {
+        Play.gameComplete()
         timer.pause()
         isSolved = true
         showSolved = true

@@ -16,6 +16,7 @@ class Play {
     private static let correctSound = Play.load("Correct")
     private static let hintSound = Play.load("Hint")
     private static let eraseSound = Play.load("Erase")
+    private static let gameCompleteSound = Play.load("GameComplete")
     private static var gameSounds: [String: Sound] = [:]
 
     private static func load(_ name: String) -> Sound? {
@@ -62,4 +63,5 @@ class Play {
     static func correct() { _play(correctSound) }
     static func hint() { _play(hintSound) }
     static func erase() { _play(eraseSound) }
+    static func gameComplete() { _play(gameCompleteSound) }
 }

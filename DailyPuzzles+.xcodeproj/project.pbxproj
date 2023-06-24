@@ -460,6 +460,7 @@
 		20E4AD272A244EF300E42A2F /* CodeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD262A244EF300E42A2F /* CodeTimer.swift */; };
 		20E4AD2F2A24518100E42A2F /* DailyPuzzlesPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD2E2A24518100E42A2F /* DailyPuzzlesPlusTests.swift */; };
 		20F5D31C2A43FCCC00153663 /* emojiList.txt in Resources */ = {isa = PBXBuildFile; fileRef = 20F5D31B2A43F95900153663 /* emojiList.txt */; };
+		20F5D31F2A46603D00153663 /* emojiFlagsList.txt in Resources */ = {isa = PBXBuildFile; fileRef = 20F5D31E2A46603D00153663 /* emojiFlagsList.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -931,6 +932,7 @@
 		20E4AD2C2A24518100E42A2F /* DailyPuzzlesPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyPuzzlesPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E4AD2E2A24518100E42A2F /* DailyPuzzlesPlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPuzzlesPlusTests.swift; sourceTree = "<group>"; };
 		20F5D31B2A43F95900153663 /* emojiList.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = emojiList.txt; sourceTree = "<group>"; usesTabs = 1; };
+		20F5D31E2A46603D00153663 /* emojiFlagsList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = emojiFlagsList.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1356,6 +1358,7 @@
 				200FBD3C2A2EE6A5002A4175 /* memoryImageFileNames.txt */,
 				200EE4A52A301A9000869E7B /* memorySymbolNames.txt */,
 				20F5D31B2A43F95900153663 /* emojiList.txt */,
+				20F5D31E2A46603D00153663 /* emojiFlagsList.txt */,
 				200FBD3E2A2EE6A5002A4175 /* sounds */,
 				200FBD412A2EE6A5002A4175 /* clipart */,
 			);
@@ -1864,6 +1867,7 @@
 				200FBFBF2A2EE6A6002A4175 /* matreshka.png in Resources */,
 				200FC00D2A2EE6A6002A4175 /* ted-tree-800px.png in Resources */,
 				200FBED52A2EE6A6002A4175 /* Twitter-Penwin-800px.png in Resources */,
+				20F5D31F2A46603D00153663 /* emojiFlagsList.txt in Resources */,
 				200FC0012A2EE6A6002A4175 /* finch.png in Resources */,
 				200FBFFA2A2EE6A6002A4175 /* smile.png in Resources */,
 				200FBF102A2EE6A6002A4175 /* lemmling-Cartoon-goat-800px.png in Resources */,

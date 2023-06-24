@@ -34,7 +34,7 @@ struct GameHostView: View, GameHost {
                     GeometryReader { proxy in
                         game.view(host: self, size: proxy.size)
                             .disabled(isGameDisabled)
-//                            .environmentObject(service)
+                            .transition(.scale)
                     }
                     if viewModel.showSolved {
                         GameSolvedView()

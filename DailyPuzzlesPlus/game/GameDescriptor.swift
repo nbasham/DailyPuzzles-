@@ -89,7 +89,7 @@ enum GameDescriptor: String, Identifiable, Codable {
             case .word_search:
                 CryptogramView(host: host, size: size)
             case .memory:
-                MemoryView(viewModel: MemoryViewModel(host: host, size: size))
+                MemoryView(viewModel: MemoryViewModel(host: host, size: size, level: GameLevel.value(forGame: .memory)))
             case .triplets:
                 CryptogramView(host: host, size: size)
             case .sample_game:

@@ -39,10 +39,11 @@ struct MemoryCardView: View {
 
     var body: some View {
         ZStack {
-            FrontView(image: image, degree: $frontDegree, found: found)
+            FrontView(cardSelectionLen: viewModel.cardSelectionLen, cardPadding: viewModel.cardPadding, image: image, degree: $frontDegree, found: found)
                 .rotationEffect(Angle(degrees: rotation))
-            BackView(degree: $backDegree)
+            BackView(cardPadding: viewModel.cardPadding, degree: $backDegree)
         }
+        .environmentObject(viewModel)
         .onReceive(NotificationCenter.default.publisher(for: .flipCard)) { notification in
             if let info = notification.object as? [String:Int] {
                 if let i = info["index"] {
@@ -67,6 +68,8 @@ struct MemoryCardView: View {
     }
 
     struct FrontView : View {
+        let cardSelectionLen: CGFloat
+        let cardPadding: CGFloat
         let image: Image
         @Binding var degree : Double
         let found: Bool
@@ -75,20 +78,22 @@ struct MemoryCardView: View {
             ZStack {
 
                 RoundedRectangle(cornerRadius: 7)
-                    .strokeBorder(GameDescriptor.memory.color, lineWidth: found ? 0 : 5)
+                    .strokeBorder(GameDescriptor.memory.color, lineWidth: found ? 0 : cardSelectionLen)
                     .background(RoundedRectangle(cornerRadius: 7)
                         .fill(Color(uiColor: UIColor.secondarySystemGroupedBackground)))
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(GameDescriptor.memory.color)
-                    .padding()
+                    .padding(cardPadding)
             }
             .rotation3DEffect(Angle(degrees: degree), axis: (x: 0.001, y: 1, z: 0.001))
         }
     }
 
     struct BackView : View {
+        @EnvironmentObject var viewModel: MemoryViewModel
+        let cardPadding: CGFloat
         @Binding var degree : Double
 
         var body: some View {
@@ -104,7 +109,7 @@ struct MemoryCardView: View {
                                 .aspectRatio(1, contentMode: .fit)
                                 .foregroundColor(Color(uiColor: UIColor.systemGray3))
                             //                                .shadow(color: .black, radius: 1, x: 1, y: 1)
-                                .padding()
+                                .padding(cardPadding)
                         }
                     )
 
@@ -116,27 +121,43 @@ struct MemoryCardView: View {
 }
 
 struct MemoryCardView_Previews: PreviewProvider {
-    static var back: some View {
-        MemoryCardView.BackView(degree: .constant(0.0))
-            .padding()
-    }
-
-    static var front: some View {
-        MemoryCardView.FrontView(image: Image(systemName: "brain.head.profile"), degree: .constant(0.0), found: true)
-            .padding()
-    }
-
-    static var frontSelected: some View {
-        MemoryCardView.FrontView(image: Image(systemName: "brain.head.profile"), degree: .constant(0.0), found: false)
-            .padding()
-    }
+//    static var back: some View {
+//        MemoryCardView.BackView(degree: .constant(0.0))
+//            .padding()
+//    }
+//
+//    static var front: some View {
+//        MemoryCardView.FrontView(image: Image(systemName: "brain.head.profile"), degree: .constant(0.0), found: true)
+//            .padding()
+//    }
+//
+//    static var frontSelected: some View {
+//        MemoryCardView.FrontView(image: Image(systemName: "brain.head.profile"), degree: .constant(0.0), found: false)
+//            .padding()
+//    }
 
     static var previews: some View {
-        back
-            .previewDisplayName("back")
-        front
-            .previewDisplayName("front")
-        frontSelected
-            .previewDisplayName("frontSelected")
+        let sePortraitSize = CGSize(width: 109, height: 131)
+        let seLandscapeSize = CGSize(width: 153, height: 86)
+//        back
+//            .previewDisplayName("back")
+//        front
+//            .previewDisplayName("front")
+//        frontSelected
+//            .previewDisplayName("frontSelected")
+        return VStack {
+            ForEach(1..<5) { row in
+                HStack {
+                    MemoryCardView.BackView(cardPadding: 2, degree: .constant(0.0))
+                        .frame(width: CGFloat(64*row/2), height: CGFloat(94*row/2))
+                    MemoryCardView.FrontView(cardSelectionLen: 2, cardPadding: 2, image: Image(uiImage: UIImage(named: "chick")!), degree: .constant(0.0), found: false)
+                        .frame(width: CGFloat(64*row/2), height: CGFloat(94*row/2))
+                    MemoryCardView.FrontView(cardSelectionLen: 2, cardPadding: 2, image: "🍕".toImage(), degree: .constant(0.0), found: false)
+                        .frame(width: CGFloat(64*row/2), height: CGFloat(94*row/2))
+                    MemoryCardView.FrontView(cardSelectionLen: 2, cardPadding: 2, image: Image(systemName: "figure.dance"), degree: .constant(0.0), found: false)
+                        .frame(width: CGFloat(64*row/2), height: CGFloat(94*row/2))
+                }
+            }
+        }
     }
 }

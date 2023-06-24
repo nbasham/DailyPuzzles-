@@ -10,17 +10,19 @@ class MemoryViewModel: ObservableObject {
 
     let host: GameHost
     let level: GameLevel
-    let cards: [Card]
+//    let cards: [Card]
     @Published var puzzle: MemoryPuzzle
     @Published var spacing: CGFloat = 12
+    @Published var cardPadding: CGFloat = 2
+    @Published var cardSelectionLen: CGFloat = 4
     @Published var cardWidth: CGFloat = 4
     @Published var cardHeight: CGFloat = 4
     @Published var cardAspectRatio: CGFloat = 64 / 94
 
-    init(host: GameHost, size: CGSize, level: GameLevel = .easy) {
+    init(host: GameHost, size: CGSize, level: GameLevel) {
         self.host = host
         self.level = level
-        cards = Card.sample(level: level)
+//        cards = Card.sample(level: level)
         puzzle = MemoryPuzzle(id: "id", puzzleString: "239,145,330,337,239,21,330,57,337,57,145,21", level: .easy)
         update(size: size)
         host.prepareSound(soundName: "AlreadySelected")
@@ -28,12 +30,12 @@ class MemoryViewModel: ObservableObject {
     }
 
     func start(size: CGSize) {
-        let data = ContentService.memory
+        let data = ContentService.memory(level: level)
         let items = data.split(separator: "\t")
         let id = String(items[0])
         let puzzleString = String(items[1])
-        //  TODO
-        puzzle = MemoryPuzzle(id: id, puzzleString: puzzleString, level: GameLevel.value(forGame: .memory))
+        puzzle = MemoryPuzzle(id: id, puzzleString: puzzleString, level: level)
+        print(puzzle.numCards)
         found = [Bool](repeating:false, count: puzzle.numCards)
     }
 
@@ -116,7 +118,14 @@ class MemoryViewModel: ObservableObject {
         cardWidth = (size.width - CGFloat(puzzle.numCols-1)*CGFloat(spacing/2)) / CGFloat(puzzle.numCols) - 1
         cardWidth = max(0, cardWidth)
         cardHeight = (size.height - CGFloat(puzzle.numRows+1)*CGFloat(spacing)) / CGFloat(puzzle.numRows) - 1
+        print("\(Int(cardWidth)) x \(Int(cardHeight))")
         cardHeight = max(0, cardHeight)
+        cardPadding = min(cardWidth, cardHeight)
+        if cardPadding > 160 { cardSelectionLen = 5 }
+        else if cardPadding > 120 { cardSelectionLen = 4 }
+        else if cardPadding > 80 { cardSelectionLen = 3 }
+        else { cardSelectionLen = 2 }
+        cardPadding = min(2, cardPadding/33)
     }
 }
 

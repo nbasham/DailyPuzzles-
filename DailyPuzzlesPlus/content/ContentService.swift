@@ -25,13 +25,12 @@ final class ContentService {
         return String(todaysLine(from: "factoids").dropFirst(5))
     }
 
-    static var memory: String {
-        return gameContent(.memory)
+    static func memory(level: GameLevel) -> String {
+        return gameContent(.memory, level: level)
     }
 
-    private static func gameContent(_ game: GameDescriptor) -> String {
-        if game.hasLevels {
-            let level = GameLevel.value(forGame: game)
+    private static func gameContent(_ game: GameDescriptor, level: GameLevel?) -> String {
+        if let level {
             return todaysLine(from: "\(game.id)_puzzles_\(level.key)")
         }
         return todaysLine(from: "\(game.id)_puzzles")

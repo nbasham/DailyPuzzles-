@@ -431,6 +431,7 @@
 		202FF2CE2A40240B000813F1 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FF2CD2A40240B000813F1 /* MainMenuView.swift */; };
 		202FF2D02A4024B5000813F1 /* GameMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FF2CF2A4024B5000813F1 /* GameMenuView.swift */; };
 		202FF2D72A412AA5000813F1 /* MemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FF2D62A412AA5000813F1 /* MemoryViewModel.swift */; };
+		204F408D2A48A18900E03643 /* MemoryPuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F408C2A48A18900E03643 /* MemoryPuzzle.swift */; };
 		2060632B2A1AC3A30044AC81 /* MainBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060632A2A1AC3A30044AC81 /* MainBallView.swift */; };
 		2060632D2A1AE4240044AC81 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060632C2A1AE4240044AC81 /* EmailView.swift */; };
 		206063302A1B0F7C0044AC81 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2060632F2A1B0F7C0044AC81 /* MessageUI.framework */; };
@@ -899,6 +900,7 @@
 		202FF2CD2A40240B000813F1 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		202FF2CF2A4024B5000813F1 /* GameMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenuView.swift; sourceTree = "<group>"; };
 		202FF2D62A412AA5000813F1 /* MemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewModel.swift; sourceTree = "<group>"; };
+		204F408C2A48A18900E03643 /* MemoryPuzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryPuzzle.swift; sourceTree = "<group>"; };
 		2060632A2A1AC3A30044AC81 /* MainBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBallView.swift; sourceTree = "<group>"; };
 		2060632C2A1AE4240044AC81 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		2060632F2A1B0F7C0044AC81 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -1448,6 +1450,7 @@
 			isa = PBXGroup;
 			children = (
 				20624B612A43837800906C71 /* MemoryCardView.swift */,
+				204F408C2A48A18900E03643 /* MemoryPuzzle.swift */,
 				2012DE482A27E2D600BB2DB5 /* MemoryView.swift */,
 				202FF2D62A412AA5000813F1 /* MemoryViewModel.swift */,
 				2012DE4A2A27E8C900BB2DB5 /* memory.xcassets */,
@@ -2119,6 +2122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				204F408D2A48A18900E03643 /* MemoryPuzzle.swift in Sources */,
 				2012DE492A27E2D600BB2DB5 /* MemoryView.swift in Sources */,
 				20D39F9C2A43BD030007698B /* MemorySettings.swift in Sources */,
 				20E4AD252A244C4900E42A2F /* File.swift in Sources */,

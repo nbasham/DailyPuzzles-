@@ -10,7 +10,7 @@ import SnapshotTesting
 final class DailyPuzzlesPlusSnapshotTests: XCTestCase {
 
     override func setUpWithError() throws {
-        try XCTSkipIf(true)
+        try XCTSkipIf(false)
     }
 
     override func tearDownWithError() throws {

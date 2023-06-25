@@ -19,24 +19,26 @@ class MemoryViewModel: ObservableObject {
     @Published var cardHeight: CGFloat = 4
     @Published var cardAspectRatio: CGFloat = 64 / 94
 
-    init(host: GameHost, size: CGSize, level: GameLevel) {
+    init(host: GameHost, size: CGSize, level: GameLevel, debugPreview: Bool = false) {
         self.host = host
         self.level = level
-//        cards = Card.sample(level: level)
-        puzzle = MemoryPuzzle(id: "id", puzzleString: "239,145,330,337,239,21,330,57,337,57,145,21", level: .easy)
-        update(size: size)
         host.prepareSound(soundName: "AlreadySelected")
-        found = [Bool](repeating:false, count: puzzle.numCards)
+        if debugPreview {
+            puzzle = MemoryPuzzle.samplePuzzle(forLevel: level)
+            var temp = [Bool](repeating:true, count: puzzle.numCards)
+            temp[0] = false
+            found = temp
+        } else {
+            let data = ContentService.memory(level: level)
+            let items = data.split(separator: "\t")
+            let id = String(items[0])
+            let puzzleString = String(items[1])
+            puzzle = MemoryPuzzle(id: id, puzzleString: puzzleString, level: level)
+            found = [Bool](repeating:false, count: puzzle.numCards)
+        }
     }
 
     func start(size: CGSize) {
-        let data = ContentService.memory(level: level)
-        let items = data.split(separator: "\t")
-        let id = String(items[0])
-        let puzzleString = String(items[1])
-        puzzle = MemoryPuzzle(id: id, puzzleString: puzzleString, level: level)
-        print(puzzle.numCards)
-        found = [Bool](repeating:false, count: puzzle.numCards)
     }
 
     func playAlreadySelected() {
@@ -69,7 +71,6 @@ class MemoryViewModel: ObservableObject {
             NotificationCenter.default.post(name: .rotateCard, object: ["index": index])
         }
         let action = tapAction(index: index)
-        print(action)
         switch action {
             case .noAction:
                 break
@@ -118,10 +119,24 @@ class MemoryViewModel: ObservableObject {
         cardWidth = (size.width - CGFloat(puzzle.numCols-1)*CGFloat(spacing/2)) / CGFloat(puzzle.numCols) - 1
         cardWidth = max(0, cardWidth)
         cardHeight = (size.height - CGFloat(puzzle.numRows+1)*CGFloat(spacing)) / CGFloat(puzzle.numRows) - 1
-        print("\(Int(cardWidth)) x \(Int(cardHeight))")
         cardHeight = max(0, cardHeight)
         cardPadding = calcPadding(cardWidth: cardWidth, cardHeight: cardHeight)
         cardSelectionLen = calcSelection(cardWidth: cardWidth, cardHeight: cardHeight)
+    }
+
+
+    func almostCompletePuzzle() {
+        let half = puzzle.numCards / 2
+        for i in 0..<half {
+            let one = puzzle.indexes[i]
+            for j in half+1..<puzzle.numCards {
+                if puzzle.indexes[j] == one {
+                    break
+                }
+                found[i] = true
+                found[j] = true
+            }
+        }
     }
 
     private func calcPadding(cardWidth: CGFloat, cardHeight: CGFloat) -> CGFloat {

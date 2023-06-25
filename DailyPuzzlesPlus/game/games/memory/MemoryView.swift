@@ -1,66 +1,5 @@
 import SwiftUI
 
-class MemoryPuzzle: ObservableObject {
-    @Published var numRows: Int
-    @Published var numCols: Int
-    var numCards: Int { numCols * numRows }
-    let imageNames: [String]
-    let indexes: [Int]
-    let level: GameLevel
-
-    subscript(index: Int) -> String {
-        return imageNames[index]
-    }
-
-    static private func imageNames() -> [String] {
-        let imageType = MemorySettings.imageType
-        switch imageType {
-            case .clipArt:
-                return Data.toString("memoryImageFileNames.txt")!.toLines
-            case .emoji:
-                return Data.toString("emojiList.txt")!.toLines
-            case .symbol:
-                return Data.toString("memorySymbolNames.txt")!.toLines
-        }
-    }
-
-    init(id: String, puzzleString: String, level: GameLevel) {
-        self.level = level
-        indexes = puzzleString.components(separatedBy: ",").map { Int($0)!}
-        let allImageNames = MemoryPuzzle.imageNames()
-        imageNames = indexes.map { allImageNames[$0] }
-        numRows = MemoryPuzzle.numRows(level: level, isPortrait: UIDevice.current.orientation == .portrait)
-        numCols = MemoryPuzzle.numCols(level: level, isPortrait: UIDevice.current.orientation == .portrait)
-    }
-
-    func update(isPortrait: Bool) {
-        numRows = MemoryPuzzle.numRows(level: level, isPortrait: isPortrait)
-        numCols = MemoryPuzzle.numCols(level: level, isPortrait: isPortrait)
-    }
-
-    static func numRows(level: GameLevel, isPortrait: Bool) -> Int {
-        switch level {
-            case .easy:
-                return isPortrait ? 4 : 3
-            case .medium:
-                return isPortrait ? 6 : 4
-            case .hard:
-                return isPortrait ? 8 : 5
-        }
-    }
-
-    static func numCols(level: GameLevel, isPortrait: Bool) -> Int {
-        switch level {
-            case .easy:
-                return isPortrait ? 3 : 4
-            case .medium:
-                return isPortrait ? 4 : 6
-            case .hard:
-                return isPortrait ? 5 : 8
-        }
-    }
-}
-
 struct MemoryView: View {
     @EnvironmentObject private var navigator: Navigator
     @StateObject var viewModel: MemoryViewModel
@@ -168,16 +107,54 @@ struct Card: Identifiable {
     }
 }
 struct MemoryView_Previews: PreviewProvider {
-    static var previews: some View {
+    static var hard: some View {
         let host = GameHostView(viewModel: GameHostViewModel(game: .memory))
-        @State var vm = MemoryViewModel(host: host, size: CGSize(width: 300, height: 600), level: .medium)
+        let size = CGSize(width: 390.0, height: 763.0)
+        @State var vm = MemoryViewModel(host: host, size: size, level: .hard, debugPreview: true)
+        MemorySettings.imageType = .clipArt
+        return MemoryView(viewModel: vm)
+            .onAppear {
+                vm.update(size: size)
+            }
+            .frame(width: size.width, height: size.height)
+    }
+
+    static var medium: some View {
+        let host = GameHostView(viewModel: GameHostViewModel(game: .memory))
+        let size = CGSize(width: 390.0, height: 763.0)
+        @State var vm = MemoryViewModel(host: host, size: size, level: .medium, debugPreview: true)
+        MemorySettings.imageType = .clipArt
+        return MemoryView(viewModel: vm)
+            .onAppear {
+                vm.update(size: size)
+            }
+            .frame(width: size.width, height: size.height)
+    }
+
+    static var easy: some View {
+        let host = GameHostView(viewModel: GameHostViewModel(game: .memory))
+        let size = CGSize(width: 390.0, height: 763.0)
+        @State var vm = MemoryViewModel(host: host, size: size, level: .easy, debugPreview: true)
+        MemorySettings.imageType = .clipArt
+        return MemoryView(viewModel: vm)
+            .onAppear {
+                vm.update(size: size)
+            }
+            .frame(width: size.width, height: size.height)
+    }
+
+    static var previews: some View {
         GeometryReader { proxy in
-            MemoryView(viewModel: vm)
-                .onAppear {
-                    vm.start(size: proxy.size)
-                    vm.update(size: proxy.size)
-                }
-                .previewDisplayName("iPhone 14")
+            easy
         }
+        .previewDisplayName("easy")
+        GeometryReader { proxy in
+            medium
+        }
+        .previewDisplayName("medium")
+        GeometryReader { proxy in
+            hard
+        }
+        .previewDisplayName("hard")
     }
 }

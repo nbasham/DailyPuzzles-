@@ -43,6 +43,10 @@ struct MemoryCardView: View {
                 .rotationEffect(Angle(degrees: rotation))
             BackView(cardPadding: viewModel.cardPadding, degree: $backDegree)
         }
+        .onAppear {
+            isFlipped = !found
+            flipCard()
+        }
         .environmentObject(viewModel)
         .onReceive(NotificationCenter.default.publisher(for: .flipCard)) { notification in
             if let info = notification.object as? [String:Int] {
@@ -121,43 +125,21 @@ struct MemoryCardView: View {
 }
 
 struct MemoryCardView_Previews: PreviewProvider {
-//    static var back: some View {
-//        MemoryCardView.BackView(degree: .constant(0.0))
-//            .padding()
-//    }
-//
-//    static var front: some View {
-//        MemoryCardView.FrontView(image: Image(systemName: "brain.head.profile"), degree: .constant(0.0), found: true)
-//            .padding()
-//    }
-//
-//    static var frontSelected: some View {
-//        MemoryCardView.FrontView(image: Image(systemName: "brain.head.profile"), degree: .constant(0.0), found: false)
-//            .padding()
-//    }
-
     static var previews: some View {
-        let sePortraitSize = CGSize(width: 109, height: 131)
-        let seLandscapeSize = CGSize(width: 153, height: 86)
-//        back
-//            .previewDisplayName("back")
-//        front
-//            .previewDisplayName("front")
-//        frontSelected
-//            .previewDisplayName("frontSelected")
         return VStack {
             ForEach(1..<5) { row in
                 HStack {
-                    MemoryCardView.BackView(cardPadding: 2, degree: .constant(0.0))
+                    MemoryCardView.BackView(cardPadding: CGFloat(2*row), degree: .constant(0.0))
                         .frame(width: CGFloat(64*row/2), height: CGFloat(94*row/2))
-                    MemoryCardView.FrontView(cardSelectionLen: 2, cardPadding: 2, image: Image(uiImage: UIImage(named: "chick")!), degree: .constant(0.0), found: false)
+                    MemoryCardView.FrontView(cardSelectionLen: CGFloat(1+row), cardPadding: CGFloat(2*row), image: Image(uiImage: UIImage(named: "chick")!), degree: .constant(0.0), found: false)
                         .frame(width: CGFloat(64*row/2), height: CGFloat(94*row/2))
-                    MemoryCardView.FrontView(cardSelectionLen: 2, cardPadding: 2, image: "🍕".toImage(), degree: .constant(0.0), found: false)
+                    MemoryCardView.FrontView(cardSelectionLen: CGFloat(1+row), cardPadding: CGFloat(2*row), image: "🍕".toImage(), degree: .constant(0.0), found: false)
                         .frame(width: CGFloat(64*row/2), height: CGFloat(94*row/2))
-                    MemoryCardView.FrontView(cardSelectionLen: 2, cardPadding: 2, image: Image(systemName: "figure.dance"), degree: .constant(0.0), found: false)
+                    MemoryCardView.FrontView(cardSelectionLen: CGFloat(1+row), cardPadding: CGFloat(2*row), image: Image(systemName: "figure.dance"), degree: .constant(0.0), found: false)
                         .frame(width: CGFloat(64*row/2), height: CGFloat(94*row/2))
                 }
             }
         }
+        .previewLayout(.sizeThatFits)
     }
 }

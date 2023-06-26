@@ -62,6 +62,7 @@ class MemoryPuzzle: ObservableObject {
 }
 
 extension MemoryPuzzle {
+    ///  Provides a consistent way to view puzzles in Preview
     static func samplePuzzle(forLevel level: GameLevel) -> MemoryPuzzle {
         switch level {
             case .easy:

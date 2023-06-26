@@ -48,4 +48,14 @@ final class DailyPuzzlesPlusSnapshotTests: XCTestCase {
         assertSnapshot(matching: MenuItemView_Previews.help, as: .image, named: "help")
         assertSnapshot(matching: MenuItemView_Previews.helpDisabled, as: .image, named: "helpDisabled")
     }
+/*
+    func testMemoryCard() throws {
+        assertSnapshot(matching: MemoryView_Previews.easy, as: .image, named: "MemoryView_easy")
+        assertSnapshot(matching: MemoryView_Previews.medium, as: .image, named: "MemoryView_medium")
+        assertSnapshot(matching: MemoryView_Previews.hard, as: .image, named: "MemoryView_hard")
+        assertSnapshot(matching: MemoryView_Previews.easyLandscape, as: .image, named: "MemoryView_easy-landscape")
+        assertSnapshot(matching: MemoryView_Previews.mediumLandscape, as: .image, named: "MemoryView_medium-landscape")
+        assertSnapshot(matching: MemoryView_Previews.hardLandscape, as: .image, named: "MemoryView_hard-landscape")
+    }
+ */
 }

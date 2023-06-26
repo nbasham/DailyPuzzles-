@@ -12,6 +12,33 @@ struct MemoryCardView: View {
     let durationAndDelay : CGFloat = 0.18
     @State private var rotation = 0.0
 
+    init(backDegree: Double = 0.0, frontDegree: Double = 90.0, index: Int, image: Image, found: Bool, isFlipped: Bool, rotation: Double = 0.0) {
+        self.backDegree = backDegree
+        self.frontDegree = frontDegree
+        self.index = index
+        self.image = image
+        self.found = found
+        self.isFlipped = isFlipped
+        self.rotation = rotation
+        flipCard()
+    }
+
+    init(index: Int, image: Image, found: Bool, isFlipped: Bool = false, rotation: Double = 0.0) {
+        if isFlipped || found {
+            self.backDegree = 90
+            self.frontDegree = 0
+        } else {
+            self.backDegree = 0
+            self.frontDegree = 90
+        }
+        self.index = index
+        self.image = image
+        self.found = found
+        self.isFlipped = isFlipped
+        self.rotation = rotation
+        flipCard()
+    }
+
     func rotateCard() {
         withAnimation(.linear(duration: 0.75).delay(durationAndDelay)){
             rotation = 360
@@ -20,7 +47,7 @@ struct MemoryCardView: View {
 
     func flipCard () {
         isFlipped = !isFlipped
-        if isFlipped {
+        if isFlipped || found {
             withAnimation(.linear(duration: durationAndDelay)) {
                 backDegree = 90
             }
@@ -42,10 +69,6 @@ struct MemoryCardView: View {
             FrontView(cardSelectionLen: viewModel.cardSelectionLen, cardPadding: viewModel.cardPadding, image: image, degree: $frontDegree, found: found)
                 .rotationEffect(Angle(degrees: rotation))
             BackView(cardPadding: viewModel.cardPadding, degree: $backDegree)
-        }
-        .onAppear {
-            isFlipped = !found
-            flipCard()
         }
         .environmentObject(viewModel)
         .onReceive(NotificationCenter.default.publisher(for: .flipCard)) { notification in
@@ -126,7 +149,12 @@ struct MemoryCardView: View {
 
 struct MemoryCardView_Previews: PreviewProvider {
     static var previews: some View {
+        let host = GameHostView(viewModel: GameHostViewModel(game: .memory))
+        let size = CGSize(width: 390.0, height: 763.0)
+        @State var vm = MemoryViewModel(host: host, size: size, level: .easy, debugPreview: true)
         return VStack {
+            MemoryCardView(index: 1, image: Image(systemName: "circle"), found: true, isFlipped: false)
+                .environmentObject(vm)
             ForEach(1..<5) { row in
                 HStack {
                     MemoryCardView.BackView(cardPadding: CGFloat(2*row), degree: .constant(0.0))

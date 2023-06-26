@@ -107,54 +107,66 @@ struct Card: Identifiable {
     }
 }
 struct MemoryView_Previews: PreviewProvider {
-    static var hard: some View {
-        let host = GameHostView(viewModel: GameHostViewModel(game: .memory))
-        let size = CGSize(width: 390.0, height: 763.0)
-        @State var vm = MemoryViewModel(host: host, size: size, level: .hard, debugPreview: true)
-        MemorySettings.imageType = .clipArt
-        return MemoryView(viewModel: vm)
-            .onAppear {
-                vm.update(size: size)
-            }
-            .frame(width: size.width, height: size.height)
+
+    static var easy: some View {
+        wrapper(level: .easy, size: size)
+    }
+
+    static var easyLandscape: some View {
+        wrapper(level: .easy, size: landscapeSize)
     }
 
     static var medium: some View {
+        wrapper(level: .medium, size: size)
+    }
+
+    static var mediumLandscape: some View {
+        wrapper(level: .medium, size: landscapeSize)
+    }
+
+    static var hard: some View {
+        wrapper(level: .hard, size: size)
+    }
+
+    static var hardLandscape: some View {
+        wrapper(level: .hard, size: landscapeSize)
+    }
+
+    static func wrapper(level: GameLevel, size: CGSize = CGSize(width: 390.0, height: 763.0), imageType: MemorySettings.ImageType = .clipArt) -> some View {
         let host = GameHostView(viewModel: GameHostViewModel(game: .memory))
-        let size = CGSize(width: 390.0, height: 763.0)
-        @State var vm = MemoryViewModel(host: host, size: size, level: .medium, debugPreview: true)
-        MemorySettings.imageType = .clipArt
+        @State var vm = MemoryViewModel(host: host, size: size, level: level, debugPreview: true)
+        MemorySettings.imageType = imageType
         return MemoryView(viewModel: vm)
-            .onAppear {
-                vm.update(size: size)
-            }
+            .onAppear { vm.update(size: size) }
             .frame(width: size.width, height: size.height)
     }
 
-    static var easy: some View {
-        let host = GameHostView(viewModel: GameHostViewModel(game: .memory))
-        let size = CGSize(width: 390.0, height: 763.0)
-        @State var vm = MemoryViewModel(host: host, size: size, level: .easy, debugPreview: true)
-        MemorySettings.imageType = .clipArt
-        return MemoryView(viewModel: vm)
-            .onAppear {
-                vm.update(size: size)
-            }
-            .frame(width: size.width, height: size.height)
-    }
-
+    static let size = CGSize(width: 390.0, height: 763.0)
+    static let landscapeSize = CGSize(width: 763.0, height: 330.0)
     static var previews: some View {
-        GeometryReader { proxy in
-            easy
-        }
-        .previewDisplayName("easy")
-        GeometryReader { proxy in
-            medium
-        }
-        .previewDisplayName("medium")
-        GeometryReader { proxy in
-            hard
-        }
-        .previewDisplayName("hard")
+        easy
+            .previewDisplayName("easy")
+            .previewInterfaceOrientation(.portrait)
+            .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
+        easy
+            .previewDisplayName("easy dark")
+            .previewInterfaceOrientation(.portrait)
+            .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
+            .preferredColorScheme(.dark)
+        medium
+            .previewDisplayName("medium")
+            .previewInterfaceOrientation(.portrait)
+        hard
+            .previewDisplayName("hard")
+            .previewInterfaceOrientation(.portrait)
+        easyLandscape
+            .previewInterfaceOrientation(.landscapeRight)
+            .previewDisplayName("easy-landscape")
+        mediumLandscape
+            .previewDisplayName("medium-landscape")
+            .previewInterfaceOrientation(.landscapeLeft)
+        hardLandscape
+            .previewDisplayName("hard-landscape")
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

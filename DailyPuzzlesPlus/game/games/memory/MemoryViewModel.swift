@@ -28,6 +28,7 @@ class MemoryViewModel: ObservableObject {
             var temp = [Bool](repeating:true, count: puzzle.numCards)
             temp[0] = false
             found = temp
+            update(size: size)
         } else {
             let data = ContentService.memory(level: level)
             let items = data.split(separator: "\t")

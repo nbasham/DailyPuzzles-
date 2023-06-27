@@ -3,6 +3,7 @@ import SwiftUI
 protocol GameHost {
     //  why does game need GameDescriptor? it knows what it is
     var game: GameDescriptor { get }
+    func setTitle(title: String)
     func didSolve()
     func incMisses()
     func incHints()
@@ -24,6 +25,7 @@ struct GameHostView: View, GameHost {
     @StateObject var viewModel: GameHostViewModel
     var game: GameDescriptor { viewModel.game }
     @State private var isGameDisabled = false
+    @State private var title = ""
 
     var body: some View {
         ZStack {
@@ -59,12 +61,19 @@ struct GameHostView: View, GameHost {
             viewModel.save()
         }
         .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(title)
+        //  make nav title white
+        .toolbarColorScheme(.dark, for: .navigationBar)
         .navigationBarBackButtonHidden()
         .toolbarBackground(.visible, for: .navigationBar)
         .toolbarBackground(viewModel.game.color, for: .navigationBar)
         .toolbar {
             GameToolbarView(showTimer: settings.timerOn, isGameSolved: $viewModel.isSolved)
         }
+    }
+
+    func setTitle(title: String) {
+        self.title = title
     }
 
     func didSolve() {

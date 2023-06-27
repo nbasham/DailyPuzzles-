@@ -84,10 +84,10 @@ class MemoryViewModel: ObservableObject {
                 flip(index: index)
                 host.playCorrect()
             case let .correct(index1, index2):
+                incAttempts()
                 selection1 = nil
                 flip(index: index)
                 host.playCorrect()
-                attempts += 1
                 found[index1] = true
                 found[index2] = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
@@ -100,10 +100,10 @@ class MemoryViewModel: ObservableObject {
                     }
                 }
             case let .incorrect(index1, index2):
+                incAttempts()
                 selection1 = nil
                 flip(index: index2)
                 host.playIncorrect()
-                attempts += 1
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.95) {
                     flip(index: index1)
                     flip(index: index2)
@@ -207,7 +207,10 @@ extension MemoryViewModel {
         return found[index]
     }
 
-    func incAttempts() { attempts += 1 }
+    func incAttempts() {
+        attempts += 1
+        host.setTitle(title: "Attempts \(attempts)")
+    }
 
     func clearFound() {
         found = [Bool](repeating:false, count: puzzle.numCards)

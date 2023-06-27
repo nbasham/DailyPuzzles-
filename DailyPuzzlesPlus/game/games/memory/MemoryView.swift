@@ -36,6 +36,9 @@ struct MemoryView: View {
                         viewModel.update(size: size)
                     }
                 }
+                .onReceive(NotificationCenter.default.publisher(for: .almostSolveEvent)) { notification in
+                    viewModel.almostSolveEvent()
+                }
                 .onAppear {
                     viewModel.start(size: proxy.size)
                 }

@@ -28,9 +28,6 @@ struct GameToolbarView: ToolbarContent {
                         }
                     })
                 }
-                .onAppear {
-                    MenuEvent.addMenuItem(.gameSolve)
-                }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 //                if viewModel.showShareMenu {

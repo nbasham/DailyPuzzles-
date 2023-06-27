@@ -126,17 +126,20 @@ class MemoryViewModel: ObservableObject {
     }
 
 
-    func almostCompletePuzzle() {
-        let half = puzzle.numCards / 2
-        for i in 0..<half {
-            let one = puzzle.indexes[i]
-            for j in half+1..<puzzle.numCards {
-                if puzzle.indexes[j] == one {
-                    break
-                }
-                found[i] = true
-                found[j] = true
+    func almostSolveEvent() {
+        let index1 = 0
+        var index2 = 0
+        for i in 1..<puzzle.numCards {
+            if puzzle.indexes[i] == puzzle.indexes[0] {
+                index2 = i
+                break
             }
+        }
+        guard index1 != index2 else { return }
+        for i in 1..<puzzle.numCards {
+            if i == index2 { continue }
+            found[i] = true
+            NotificationCenter.default.post(name: .flipCard, object: ["index": i])
         }
     }
 

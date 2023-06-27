@@ -32,4 +32,5 @@ extension MenuItemViewModel {
     static let settings = MenuItemViewModel(name: "Settings", notificationName: .settings, image: "gearshape")
     static let contact = MenuItemViewModel(name: "Contact us", notificationName: .contact, image: "square.and.pencil")
     static let gameSolve = MenuItemViewModel(name: "Solve", notificationName: .gameSolve, image: "pencil.and.scribble")
+    static let almostSolveEvent = MenuItemViewModel(name: "Almost Solve", notificationName: .almostSolveEvent, image: "toilet")
 }

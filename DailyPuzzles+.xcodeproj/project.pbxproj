@@ -432,6 +432,8 @@
 		202FF2D02A4024B5000813F1 /* GameMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FF2CF2A4024B5000813F1 /* GameMenuView.swift */; };
 		202FF2D72A412AA5000813F1 /* MemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202FF2D62A412AA5000813F1 /* MemoryViewModel.swift */; };
 		204F408D2A48A18900E03643 /* MemoryPuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F408C2A48A18900E03643 /* MemoryPuzzle.swift */; };
+		204F408F2A4BBE5500E03643 /* RoundApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F408E2A4BBE5500E03643 /* RoundApps.swift */; };
+		204F40912A4BBFA600E03643 /* GameSolvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F40902A4BBFA600E03643 /* GameSolvedView.swift */; };
 		2060632B2A1AC3A30044AC81 /* MainBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060632A2A1AC3A30044AC81 /* MainBallView.swift */; };
 		2060632D2A1AE4240044AC81 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060632C2A1AE4240044AC81 /* EmailView.swift */; };
 		206063302A1B0F7C0044AC81 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2060632F2A1B0F7C0044AC81 /* MessageUI.framework */; };
@@ -901,6 +903,8 @@
 		202FF2CF2A4024B5000813F1 /* GameMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenuView.swift; sourceTree = "<group>"; };
 		202FF2D62A412AA5000813F1 /* MemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewModel.swift; sourceTree = "<group>"; };
 		204F408C2A48A18900E03643 /* MemoryPuzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryPuzzle.swift; sourceTree = "<group>"; };
+		204F408E2A4BBE5500E03643 /* RoundApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundApps.swift; sourceTree = "<group>"; };
+		204F40902A4BBFA600E03643 /* GameSolvedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSolvedView.swift; sourceTree = "<group>"; };
 		2060632A2A1AC3A30044AC81 /* MainBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBallView.swift; sourceTree = "<group>"; };
 		2060632C2A1AE4240044AC81 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		2060632F2A1B0F7C0044AC81 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -935,6 +939,7 @@
 		20E4AD2E2A24518100E42A2F /* DailyPuzzlesPlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPuzzlesPlusTests.swift; sourceTree = "<group>"; };
 		20F5D31B2A43F95900153663 /* emojiList.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = emojiList.txt; sourceTree = "<group>"; usesTabs = 1; };
 		20F5D31E2A46603D00153663 /* emojiFlagsList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = emojiFlagsList.txt; sourceTree = "<group>"; };
+		20FD54682A4D185D00F91A77 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1494,6 +1499,7 @@
 				20292BFC29F2104C00C51913 /* ContentView.swift */,
 				20292BFA29F2104C00C51913 /* DailyPuzzles_App.swift */,
 				209AAA7F2A2298640072B17D /* Notes.txt */,
+				20FD54682A4D185D00F91A77 /* readme.md */,
 				200FBD392A2EE6A5002A4175 /* content */,
 				202FF2D32A40A9C6000813F1 /* game */,
 				202FF2D22A40A985000813F1 /* main */,
@@ -1537,6 +1543,7 @@
 				209025382A0ED937004B6790 /* GameHostView.swift */,
 				200FBD372A2EE634002A4175 /* GameLevel.swift */,
 				201E65582A17E994005404B9 /* GameModel.swift */,
+				204F40902A4BBFA600E03643 /* GameSolvedView.swift */,
 				209025442A1053CA004B6790 /* GameToolbarView.swift */,
 				201E655A2A190A00005404B9 /* SecondsTimer.swift */,
 				2012DE462A27E2B800BB2DB5 /* games */,
@@ -1562,6 +1569,7 @@
 				20E4AD262A244EF300E42A2F /* CodeTimer.swift */,
 				201E65562A17E535005404B9 /* Extension.swift */,
 				2090253C2A0EDA15004B6790 /* Navigator.swift */,
+				204F408E2A4BBE5500E03643 /* RoundApps.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -2143,7 +2151,9 @@
 				2085A1732A1E859A004E601F /* SettingsGameOrderView.swift in Sources */,
 				20CB09EC2A3E89170086036B /* MenuItemView.swift in Sources */,
 				201E65572A17E535005404B9 /* Extension.swift in Sources */,
+				204F40912A4BBFA600E03643 /* GameSolvedView.swift in Sources */,
 				201E655F2A195845005404B9 /* SettingsView.swift in Sources */,
+				204F408F2A4BBE5500E03643 /* RoundApps.swift in Sources */,
 				20D39F9E2A43BD5F0007698B /* MemorySettingsView.swift in Sources */,
 				200FBEA82A2EE6A6002A4175 /* ContentService.swift in Sources */,
 				20624B622A43837800906C71 /* MemoryCardView.swift in Sources */,

@@ -4,6 +4,19 @@
 <dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>com.blacklabs.dailypuzzles</string>
+		<string>com.blacklabs.triplets</string>
+		<string>com.blacklabs.cryptogram</string>
+		<string>com.blacklabs.cryptofamilies</string>
+		<string>com.blacklabs.quotefalls</string>
+		<string>com.blacklabs.sudoku</string>
+		<string>com.blacklabs.wordsearch</string>
+		<string>com.blacklabs.pairit</string>
+		<string>com.blacklabs.memory</string>
+		<string>com.blacklabs.shared</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

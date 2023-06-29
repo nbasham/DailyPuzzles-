@@ -96,4 +96,61 @@ enum GameDescriptor: String, Identifiable, Codable {
                 CryptogramView(host: host, size: size)
         }
     }
+
+    var appUrl: URL? {
+        let dpScheme = "com.blacklabs.dailypuzzles"
+        let urlStr = "\(self.scheme)://?source=\(dpScheme)"
+        return URL.init(string: urlStr)
+    }
+
+    var appStoreUrl: URL? {
+        return URL.init(string: self.storeLink)
+    }
+
+    fileprivate var storeLink: String {
+        var link: String
+        switch self {
+            case .cryptogram:
+                link = "https://itunes.apple.com/us/app/cryptogram-round/id1013610861?mt=8&at=1010lokd&ct=dpplaunch"
+            case .crypto_families:
+                link = "https://itunes.apple.com/us/app/crypto-families-round/id1093561769?mt=8&at=1010lokd&ct=dpplaunch"
+            case .quotefalls:
+                link = "https://itunes.apple.com/us/app/quotefalls-round/id1103536176?mt=8&at=1010lokd&ct=dpplaunch"
+            case .sudoku:
+                link = "https://itunes.apple.com/us/app/sudokus-round/id1109102683?mt=8&at=1010lokd&ct=dpplaunch"
+            case .word_search:
+                link = "https://itunes.apple.com/us/app/word-search-round/id1148342858?ls=1&mt=8&at=1010lokd&ct=dpplaunch"
+            case .memory:
+                link = "https://itunes.apple.com/us/app/memory-round/id1132722898?ls=1&mt=8&at=1010lokd&ct=dpplaunch"
+            case .triplets:
+                link = "https://itunes.apple.com/us/app/triplets/id1551245829?ls=1&mt=8&at=1010lokd&ct=dpplaunch"
+            case .sample_game:
+                fatalError("Must impleent for Sample Game")
+        }
+        return link
+    }
+
+    var scheme: String {
+        var scheme: String
+        switch self {
+            case .cryptogram:
+                scheme = "com.blacklabs.cryptogram"
+            case .crypto_families:
+                scheme = "com.blacklabs.cryptofamilies"
+            case .quotefalls:
+                scheme = "com.blacklabs.quotefalls"
+            case .sudoku:
+                scheme = "com.blacklabs.sudoku"
+            case .word_search:
+                scheme = "com.blacklabs.wordsearch"
+            case .memory:
+                scheme = "com.blacklabs.memory"
+            //  TODO these need to be defined
+            case .triplets:
+                scheme = "com.blacklabs.triplets"
+            case .sample_game:
+                scheme = "com.blacklabs.samplegame"
+        }
+        return scheme
+    }
 }

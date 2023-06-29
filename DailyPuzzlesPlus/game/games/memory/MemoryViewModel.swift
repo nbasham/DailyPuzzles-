@@ -10,7 +10,6 @@ class MemoryViewModel: ObservableObject {
 
     let host: GameHost
     let level: GameLevel
-//    let cards: [Card]
     @Published var puzzle: MemoryPuzzle
     @Published var spacing: CGFloat = 12
     @Published var cardPadding: CGFloat = 2

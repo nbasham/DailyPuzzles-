@@ -40,7 +40,7 @@ struct GameHostView: View, GameHost {
                             .transition(.scale)
                     }
                     if viewModel.showSolved {
-                        GameSolvedView()
+                        GameSolvedView(game: game)
                             .frame(height: 88)
                             .transition(.move(edge: .bottom))
                     }
@@ -173,19 +173,3 @@ class GameHostViewModel: ObservableObject {
     func incMisses() { gameModel.numberMissed += 1 }
     func incHints() { gameModel.numberOfHintsUsed += 1 }
 }
-
-struct GameSolvedView: View {
-
-    var body: some View {
-        ZStack {
-            Color.yellow
-        }
-        .ignoresSafeArea()
-    }
-}
-
-//struct GameSolvedView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GameSolvedView()
-//    }
-//}

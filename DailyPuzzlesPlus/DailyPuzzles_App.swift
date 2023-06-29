@@ -16,6 +16,12 @@ struct DailyPuzzles_App: App {
     @State private var safeAreaInsets = EdgeInsets()
     @State private var isPortrait = UIDevice.current.orientation == .portrait
 
+    init() {
+        // Since env vars can only be accessed without warning from View, we set a flag that view models or any other type have access
+        UserDefaults.standard.set(false, forKey: "isPreview")
+        UserDefaults.standard.set(isPreview, forKey: "isPreview")
+    }
+
     var body: some Scene {
         WindowGroup {
             GeometryReader { geometry in
@@ -30,9 +36,6 @@ struct DailyPuzzles_App: App {
                         if isFirstTime {
                             firstTime()
                         }
-                        // Since env vars can only be accessed without warning from View, we set a flag that view models or any other ObservableObject can use
-                        UserDefaults.standard.set(false, forKey: "isPreview")
-                        UserDefaults.standard.set(isPreview, forKey: "isPreview")
                         guard !isPreview else { return }
                         if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first,
                         let view = window.rootViewController?.view {
@@ -73,8 +76,11 @@ struct DailyPuzzles_App: App {
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
+    var roundApps: RoundApps?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         application.registerForRemoteNotifications()
+        roundApps = RoundApps()
         return true
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {

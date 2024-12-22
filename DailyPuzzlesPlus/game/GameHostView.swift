@@ -112,7 +112,7 @@ class GameHostViewModel: ObservableObject {
     let game: GameDescriptor
     @Published var isSolved = false
     @Published var showSolved = false
-    var gameModel = GameModel()
+    var gameProgress = GameProgress()
     let timer = SecondsTimer()
 
     init(game: GameDescriptor) {
@@ -121,9 +121,9 @@ class GameHostViewModel: ObservableObject {
 
     //  init is called twice, appear (which calls this) only once
     func start() {
-        gameModel = GameModel.load(game: game)
-        timer.start(initialSeconds: gameModel.elapsedSeconds) { secs in
-            self.gameModel.elapsedSeconds = secs
+        gameProgress = GameProgress.load(game: game)
+        timer.start(initialSeconds: gameProgress.elapsedSeconds) { secs in
+            self.gameProgress.elapsedSeconds = secs
             NotificationCenter.default.post(name: .gameTimer, object: ["secs": NSNumber(value: secs)])
         }
         startEventListening()
@@ -160,16 +160,16 @@ class GameHostViewModel: ObservableObject {
         timer.pause()
         isSolved = true
         showSolved = true
-        GameModel.clear(game: game)
+        GameProgress.clear(game: game)
         // TODO remove game's persistence
     }
 
     func save() {
         if !isSolved {
-            gameModel.save(game: game)
+            gameProgress.save(game: game)
         }
     }
 
-    func incMisses() { gameModel.numberMissed += 1 }
-    func incHints() { gameModel.numberOfHintsUsed += 1 }
+    func incMisses() { gameProgress.numberMissed += 1 }
+    func incHints() { gameProgress.numberOfHintsUsed += 1 }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-struct GameModel: Codable {
+struct GameProgress: Codable {
     var level : Int
     var elapsedSeconds : Int
     var numberOfHintsUsed : Int
@@ -18,15 +18,15 @@ struct GameModel: Codable {
     }
 
     static func fromData(_ data: Data) -> Self? {
-        (try? JSONDecoder().decode(GameModel.self, from: data))
+        (try? JSONDecoder().decode(GameProgress.self, from: data))
     }
 
     static func load(game: GameDescriptor) -> Self {
         if let data = UserDefaults.daily.object(forKey: key(game)) as? Data,
-           let model = GameModel.fromData(data) {
+           let model = GameProgress.fromData(data) {
             return model
         } else {
-            return GameModel()
+            return GameProgress()
         }
     }
 
@@ -36,7 +36,7 @@ struct GameModel: Codable {
 
     func save(game: GameDescriptor) {
         if let data {
-            UserDefaults.daily.set(data, forKey: GameModel.key(game))
+            UserDefaults.daily.set(data, forKey: GameProgress.key(game))
         }
     }
 }

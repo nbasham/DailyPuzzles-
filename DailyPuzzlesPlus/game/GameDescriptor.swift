@@ -7,49 +7,27 @@ enum GameDescriptor: String, Identifiable, Codable {
     static let all: [GameDescriptor] = [.cryptogram, .crypto_families, .quotefalls, .sudoku, .word_search, .memory, .triplets, .sample_game]
 
     var displayName: String {
-        var name: String
-        switch self {
-            case .cryptogram:
-                name = "Cryptogram"
-            case .crypto_families:
-                name = "Crypto-Families"
-            case .quotefalls:
-                name = "Quotefalls"
-            case .sudoku:
-                name = "Sudoku"
-            case .word_search:
-                name = "Word Search"
-            case .memory:
-                name = "Memory"
-            case .triplets:
-                name = "Triplets"
-            case .sample_game:
-                name = "Sample Game"
+        if self == .crypto_families {
+            return "Crypto-Families"
         }
-        return name
+        return rawValue.capitalized.replacingOccurrences(of: "_", with: " ")
     }
 
     var id: String { self.rawValue }
 
+    private static let colors: [GameDescriptor: Color] = [
+        .cryptogram: .red,
+        .crypto_families: .yellow,
+        .quotefalls: .green,
+        .sudoku: .blue,
+        .word_search: .pink,
+        .memory: .purple,
+        .triplets: .orange,
+        .sample_game: .cyan
+    ]
+    
     var color: Color {
-        switch self {
-            case .cryptogram:
-                return .red
-            case .crypto_families:
-                return .yellow
-            case .quotefalls:
-                return .green
-            case .sudoku:
-                return .blue
-            case .word_search:
-                return .pink
-            case .memory:
-                return .purple
-            case .triplets:
-                return .orange
-            case .sample_game:
-                return .cyan
-        } // next color ff00ff
+        return Self.colors[self] ?? .clear
     }
 
     var hasLevels: Bool {
@@ -70,7 +48,7 @@ enum GameDescriptor: String, Identifiable, Codable {
                 return true
             case .sample_game:
                 return false
-        } // next color ff00ff
+        }
     }
 
     @MainActor
@@ -107,30 +85,31 @@ enum GameDescriptor: String, Identifiable, Codable {
         return URL.init(string: self.storeLink)
     }
 
-    fileprivate var storeLink: String {
+    private static let baseURL = "https://itunes.apple.com/us/app/"
+    internal var storeLink: String {
         var link: String
         switch self {
             case .cryptogram:
-                link = "https://itunes.apple.com/us/app/cryptogram-round/id1013610861?mt=8&at=1010lokd&ct=dpplaunch"
+                link = "\(Self.baseURL)cryptogram-round/id1013610861?mt=8&at=1010lokd&ct=dpplaunch"
             case .crypto_families:
-                link = "https://itunes.apple.com/us/app/crypto-families-round/id1093561769?mt=8&at=1010lokd&ct=dpplaunch"
+                link = "\(Self.baseURL)crypto-families-round/id1093561769?mt=8&at=1010lokd&ct=dpplaunch"
             case .quotefalls:
-                link = "https://itunes.apple.com/us/app/quotefalls-round/id1103536176?mt=8&at=1010lokd&ct=dpplaunch"
+                link = "\(Self.baseURL)quotefalls-round/id1103536176?mt=8&at=1010lokd&ct=dpplaunch"
             case .sudoku:
-                link = "https://itunes.apple.com/us/app/sudokus-round/id1109102683?mt=8&at=1010lokd&ct=dpplaunch"
+                link = "\(Self.baseURL)sudokus-round/id1109102683?mt=8&at=1010lokd&ct=dpplaunch"
             case .word_search:
-                link = "https://itunes.apple.com/us/app/word-search-round/id1148342858?ls=1&mt=8&at=1010lokd&ct=dpplaunch"
+                link = "\(Self.baseURL)word-search-round/id1148342858?ls=1&mt=8&at=1010lokd&ct=dpplaunch"
             case .memory:
-                link = "https://itunes.apple.com/us/app/memory-round/id1132722898?ls=1&mt=8&at=1010lokd&ct=dpplaunch"
+                link = "\(Self.baseURL)memory-round/id1132722898?ls=1&mt=8&at=1010lokd&ct=dpplaunch"
             case .triplets:
-                link = "https://itunes.apple.com/us/app/triplets/id1551245829?ls=1&mt=8&at=1010lokd&ct=dpplaunch"
+                link = "\(Self.baseURL)triplets/id1551245829?ls=1&mt=8&at=1010lokd&ct=dpplaunch"
             case .sample_game:
-                fatalError("Must impleent for Sample Game")
+                fatalError("Must implement for Sample Game")
         }
         return link
     }
 
-    var scheme: String {
+    internal var scheme: String {
         var scheme: String
         switch self {
             case .cryptogram:

@@ -15,11 +15,11 @@ class MenuItemViewModel: ObservableObject, Identifiable, Comparable, Hashable {
     }
 
     public func hash(into hasher: inout Hasher) {
-        return hasher.combine(id)
+        hasher.combine(id)
     }
 
     static func == (lhs: MenuItemViewModel, rhs: MenuItemViewModel) -> Bool {
-        lhs.notificationName.rawValue == rhs.notificationName.rawValue
+        lhs.id == rhs.id
     }
 
     static func < (lhs: MenuItemViewModel, rhs: MenuItemViewModel) -> Bool {

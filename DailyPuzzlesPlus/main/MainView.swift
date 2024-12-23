@@ -10,11 +10,18 @@ class MainViewModel: ObservableObject {
     private var isLandscape: Bool { !inPortrait }
 
     init() {
+        // I'm unclear why we calculate isPortrait and then pass UIDevice.current.orientation to handleRotation()
+        self.inPortrait = MainViewModel.isWindowPortrait()
+        print("inPortrait \(inPortrait) UIDevice.current.orientation \(UIDevice.current.orientation == .portrait)")
+        handleRotation(UIDevice.current.orientation)
+    }
+
+    private static func isWindowPortrait() -> Bool {
         if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first,
            let interfaceOrientation = window.windowScene?.interfaceOrientation {
-            self.inPortrait = interfaceOrientation == .portrait
-            handleRotation(UIDevice.current.orientation)
+            return interfaceOrientation == .portrait
         }
+        return UIDevice.current.orientation == .portrait
     }
 
     //  The starting point of the leading navigation bar item changes by device, the smallest device is 16 pixels in (e.g. iPhone SE). This method figures out the starting point for the device and subtracts the minumum so that the logo (the leading nav item) right aligns with game names below
@@ -159,7 +166,9 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(viewModel: MainViewModel())
-            .environmentObject(Navigator())
+        NavigationStack {
+            MainView(viewModel: MainViewModel())
+                .environmentObject(Navigator())
+        }
     }
 }

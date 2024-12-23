@@ -23,7 +23,7 @@ struct MenuEvent {
     private static let payloadKey = "menuItem"
 
     static func addMenuItem(_ item: MenuItemViewModel) {
-        NotificationCenter.default.post(name: .addMenuItem, object: [payloadKey : item])
+        NotificationCenter.default.post(name: .addMenuItem, object: [payloadKey: item])
     }
 
     static func updateMenuItem(_ item: MenuItemViewModel) {
@@ -35,23 +35,23 @@ struct MenuEvent {
     }
 
     static func payload(for notification: Notification) -> MenuItemViewModel? {
-        if let info = notification.object as? [String:MenuItemViewModel] {
-            if let vm = info[payloadKey] {
-                return vm
-            }
+        guard let info = notification.object as? [String: MenuItemViewModel],
+              let viewModel = info[payloadKey] else {
+            return nil
         }
-        return nil
+        return viewModel
     }
 }
 
+// MARK: - Notification Names
 
-//  MENU
+/// Notification names related to menu events.
 extension NSNotification.Name {
     static let addMenuItem = NSNotification.Name("addMenuItem")
     static let removeMenuItem = NSNotification.Name("removeMenuItem")
 }
 
-//  MENU ITEM
+/// Notification names related to game events.
 extension NSNotification.Name {
     static let settings = NSNotification.Name("settings")
     static let gameTimer = NSNotification.Name("gameTimer")
@@ -59,19 +59,27 @@ extension NSNotification.Name {
     static let gameHelp = NSNotification.Name("gameHelp")
     static let gameSolve = NSNotification.Name("gameSolve")
     static let gameStartAgain = NSNotification.Name("gameStartAgain")
-    //  quotefalls
+}
+
+/// Notification names specific to individual game types (e.g., Sudoku, Word Search).
+extension NSNotification.Name {
+    // Quotefalls
     static let autoAdvance = NSNotification.Name("autoAdvance")
-    //  sudoku
+
+    // Sudoku
     static let completeLastNumber = NSNotification.Name("completeLastNumber")
     static let placeMarkersTrailing = NSNotification.Name("placeMarkersTrailing")
     static let selectRowCol = NSNotification.Name("selectRowCol")
     static let undo = NSNotification.Name("undo")
-    //  word search
+
+    // Word Search
     static let hideClues = NSNotification.Name("hideClues")
-    //  debug
+
+    // Debugging
     static let almostSolveEvent = NSNotification.Name("almostSolveEvent")
 }
 
+/// Notification names for other app-wide events.
 extension NSNotification.Name {
     static let contact = NSNotification.Name("contact")
     static let help = NSNotification.Name("help")

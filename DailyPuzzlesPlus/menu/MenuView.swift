@@ -71,9 +71,16 @@ struct MenuView_Previews: PreviewProvider {
         .disabled(true)
     }
     static var previews: some View {
-        menu
-            .previewDisplayName("menu")
-        menuDisabled
-            .previewDisplayName("menuDisabled")
+        VStack {
+            Text("Enabled")
+            menu
+                .previewDisplayName("menu")
+            Divider()
+                .padding()
+            Text("Disabled")
+            menuDisabled
+                .previewDisplayName("menuDisabled")
+        }
+        .padding()
     }
 }

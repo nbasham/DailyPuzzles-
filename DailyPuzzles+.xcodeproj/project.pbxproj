@@ -442,6 +442,8 @@
 		20624B622A43837800906C71 /* MemoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20624B612A43837800906C71 /* MemoryCardView.swift */; };
 		2085A1712A1DB343004E601F /* SettingsGameChooserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085A1702A1DB343004E601F /* SettingsGameChooserView.swift */; };
 		2085A1732A1E859A004E601F /* SettingsGameOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085A1722A1E859A004E601F /* SettingsGameOrderView.swift */; };
+		208F8FB62DD953C600500CE1 /* GameLauncherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F8FB52DD953C600500CE1 /* GameLauncherView.swift */; };
+		208F8FB82DD969E900500CE1 /* GameLauncherRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F8FB72DD969E900500CE1 /* GameLauncherRowView.swift */; };
 		209025372A0ED7B5004B6790 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025362A0ED7B5004B6790 /* MainView.swift */; };
 		209025392A0ED937004B6790 /* GameHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209025382A0ED937004B6790 /* GameHostView.swift */; };
 		2090253D2A0EDA15004B6790 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2090253C2A0EDA15004B6790 /* Navigator.swift */; };
@@ -460,6 +462,7 @@
 		20D39F9C2A43BD030007698B /* MemorySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D39F9B2A43BD030007698B /* MemorySettings.swift */; };
 		20D39F9E2A43BD5F0007698B /* MemorySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D39F9D2A43BD5F0007698B /* MemorySettingsView.swift */; };
 		20E023C72D18C75D009A0755 /* GameDescriptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E023C62D18C75D009A0755 /* GameDescriptorTests.swift */; };
+		20E023C92D19EA2F009A0755 /* MainRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E023C82D19EA2F009A0755 /* MainRowView.swift */; };
 		20E4AD252A244C4900E42A2F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD242A244C4900E42A2F /* File.swift */; };
 		20E4AD272A244EF300E42A2F /* CodeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD262A244EF300E42A2F /* CodeTimer.swift */; };
 		20E4AD2F2A24518100E42A2F /* DailyPuzzlesPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4AD2E2A24518100E42A2F /* DailyPuzzlesPlusTests.swift */; };
@@ -914,6 +917,8 @@
 		20624B612A43837800906C71 /* MemoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCardView.swift; sourceTree = "<group>"; };
 		2085A1702A1DB343004E601F /* SettingsGameChooserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGameChooserView.swift; sourceTree = "<group>"; };
 		2085A1722A1E859A004E601F /* SettingsGameOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGameOrderView.swift; sourceTree = "<group>"; };
+		208F8FB52DD953C600500CE1 /* GameLauncherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherView.swift; sourceTree = "<group>"; };
+		208F8FB72DD969E900500CE1 /* GameLauncherRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLauncherRowView.swift; sourceTree = "<group>"; };
 		209025362A0ED7B5004B6790 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		209025382A0ED937004B6790 /* GameHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHostView.swift; sourceTree = "<group>"; };
 		2090253C2A0EDA15004B6790 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -935,6 +940,7 @@
 		20D39F9B2A43BD030007698B /* MemorySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySettings.swift; sourceTree = "<group>"; };
 		20D39F9D2A43BD5F0007698B /* MemorySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySettingsView.swift; sourceTree = "<group>"; };
 		20E023C62D18C75D009A0755 /* GameDescriptorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDescriptorTests.swift; sourceTree = "<group>"; };
+		20E023C82D19EA2F009A0755 /* MainRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRowView.swift; sourceTree = "<group>"; };
 		20E4AD242A244C4900E42A2F /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		20E4AD262A244EF300E42A2F /* CodeTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTimer.swift; sourceTree = "<group>"; };
 		20E4AD2C2A24518100E42A2F /* DailyPuzzlesPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyPuzzlesPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1533,6 +1539,9 @@
 				201E65B82A1A99C7005404B9 /* MainHelpView.swift */,
 				209025402A104CD2004B6790 /* MainToolbarView.swift */,
 				209025362A0ED7B5004B6790 /* MainView.swift */,
+				208F8FB52DD953C600500CE1 /* GameLauncherView.swift */,
+				208F8FB72DD969E900500CE1 /* GameLauncherRowView.swift */,
+				20E023C82D19EA2F009A0755 /* MainRowView.swift */,
 				202FF2D12A40A978000813F1 /* settings */,
 			);
 			path = main;
@@ -2135,6 +2144,7 @@
 			files = (
 				204F408D2A48A18900E03643 /* MemoryPuzzle.swift in Sources */,
 				2012DE492A27E2D600BB2DB5 /* MemoryView.swift in Sources */,
+				208F8FB82DD969E900500CE1 /* GameLauncherRowView.swift in Sources */,
 				20D39F9C2A43BD030007698B /* MemorySettings.swift in Sources */,
 				20E4AD252A244C4900E42A2F /* File.swift in Sources */,
 				2090253F2A103958004B6790 /* GameDescriptor.swift in Sources */,
@@ -2153,6 +2163,7 @@
 				20C0BE852A23F30F00884E76 /* CloudKitObserver.swift in Sources */,
 				2085A1732A1E859A004E601F /* SettingsGameOrderView.swift in Sources */,
 				20CB09EC2A3E89170086036B /* MenuItemView.swift in Sources */,
+				208F8FB62DD953C600500CE1 /* GameLauncherView.swift in Sources */,
 				201E65572A17E535005404B9 /* Extension.swift in Sources */,
 				204F40912A4BBFA600E03643 /* GameSolvedView.swift in Sources */,
 				201E655F2A195845005404B9 /* SettingsView.swift in Sources */,
@@ -2164,6 +2175,7 @@
 				209025372A0ED7B5004B6790 /* MainView.swift in Sources */,
 				200FBD382A2EE634002A4175 /* GameLevel.swift in Sources */,
 				2060632D2A1AE4240044AC81 /* EmailView.swift in Sources */,
+				20E023C92D19EA2F009A0755 /* MainRowView.swift in Sources */,
 				200FC01D2A2F007B002A4175 /* Sound.swift in Sources */,
 				209025412A104CD2004B6790 /* MainToolbarView.swift in Sources */,
 				201E655B2A190A00005404B9 /* SecondsTimer.swift in Sources */,
@@ -2324,7 +2336,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyPuzzlesPlus/content/Preview Content\"";
-				DEVELOPMENT_TEAM = BGR2CU5KFK;
+				DEVELOPMENT_TEAM = CBH5AV2U3Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DailyPuzzlesPlus/Info.plist;
@@ -2355,7 +2367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DailyPuzzlesPlus/content/Preview Content\"";
-				DEVELOPMENT_TEAM = BGR2CU5KFK;
+				DEVELOPMENT_TEAM = CBH5AV2U3Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DailyPuzzlesPlus/Info.plist;
@@ -2383,7 +2395,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BGR2CU5KFK;
+				DEVELOPMENT_TEAM = CBH5AV2U3Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = blacklabs.DailyPuzzlesPlusTests;
@@ -2401,7 +2413,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BGR2CU5KFK;
+				DEVELOPMENT_TEAM = CBH5AV2U3Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = blacklabs.DailyPuzzlesPlusTests;

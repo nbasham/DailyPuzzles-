@@ -73,7 +73,10 @@ struct MainView: View {
             Color.background
                 .ignoresSafeArea()
             VStack(alignment: .leading, spacing: 0) {
-                gameChooserView
+                GameLauncherView(gameDescriptors: Settings.onAndOrderedGames())
+//                GameView()
+//                    .padding(.top, 16)
+//                gameChooserView
                 Spacer()
                 FactoidView()
                     .padding(.leading, (viewModel.bottomViewHeight + safeAreaInsets.bottom)/2)
@@ -147,7 +150,7 @@ struct MainView: View {
                         .frame(maxWidth: 200)
                         .tint(.primary)
                         .font(.system(size: UIDevice.isPhone ? 18 : 22, weight: .semibold))
-                        .frame(width: UIDevice.isPhone ? 148 : 256)
+                        .frame(width: UIDevice.isPhone ? 152 : 256)
                     Spacer().frame(width: 16)
                     MainBallView(game: game)
                         .frame(maxHeight: UIDevice.isPhone ? 34 : 54)
@@ -163,7 +166,46 @@ struct MainView: View {
         .padding(.top, viewModel.chooserTopSpacing)
     }
 }
+/*
+struct GameView: View {
+    var body: some View {
+       // VStack(spacing: 2 viewModel.chooserLineSpacing) {
+            ForEach(Settings.onAndOrderedGames()) { game in
+                HStack {
+                    Spacer()
+                    GameRowView(game: game)
+                }
+//                    .background(.blue)
+//                Spacer().frame(width: 16)
+                .padding(.leading)
+                .contentShape(Rectangle())
+//                .onTapGesture {
+//                    Play.tap()
+//                }
+            }
+        }
+//    }
+}
 
+struct GameRowView: View {
+    var game: GameDescriptor
+
+    var body: some View {
+        HStack {
+            Text(game.displayName)
+                .frame(maxWidth: 200, alignment: .trailing)
+                .tint(.primary)
+                .font(.system(size: UIDevice.isPhone ? 18 : 22, weight: .semibold))
+                .frame(width: UIDevice.isPhone ? 152 : 256)
+            //Spacer()
+            MainBallView(game: game)
+                .padding(.leading)
+                .frame(maxHeight: UIDevice.isPhone ? 34 : 54)
+            Spacer()
+        }
+    }
+}
+*/
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {

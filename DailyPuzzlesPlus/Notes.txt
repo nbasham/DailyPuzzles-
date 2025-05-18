@@ -15,3 +15,7 @@ When uploading to app store changed name from DailyPuzzles+ to DailyPuzzlesPlus
 Why DP+
 Levels for certain games
 
+
+The list to choose games can have a flexible number of rows based on the list of GameDescriptors it is passed in. The rows should have spacing on the top row and inbetween all the rows below. The list's vertical alignment should be .top. The height of each row is determined by the following in order of importance:
+- All rows should be visible in the view without scrolling.
+- Rows on an iPhone should range between 34 pixles in landscape to 54 pixels in portrait, on iPad 64 pixels in landscape and 72 in portrait.

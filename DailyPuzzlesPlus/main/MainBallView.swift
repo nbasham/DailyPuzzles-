@@ -17,12 +17,12 @@ struct MainBallView: View {
             )
             .aspectRatio(1, contentMode: .fit)
             .rotationEffect(.degrees(animateBall ? 5*360 : 0))
-            .onTapGesture {
-                Play.tap()
-                withAnimation(.linear(duration: 3).repeatForever(autoreverses: false)) {
-                    animateBall.toggle()
-                }
-            }
+//            .onTapGesture {
+//                Play.tap()
+//                withAnimation(.linear(duration: 3).repeatForever(autoreverses: false)) {
+//                    animateBall.toggle()
+//                }
+//            }
             .onAppear {
                 guard !isPreview else { return }
                 isCompleted = DailyStorage.isCompleted(game: game)
